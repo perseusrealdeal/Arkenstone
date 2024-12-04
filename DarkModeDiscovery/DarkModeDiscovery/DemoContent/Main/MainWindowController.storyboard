@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="zEn-H0-fel">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="zEn-H0-fel">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -45,7 +45,7 @@
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="ggy-pj-ydL">
                                         <rect key="frame" x="0.0" y="150" width="450" height="100"/>
                                         <subviews>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="pch-xV-LUR" customClass="DarkModeImageView" customModule="DarkModeDiscovery" customModuleProvider="target">
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="pch-xV-LUR" customClass="DarkModeImageView" customModule="PerseusDarkMode">
                                                 <rect key="frame" x="0.0" y="0.0" width="450" height="100"/>
                                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="Mol-TW-rN3"/>
                                                 <userDefinedRuntimeAttributes>
@@ -95,7 +95,7 @@
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="dXU-fX-v5M">
                                         <rect key="frame" x="0.0" y="0.0" width="450" height="50"/>
                                         <subviews>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mj2-Gc-sLl" customClass="DarkModeImageView" customModule="DarkModeDiscovery" customModuleProvider="target">
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mj2-Gc-sLl" customClass="DarkModeImageView" customModule="PerseusDarkMode">
                                                 <rect key="frame" x="0.0" y="0.0" width="450" height="50"/>
                                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="uaX-XN-hFq"/>
                                                 <userDefinedRuntimeAttributes>
@@ -156,7 +156,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wLm-68-HNO" customClass="DarkModeImageView" customModule="DarkModeDiscovery" customModuleProvider="target">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wLm-68-HNO" customClass="DarkModeImageView" customModule="PerseusDarkMode">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="MjK-VM-7uu"/>
                                 <userDefinedRuntimeAttributes>
@@ -167,7 +167,7 @@
                             </imageView>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oe2-DN-uNG">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="XTU-e3-VL1">
+                                <clipView key="contentView" copiesOnScroll="NO" id="XTU-e3-VL1">
                                     <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -185,11 +185,11 @@
                                         </collectionView>
                                     </subviews>
                                 </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="sBS-IT-gd3">
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="sBS-IT-gd3">
                                     <rect key="frame" x="-100" y="-100" width="233" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="fBE-9x-zZB">
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="fBE-9x-zZB">
                                     <rect key="frame" x="234" y="1" width="15" height="143"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -222,7 +222,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5au-tj-4bR" customClass="DarkModeImageView" customModule="DarkModeDiscovery" customModuleProvider="target">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5au-tj-4bR" customClass="DarkModeImageView" customModule="PerseusDarkMode">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="xzx-Gy-l7r"/>
                             </imageView>
@@ -302,11 +302,11 @@
                                         </textView>
                                     </subviews>
                                 </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="L5R-g5-gzl">
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="L5R-g5-gzl">
                                     <rect key="frame" x="-100" y="-100" width="100" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="oHO-tt-fGB">
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="oHO-tt-fGB">
                                     <rect key="frame" x="252" y="2" width="16" height="146"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>

@@ -17,15 +17,15 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2</string>
+	<string>2.0</string>
 	<key>CFBundleVersion</key>
 	<string>0</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 7530 — 7531 Mikhail Zhigulin
-Copyright © 7530 — 7531 PerseusRealDeal 
-Created by Mikhail Zhigulin of Novosibirsk.
+	<string>Copyright © 7530 — 7533 Mikhail A. Zhigulin
+Copyright © 7530 — 7533 PerseusRealDeal 
+Created by Mikhail A. Zhigulin of Novosibirsk.
 All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>

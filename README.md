@@ -1,46 +1,52 @@
-# macos.darkmode.discovery
+# Dark Mode discovery for macOS — Xcode 14.2+
 
-[![Actions Status](https://github.com/perseusrealdeal/macos.darkmode.discovery/actions/workflows/main.yml/badge.svg)](https://github.com/perseusrealdeal/macos.darkmode.discovery/actions)
-![Version](https://img.shields.io/badge/App_Version-1.2-green.svg)
-[![Platform macOS](https://img.shields.io/badge/Platform-macOS%2010.11+-orange.svg)](https://en.wikipedia.org/wiki/MacOS_version_history)
-[![Xcode 10.1](https://img.shields.io/badge/Xcode-10.1+-red.svg)](https://en.wikipedia.org/wiki/Xcode)
-[![Swift 4.2](https://img.shields.io/badge/Swift-4.2-red.svg)](https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html)
+> A fan macOS app themed with the Middle-earth adventures from The Hobbit.
+
+[![Actions Status](https://github.com/perseusrealdeal/macos.darkmode.discovery/actions/workflows/main.yml/badge.svg)](https://github.com/perseusrealdeal/macos.darkmode.discovery/actions/workflows/main.yml)
+[![Style](https://github.com/perseusrealdeal/macos.darkmode.discovery/actions/workflows/swiftlint.yml/badge.svg)](https://github.com/perseusrealdeal/macos.darkmode.discovery/actions/workflows/swiftlint.yml)
+[![Version](https://img.shields.io/badge/Version-2.0-green.svg)](/CHANGELOG.md)
+[![Platform macOS](https://img.shields.io/badge/Platform-macOS%2010.13+-orange.svg)](https://en.wikipedia.org/wiki/MacOS_version_history)
+[![Xcode 14.2](https://img.shields.io/badge/Xcode-14.2+-red.svg)](https://en.wikipedia.org/wiki/Xcode)
+[![Swift 5.0](https://img.shields.io/badge/Swift-5-orange.svg)](https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html)
+[![SDK UIKit](https://img.shields.io/badge/SDK-UIKit%20-blueviolet.svg)](https://developer.apple.com/documentation/uikit)
 [![License](http://img.shields.io/:License-MIT-blue.svg)](/LICENSE)
 
 ## Dependencies
 
-[![PerseusDarkMode](http://img.shields.io/:PerseusDarkMode-1.1.5-green.svg)](https://github.com/perseusrealdeal/PerseusDarkMode/tree/1.1.5)
-[![PerseusUISystemKit](http://img.shields.io/:PerseusUISystemKit-1.1.4-green.svg)](https://github.com/perseusrealdeal/PerseusUISystemKit/tree/1.1.4)
+> Swift Package Manager.
+
+[![PerseusLogger](http://img.shields.io/:PerseusLogger-latest-green.svg)](https://github.com/perseusrealdeal/ConsolePerseusLogger.git)
+[![PerseusDarkMode](http://img.shields.io/:PerseusDarkMode-2.0.0-green.svg)](https://github.com/perseusrealdeal/PerseusDarkMode.git)
+[![PerseusGeoKit](http://img.shields.io/:PerseusGeoKit-1.0.0-green.svg)](https://github.com/perseusrealdeal/PerseusGeoLocationKit.git)
 
 # In brief
 
-> This project is used to prove a set of Perseus Dark Mode capabilities.
+> This app was designed to approbate capabilities that are based on the dependencies listed above.
 
 ![Hobbit](https://user-images.githubusercontent.com/50202963/214910458-781beb39-c6fe-4b73-b7df-eec9f1bfc708.gif)
 
-# Requirements
+## Approbation Matrix
 
-- [macOS 10.13.6+](https://apps.apple.com/us/app/macos-high-sierra/id1246284741?ls=1)
-- [Xcode 10.1+](https://stackoverflow.com/questions/10335747/how-to-download-xcode-dmg-or-xip-file)
-- Swift 4.2+
-- AppKit SDK
+> [A3 Environment](https://docs.google.com/document/d/1K2jOeIknKRRpTEEIPKhxO2H_1eBTof5uTXxyOm5g6nQ/edit?usp=sharing) / [Approbation Results](/APPROBATION.md) for details.
 
-# First-party software
+# Build system requirements
 
-- [Perseus Dark Mode](https://github.com/perseusrealdeal/PerseusDarkMode.git) / [1.1.5](https://github.com/perseusrealdeal/perseusdarkmode/releases/tag/1.1.5)
-- [Perseus UI System Kit](https://github.com/perseusrealdeal/PerseusUISystemKit.git) / [1.1.4](https://github.com/perseusrealdeal/perseusuisystemkit/releases/tag/1.1.4)
-- [Dark Mode switching functions](https://gist.github.com/perseusrealdeal/11b1bab47f13134832b859f49d9af706)
-- [PerseusLogger](https://gist.github.com/perseusrealdeal/df456a9825fcface44eca738056eb6d5)
+- [macOS Monterey 12.7.6+](https://apps.apple.com/by/app/macos-monterey/id1576738294) / [Xcode 14.2+](https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_14.2/Xcode_14.2.xip)
+- AppKit SDK, macOS 10.13+, Swift 5
 
 # Third-party software
 
-- [SwiftLint](https://github.com/realm/SwiftLint) / [0.31.0: Busy Laundromat](https://github.com/realm/SwiftLint/releases/tag/0.31.0) for macOS High Sierra
+| Type   | Name                                                                                                 | License                            | Conditions                    |
+| ------ | ---------------------------------------------------------------------------------------------------- | ---------------------------------- | ----------------------------- |
+| Style  | [SwiftLint](https://github.com/realm/SwiftLint)                                                      | MIT                                | Copyright (c) 2020 Realm Inc. |
+| Action | [mxcl/xcodebuild@v3.3](https://github.com/mxcl/xcodebuild/releases/tag/v3.3.0)                       | [Unlicense](https://unlicense.org) | -                             |
+| Action | [cirruslabs/swiftlint-action@v1](https://github.com/cirruslabs/swiftlint-action/releases/tag/v1.0.0) | MIT                                | Copyright GitHub              |
 
 # License MIT
 
-Copyright © 7530 - 7531 Mikhail Zhigulin of Novosibirsk.
+Copyright © 7530 - 7533 Mikhail Zhigulin of Novosibirsk
 
-Copyright © 7530 - 7531 PerseusRealDeal.
+Copyright © 7530 - 7533 PerseusRealDeal
 
 - The year starts from the creation of the world according to a Slavic calendar.
 - September, the 1st of Slavic year.
@@ -49,8 +55,36 @@ Copyright © 7530 - 7531 PerseusRealDeal.
 
 ***TODO:*** Add some special words about app's theme images and text that were found on the seas of Internet.
 
+## Credits
+
+<table>
+<tr>
+    <td>Balance and Control</td>
+    <td>kept by</td>
+    <td>Mikhail A. Zhigulin</td>
+</tr>
+<tr>
+    <td>Source Code</td>
+    <td>written by</td>
+    <td>Mikhail A. Zhigulin</td>
+</tr>
+<tr>
+    <td>Documentation</td>
+    <td>prepared by</td>
+    <td>Mikhail A. Zhigulin</td>
+</tr>
+<tr>
+    <td>Product Approbation</td>
+    <td>tested by</td>
+    <td>Mikhail A. Zhigulin</td>
+</tr>
+</table>
+
+- Language support: [Reverso](https://www.reverso.net/)
+- - Git client: [SmartGit](https://syntevo.com/)
+
 # Author
 
-> This app called as `DarkModeDiscovery` was written at Novosibirsk by Mikhail Zhigulin i.e. me, mzhigulin@gmail.com.
+> Mikhail A. Zhigulin of Novosibirsk.
 
-> Mostly I'd like thank my lovely parents for supporting me in all my ways.
+> Mostly thanks my lovely parents for supporting me in all my ways.
