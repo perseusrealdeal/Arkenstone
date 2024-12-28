@@ -29,5 +29,7 @@ Created by Mikhail A. Zhigulin of Novosibirsk.
 All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Location Usage Description</string>
 </dict>
 </plist>

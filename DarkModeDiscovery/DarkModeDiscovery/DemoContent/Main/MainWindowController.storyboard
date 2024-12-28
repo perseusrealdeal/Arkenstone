@@ -54,12 +54,19 @@
                                                     <userDefinedRuntimeAttribute type="image" keyPath="imageDark" value="DwarvesAndHiddenDoor"/>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Qj0-cm-h4X" customClass="LocationView" customModule="DarkModeDiscovery" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="450" height="100"/>
+                                            </customView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="pch-xV-LUR" firstAttribute="centerY" secondItem="ggy-pj-ydL" secondAttribute="centerY" id="49R-kT-shj"/>
                                             <constraint firstItem="pch-xV-LUR" firstAttribute="height" secondItem="ggy-pj-ydL" secondAttribute="height" id="AxD-dD-CkH"/>
+                                            <constraint firstAttribute="trailing" secondItem="Qj0-cm-h4X" secondAttribute="trailing" id="NES-Pg-sQG"/>
+                                            <constraint firstItem="Qj0-cm-h4X" firstAttribute="top" secondItem="ggy-pj-ydL" secondAttribute="top" id="Ozl-YE-S7k"/>
                                             <constraint firstItem="pch-xV-LUR" firstAttribute="width" secondItem="ggy-pj-ydL" secondAttribute="width" id="PBe-yA-LZj"/>
+                                            <constraint firstAttribute="bottom" secondItem="Qj0-cm-h4X" secondAttribute="bottom" id="XGu-oN-DQX"/>
                                             <constraint firstItem="pch-xV-LUR" firstAttribute="centerX" secondItem="ggy-pj-ydL" secondAttribute="centerX" id="fvI-Te-MmL"/>
+                                            <constraint firstItem="Qj0-cm-h4X" firstAttribute="leading" secondItem="ggy-pj-ydL" secondAttribute="leading" id="t4H-7n-pLV"/>
                                         </constraints>
                                     </customView>
                                     <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2EH-cM-tzd">

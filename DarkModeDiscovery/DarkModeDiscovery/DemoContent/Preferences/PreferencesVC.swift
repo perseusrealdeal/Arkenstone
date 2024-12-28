@@ -40,7 +40,7 @@ class PreferencesViewController: NSViewController {
     }
 
     private func updateDarkModeOption() {
-        switch AppearanceService.DarkModeUserChoice {
+        switch DarkModeAgent.DarkModeUserChoice {
         case .auto:
             segmentedControl.selectedSegment = 2
         case .on:
@@ -53,11 +53,11 @@ class PreferencesViewController: NSViewController {
     private func changeDarkModeValue(selected: Int) {
         switch selected {
         case 0:
-            changeDarkModeManually(.off)
+            DarkModeAgent.forceDarkMode(.off)
         case 1:
-            changeDarkModeManually(.on)
+            DarkModeAgent.forceDarkMode(.on)
         case 2:
-            changeDarkModeManually(.auto)
+            DarkModeAgent.forceDarkMode(.auto)
         default:
             break
         }

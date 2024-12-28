@@ -29,22 +29,22 @@ public protocol CustomColorsProtocol {
 extension NSColor: CustomColorsProtocol {
 
     public static var customChosenOne: NSColor {
-        return AppearanceService.shared.style == .light ?
+        return DarkModeAgent.shared.style == .light ?
             rgba255(255, 255, 255) : rgba255(255, 255, 255, 0.6)
     }
 
     public static var customLabel: NSColor {
-        return AppearanceService.shared.style == .light ?
+        return DarkModeAgent.shared.style == .light ?
             rgba255(255, 255, 255, 0.9) : rgba255(235, 235, 245, 0.6)
     }
 
     public static var customShortText: NSColor {
-        return AppearanceService.shared.style == .light ?
+        return DarkModeAgent.shared.style == .light ?
             rgba255(255, 255, 255) : rgba255(235, 235, 245, 0.6)
     }
 
     public static var customLongText: NSColor {
-        return AppearanceService.shared.style == .light ?
+        return DarkModeAgent.shared.style == .light ?
         rgba255(255, 255, 255, 0.9) : rgba255(235, 235, 245, 0.6)
     }
 }
