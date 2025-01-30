@@ -22,14 +22,14 @@ struct AppGlobals {
 
     static var currentLocation: PerseusLocation? {
         didSet {
-            let location = currentLocation?.description ?? "current location is cleared"
+            let location = currentLocation?.description ?? "current location is erased"
             log.message("\(location) [\(type(of: self))].\(#function)", .info)
         }
     }
 
     // MARK: - Constants
 
-    static let systemApp = "x-apple.systempreferences:"
+    static let preferedAccuracy = LocationAccuracy.threeKilometers
 
     // MARK: - System Services
 
@@ -45,18 +45,18 @@ struct AppGlobals {
         log.message("[\(type(of: self))].\(#function)", .info)
 
         locationDealer = LocationAgent.shared
-    }
 
-    // MARK: - Contract
+        // Configure accuracy
 
-    static func openTheApp(name: String) {
+        var lm = locationDealer.locationManager
+        lm?.desiredAccuracy = AppGlobals.preferedAccuracy.rawValue
 
-        guard let pathURL = URL(string: name)
-        else {
-            log.message("[\(type(of: self))].\(#function)", .error)
-            return
-        }
+        // Configure GoTo Settings alert
+        let text = OneFunctionAlertText(title: "Custom Title",
+                                        message: "Custom Message",
+                                        buttonCancel: "MyCancel",
+                                        buttonFunction: "MyAction")
 
-        NSWorkspace.shared.open(pathURL)
+        locationDealer.alert.titles = text
     }
 }

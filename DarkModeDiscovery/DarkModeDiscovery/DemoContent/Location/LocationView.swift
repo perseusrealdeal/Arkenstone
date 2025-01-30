@@ -32,9 +32,15 @@ class LocationView: NSView {
     // MARK: - Actions
 
     @IBAction func buttonRefreshStatusTapped(_ sender: NSButton) {
-        let permit = "\(globals.locationDealer.locationPermit)"
-        labelPermissionValue.stringValue = permit.capitalized
+        let permit = globals.locationDealer.locationPermit
+        labelPermissionValue.stringValue = "\(permit)".capitalized
+
         log.message("Location access \(permit)")
+
+        if permit == .notDetermined {
+            // Allow geo service action.
+            globals.locationDealer.requestPermission()
+        }
     }
 
     @IBAction func buttonRefreshTapped(_ sender: NSButton) {
@@ -48,7 +54,7 @@ class LocationView: NSView {
             try? globals.locationDealer.requestCurrentLocation()
         } else {
             // Open system options action.
-            AppGlobals.openTheApp(name: AppGlobals.systemApp)
+            globals.locationDealer.alert.show()
         }
     }
 
