@@ -52,10 +52,10 @@ struct AppGlobals {
         lm?.desiredAccuracy = AppGlobals.preferedAccuracy.rawValue
 
         // Configure GoTo Settings alert
-        let text = OneFunctionAlertText(title: "Custom Title",
-                                        message: "Custom Message",
-                                        buttonCancel: "MyCancel",
-                                        buttonFunction: "MyAction")
+        let text = ActionAlertText(title: "Custom Title",
+                                   message: "Custom Message",
+                                   buttonCancel: "MyCancel",
+                                   buttonFunction: "MyAction")
 
         locationDealer.alert.titles = text
     }

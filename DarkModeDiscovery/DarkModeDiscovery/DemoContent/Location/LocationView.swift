@@ -37,23 +37,32 @@ class LocationView: NSView {
 
         log.message("Location access \(permit)")
 
+        guard permit != .allowed else { return }
+
+        let dealer = globals.locationDealer
+
         if permit == .notDetermined {
-            // Allow geo service action.
-            globals.locationDealer.requestPermission()
+            // Deal with permission
+            dealer.requestPermission()
+        } else {
+            // Show GoTo Settings alert
+            dealer.alert.show()
         }
     }
 
     @IBAction func buttonRefreshTapped(_ sender: NSButton) {
         let permit = globals.locationDealer.locationPermit
 
+        log.message("Location access \(permit)")
+
         if permit == .notDetermined {
-            // Allow geo service action.
+            // Deal with permission
             globals.locationDealer.requestPermission()
         } else if permit == .allowed {
-            // Refresh geo data action.
+            // Request current location
             try? globals.locationDealer.requestCurrentLocation()
         } else {
-            // Open system options action.
+            // Show Goto Setting alert
             globals.locationDealer.alert.show()
         }
     }
