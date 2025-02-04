@@ -146,7 +146,7 @@ extension LocationView {
     }
 
     @objc private func locationDealerCurrentHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)")
+        log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .info)
 
         guard
             let result = notification.object as? Result<PerseusLocation, LocationError>
@@ -166,7 +166,7 @@ extension LocationView {
     }
 
     @objc private func locationDealerStatusChangedHandler() {
-        log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)")
+        log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .info)
         refresh()
     }
 

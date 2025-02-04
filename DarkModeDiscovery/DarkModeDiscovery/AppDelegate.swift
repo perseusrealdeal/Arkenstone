@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         log.message("Launching with business matter purpose...", .info)
         log.message("[\(type(of: self))].\(#function)")
 
-        DarkModeAgent.recalculateStyleIfNeeded()
+        DarkModeAgent.makeUp() // DarkModeAgent.recalculateStyleIfNeeded()
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
