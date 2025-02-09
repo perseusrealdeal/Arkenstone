@@ -10,6 +10,8 @@
 //  Licensed under the special license. See LICENSE file.
 //  All rights reserved.
 //
+// swiftlint:disable file_length
+//
 
 import Cocoa
 
@@ -32,38 +34,34 @@ class LocationView: NSView {
     // MARK: - Actions
 
     @IBAction func buttonRefreshStatusTapped(_ sender: NSButton) {
-        let permit = globals.locationDealer.locationPermit
-        labelPermissionValue.stringValue = "\(permit)".capitalized
-
-        log.message("Location access \(permit)")
-
-        guard permit != .allowed else { return }
-
         let dealer = globals.locationDealer
 
-        if permit == .notDetermined {
-            // Deal with permission
-            dealer.requestPermission()
-        } else {
-            // Show GoTo Settings alert
-            dealer.alert.show()
+        labelPermissionValue.stringValue = "\(dealer.locationPermit)".capitalized
+
+        dealer.requestPermission { permit in
+            if permit != .allowed {
+                dealer.alert.show()
+            }
         }
     }
 
-    @IBAction func buttonRefreshTapped(_ sender: NSButton) {
-        let permit = globals.locationDealer.locationPermit
+    @IBAction func buttonRefreshCurrentTapped(_ sender: NSButton) {
+        let dealer = globals.locationDealer
 
-        log.message("Location access \(permit)")
+        do {
+            try dealer.requestCurrentLocation()
+        } catch LocationError.permissionRequired(let permit) {
 
-        if permit == .notDetermined {
-            // Deal with permission
-            globals.locationDealer.requestPermission()
-        } else if permit == .allowed {
-            // Request current location
-            try? globals.locationDealer.requestCurrentLocation()
-        } else {
-            // Show Goto Setting alert
-            globals.locationDealer.alert.show()
+            log.message("[\(type(of: self))].\(#function) - permission required", .notice)
+
+            if permit == .notDetermined {
+                dealer.requestPermission()
+            } else {
+                dealer.alert.show()
+            }
+
+        } catch {
+            log.message("[\(type(of: self))].\(#function) - something totally wrong", .error)
         }
     }
 
@@ -112,15 +110,19 @@ class LocationView: NSView {
 
         // Setup location event handlers.
 
-        let nc = AppGlobals.notificationCenter
+        LocationAgent.getNotified(with: self,
+                                  selector: #selector(locationDealerCurrentHandler(_:)),
+                                  name: .locationDealerCurrentNotification)
 
-        nc.addObserver(self, selector: #selector(locationDealerCurrentHandler(_:)),
-                       name: .locationDealerCurrentNotification,
-                       object: nil)
+        LocationAgent.getNotified(with: self,
+                                  selector: #selector(locationDealerStatusChangedHandler),
+                                  name: .locationDealerStatusChangedNotification)
 
-        nc.addObserver(self, selector: #selector(locationDealerStatusChangedHandler),
-                       name: .locationDealerStatusChangedNotification,
-                       object: nil)
+        LocationAgent.getNotified(with: self,
+                                  selector: #selector(locationDealerErrorHandler(_:)),
+                                  name: .locationDealerErrorNotification)
+
+        // Setup Dark Mode event handlers.
 
         darkModeObserver.action = { _ in self.callDarkModeSensitiveColours() }
 
@@ -168,6 +170,25 @@ extension LocationView {
     @objc private func locationDealerStatusChangedHandler() {
         log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .info)
         refresh()
+    }
+
+    @objc private func locationDealerErrorHandler(_ notification: Notification) {
+        log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .info)
+
+        guard
+            let result = notification.object as? LocationError,
+            let failedRequestDetails = result.failedRequestDetails
+        else {
+            log.message("[\(type(of: self))].\(#function) - no error details", .error)
+            return
+        }
+
+        switch failedRequestDetails.code {
+        case 0: log.message("Wireless issue takes place. Try tap Wi-Fi.", .notice)
+        case 1: log.message("Permission deal required.", .notice)
+        default:
+            break
+        }
     }
 
     private func refresh() {

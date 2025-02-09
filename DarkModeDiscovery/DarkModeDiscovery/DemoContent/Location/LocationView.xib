@@ -51,7 +51,7 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <action selector="buttonRefreshTapped:" target="-2" id="vHK-sY-Ajp"/>
+                        <action selector="buttonRefreshCurrentTapped:" target="-2" id="jwC-nr-IA0"/>
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H7e-9Y-s10">
