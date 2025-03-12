@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E00F837C288A4A04000D0A01"
-               BuildableName = "Dark Mode Discovery.app"
+               BuildableName = "Arkenstone.app"
                BlueprintName = "DarkModeDiscovery"
                ReferencedContainer = "container:DarkModeDiscovery.xcodeproj">
             </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E00F837C288A4A04000D0A01"
-            BuildableName = "Dark Mode Discovery.app"
+            BuildableName = "Arkenstone.app"
             BlueprintName = "DarkModeDiscovery"
             ReferencedContainer = "container:DarkModeDiscovery.xcodeproj">
          </BuildableReference>
@@ -86,7 +86,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E00F837C288A4A04000D0A01"
-            BuildableName = "Dark Mode Discovery.app"
+            BuildableName = "Arkenstone.app"
             BlueprintName = "DarkModeDiscovery"
             ReferencedContainer = "container:DarkModeDiscovery.xcodeproj">
          </BuildableReference>
