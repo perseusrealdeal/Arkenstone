@@ -79,7 +79,7 @@
 		E002B00E288E9A8D00E46356 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E002B010288E9A9200E46356 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E002B012288E9AAD00E46356 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
-		E00F837D288A4A04000D0A01 /* Dark Mode Discovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dark Mode Discovery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E00F837D288A4A04000D0A01 /* Arkenstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arkenstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E00F8382288A4A04000D0A01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E00F8384288A4A0B000D0A01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E00F8389288A4A0B000D0A01 /* DarkModeDiscovery.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DarkModeDiscovery.entitlements; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 		E00F837E288A4A04000D0A01 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E00F837D288A4A04000D0A01 /* Dark Mode Discovery.app */,
+				E00F837D288A4A04000D0A01 /* Arkenstone.app */,
 				4B0158E329103C0D009F1803 /* DarkModeDiscoveryTests.xctest */,
 			);
 			name = Products;
@@ -279,7 +279,7 @@
 				2EA10AAC2CFE273C00535E5A /* ConsolePerseusLogger */,
 			);
 			productName = DarkModeDiscovery;
-			productReference = E00F837D288A4A04000D0A01 /* Dark Mode Discovery.app */;
+			productReference = E00F837D288A4A04000D0A01 /* Arkenstone.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -442,7 +442,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.perseus.DarkModeDiscoveryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dark Mode Discovery.app/Contents/MacOS/Dark Mode Discovery";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arkenstone.app/Contents/MacOS/Arkenstone";
 			};
 			name = Debug;
 		};
@@ -466,7 +466,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.perseus.DarkModeDiscoveryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dark Mode Discovery.app/Contents/MacOS/Dark Mode Discovery";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arkenstone.app/Contents/MacOS/Arkenstone";
 			};
 			name = Release;
 		};
@@ -605,7 +605,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.perseus.lab.macos.DarkModeDiscovery;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME)";
-				PRODUCT_NAME = "Dark Mode Discovery";
+				PRODUCT_NAME = Arkenstone;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
@@ -630,7 +630,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.perseus.lab.macos.DarkModeDiscovery;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME)";
-				PRODUCT_NAME = "Dark Mode Discovery";
+				PRODUCT_NAME = Arkenstone;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
