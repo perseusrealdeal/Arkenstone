@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E00F837C288A4A04000D0A01"
-               BuildableName = "Dark Mode Discovery.app"
-               BlueprintName = "DarkModeDiscovery"
-               ReferencedContainer = "container:DarkModeDiscovery.xcodeproj">
+               BuildableName = "Arkenstone.app"
+               BlueprintName = "Arkenstone"
+               ReferencedContainer = "container:Arkenstone.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -27,18 +27,6 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "NO">
-      <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4B0158E229103C0D009F1803"
-               BuildableName = "DarkModeDiscoveryTests.xctest"
-               BlueprintName = "DarkModeDiscoveryTests"
-               ReferencedContainer = "container:DarkModeDiscovery.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "OS_ACTIVITY_MODE"
@@ -46,8 +34,18 @@
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
-      <AdditionalOptions>
-      </AdditionalOptions>
+      <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4B0158E229103C0D009F1803"
+               BuildableName = "ArkenstoneTests.xctest"
+               BlueprintName = "ArkenstoneTests"
+               ReferencedContainer = "container:Arkenstone.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -64,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E00F837C288A4A04000D0A01"
-            BuildableName = "Dark Mode Discovery.app"
-            BlueprintName = "DarkModeDiscovery"
-            ReferencedContainer = "container:DarkModeDiscovery.xcodeproj">
+            BuildableName = "Arkenstone.app"
+            BlueprintName = "Arkenstone"
+            ReferencedContainer = "container:Arkenstone.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -76,8 +74,6 @@
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -90,9 +86,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E00F837C288A4A04000D0A01"
-            BuildableName = "Dark Mode Discovery.app"
-            BlueprintName = "DarkModeDiscovery"
-            ReferencedContainer = "container:DarkModeDiscovery.xcodeproj">
+            BuildableName = "Arkenstone.app"
+            BlueprintName = "Arkenstone"
+            ReferencedContainer = "container:Arkenstone.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
