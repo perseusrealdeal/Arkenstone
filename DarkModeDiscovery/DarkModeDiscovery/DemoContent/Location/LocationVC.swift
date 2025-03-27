@@ -12,8 +12,26 @@
 //
 
 import Cocoa
+import MapKit
 
 class LocationViewController: NSViewController {
+
+    @IBOutlet private(set) weak var mapView: MKMapView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Set the defualt visible area
+
+        let point = CLLocation(latitude: 55.036857, longitude: 82.914063)
+        let radius: CLLocationDistance = 1000
+
+        let region = MKCoordinateRegion(center: point.coordinate,
+                                        latitudinalMeters: radius,
+                                        longitudinalMeters: radius)
+
+        mapView.setRegion(region, animated: true)
+    }
 
     override func viewDidAppear() {
         super.viewDidAppear()

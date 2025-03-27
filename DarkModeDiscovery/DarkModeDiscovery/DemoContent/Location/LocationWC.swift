@@ -20,9 +20,4 @@ class LocationWindowController: NSWindowController, NSWindowDelegate {
 
         if #available(macOS 10.14, *) { self.window?.title = "Map" }
     }
-
-    func windowShouldClose(_ sender: NSWindow) -> Bool {
-        self.window?.orderOut(sender)
-        return false
-    }
 }

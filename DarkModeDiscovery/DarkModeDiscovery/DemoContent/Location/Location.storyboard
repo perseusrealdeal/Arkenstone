@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
+        <plugIn identifier="com.apple.MapKitIBPlugin" version="21507"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -10,11 +11,12 @@
         <scene sceneID="xHZ-NS-mQG">
             <objects>
                 <windowController id="LRv-GY-PgF" customClass="LocationWindowController" customModule="Arkenstone" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="ENh-LT-Ttf">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="ENh-LT-Ttf">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="294" y="313" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+                        <value key="minSize" type="size" width="480" height="270"/>
                         <view key="contentView" id="AEJ-Ys-oIV">
                             <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                             <autoresizingMask key="autoresizingMask"/>
@@ -38,7 +40,21 @@
                     <view key="view" id="BCN-XX-VIt">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <mapView mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jhs-hh-bhk">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            </mapView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Jhs-hh-bhk" secondAttribute="bottom" id="RDk-7l-9rY"/>
+                            <constraint firstAttribute="trailing" secondItem="Jhs-hh-bhk" secondAttribute="trailing" id="awc-fK-gbB"/>
+                            <constraint firstItem="Jhs-hh-bhk" firstAttribute="top" secondItem="BCN-XX-VIt" secondAttribute="top" id="jNP-7R-SFQ"/>
+                            <constraint firstItem="Jhs-hh-bhk" firstAttribute="leading" secondItem="BCN-XX-VIt" secondAttribute="leading" id="mKV-xZ-9Wi"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="Jhs-hh-bhk" id="zOd-UK-XMW"/>
+                    </connections>
                 </viewController>
                 <customObject id="INi-pV-9is" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

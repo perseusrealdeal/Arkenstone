@@ -10,7 +10,7 @@
         <scene sceneID="MXA-Sv-x0g">
             <objects>
                 <windowController id="zEn-H0-fel" customClass="MainWindowController" customModule="Arkenstone" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="macOS.DarkMode.Discovery" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="t5D-0x-IF4">
+                    <window key="window" title="macOS.DarkMode.Discovery" separatorStyle="none" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="t5D-0x-IF4">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
                         <rect key="contentRect" x="99" y="99" width="500" height="500"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1025"/>
