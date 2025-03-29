@@ -14,9 +14,40 @@
 import Cocoa
 import MapKit
 
+import ConsolePerseusLogger
+
 class LocationViewController: NSViewController {
 
     @IBOutlet private(set) weak var mapView: MKMapView!
+
+    @IBOutlet private(set) weak var buttonStop: NSButton!
+    @IBOutlet private(set) weak var buttonStart: NSButton!
+    @IBOutlet private(set) weak var buttonCurrent: NSButton!
+    @IBOutlet private(set) weak var buttonGoToPoint: NSButton!
+    @IBOutlet private(set) weak var buttonRefreshStatus: NSButton!
+
+    @IBOutlet private(set) weak var labelCoordinate: NSTextField!
+    @IBOutlet private(set) weak var labelGeoStatus: NSTextField!
+
+    @IBAction func actionButtonStopTapped(_ sender: NSButton) {
+        log.message("\(#function)")
+    }
+
+    @IBAction func actionButtonStartTapped(_ sender: NSButton) {
+        log.message("\(#function)")
+    }
+
+    @IBAction func actionButtonCurrentTapped(_ sender: NSButton) {
+        log.message("\(#function)")
+    }
+
+    @IBAction func actionButtonGoToPointTapped(_ sender: NSButton) {
+        log.message("\(#function)")
+    }
+
+    @IBAction func actionButtonRefreshStatusTapped(_ sender: NSButton) {
+        log.message("\(#function)")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

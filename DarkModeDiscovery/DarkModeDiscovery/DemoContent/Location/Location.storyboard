@@ -44,15 +44,102 @@
                             <mapView mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jhs-hh-bhk">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                             </mapView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2WA-kr-OsB">
+                                <rect key="frame" x="413" y="233" width="64" height="32"/>
+                                <buttonCell key="cell" type="push" title="Stop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AFn-2o-doV">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="actionButtonStopTapped:" target="TeN-YK-hyK" id="VhF-wY-R7l"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="K2x-pI-NXx">
+                                <rect key="frame" x="353" y="233" width="64" height="32"/>
+                                <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VNQ-Ec-Xdc">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="actionButtonStartTapped:" target="TeN-YK-hyK" id="gWa-UT-9fe"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9Pp-XI-Fid">
+                                <rect key="frame" x="277" y="233" width="80" height="32"/>
+                                <buttonCell key="cell" type="push" title="Current" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cHz-CX-a9n">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="actionButtonCurrentTapped:" target="TeN-YK-hyK" id="YHC-ZD-Qvm"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f43-QN-Yp7">
+                                <rect key="frame" x="177" y="233" width="104" height="32"/>
+                                <buttonCell key="cell" type="push" title="Go To Point" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JPL-CU-Rqp">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="actionButtonGoToPointTapped:" target="TeN-YK-hyK" id="SjX-AQ-QdF"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nJl-RP-M8I">
+                                <rect key="frame" x="350" y="204" width="122" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Latitude, Longitude" id="5xy-Mv-fjx">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FhB-70-nHJ">
+                                <rect key="frame" x="3" y="21" width="124" height="32"/>
+                                <buttonCell key="cell" type="push" title="Refresh Status" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mQY-e1-Bso">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="actionButtonRefreshStatusTapped:" target="TeN-YK-hyK" id="mij-v5-LTF"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iac-N3-spI">
+                                <rect key="frame" x="128" y="30" width="43" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Status" id="ean-d0-Rd5">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="iac-N3-spI" firstAttribute="leading" secondItem="FhB-70-nHJ" secondAttribute="trailing" constant="10" id="79A-6N-DNs"/>
+                            <constraint firstItem="FhB-70-nHJ" firstAttribute="leading" secondItem="BCN-XX-VIt" secondAttribute="leading" constant="10" id="9SE-5p-Dp4"/>
+                            <constraint firstItem="nJl-RP-M8I" firstAttribute="top" secondItem="BCN-XX-VIt" secondAttribute="top" constant="50" id="Io5-9E-vFX"/>
                             <constraint firstAttribute="bottom" secondItem="Jhs-hh-bhk" secondAttribute="bottom" id="RDk-7l-9rY"/>
+                            <constraint firstItem="9Pp-XI-Fid" firstAttribute="leading" secondItem="f43-QN-Yp7" secondAttribute="trailing" constant="10" id="TbE-dk-EY1"/>
+                            <constraint firstItem="K2x-pI-NXx" firstAttribute="centerY" secondItem="2WA-kr-OsB" secondAttribute="centerY" id="XLI-wa-2UB"/>
+                            <constraint firstItem="9Pp-XI-Fid" firstAttribute="centerY" secondItem="2WA-kr-OsB" secondAttribute="centerY" id="aFy-4v-ZuZ"/>
                             <constraint firstAttribute="trailing" secondItem="Jhs-hh-bhk" secondAttribute="trailing" id="awc-fK-gbB"/>
+                            <constraint firstAttribute="bottom" secondItem="FhB-70-nHJ" secondAttribute="bottom" constant="28" id="hp8-fC-Jgj"/>
                             <constraint firstItem="Jhs-hh-bhk" firstAttribute="top" secondItem="BCN-XX-VIt" secondAttribute="top" id="jNP-7R-SFQ"/>
+                            <constraint firstItem="K2x-pI-NXx" firstAttribute="trailing" secondItem="2WA-kr-OsB" secondAttribute="leading" constant="-10" id="l0E-J1-5BQ"/>
                             <constraint firstItem="Jhs-hh-bhk" firstAttribute="leading" secondItem="BCN-XX-VIt" secondAttribute="leading" id="mKV-xZ-9Wi"/>
+                            <constraint firstAttribute="trailing" secondItem="nJl-RP-M8I" secondAttribute="trailing" constant="10" id="pY0-YA-Mge"/>
+                            <constraint firstItem="2WA-kr-OsB" firstAttribute="top" secondItem="BCN-XX-VIt" secondAttribute="top" constant="10" id="q41-C7-fc5"/>
+                            <constraint firstAttribute="trailing" secondItem="2WA-kr-OsB" secondAttribute="trailing" constant="10" id="vHk-ni-5JJ"/>
+                            <constraint firstItem="iac-N3-spI" firstAttribute="centerY" secondItem="FhB-70-nHJ" secondAttribute="centerY" id="wfQ-m6-Ruo"/>
+                            <constraint firstItem="f43-QN-Yp7" firstAttribute="centerY" secondItem="2WA-kr-OsB" secondAttribute="centerY" id="xB4-pF-8af"/>
+                            <constraint firstItem="K2x-pI-NXx" firstAttribute="leading" secondItem="9Pp-XI-Fid" secondAttribute="trailing" constant="10" id="zy6-hM-xmM"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonCurrent" destination="9Pp-XI-Fid" id="Rdr-Wv-sTc"/>
+                        <outlet property="buttonGoToPoint" destination="f43-QN-Yp7" id="aT1-Ks-fDN"/>
+                        <outlet property="buttonRefreshStatus" destination="FhB-70-nHJ" id="4Vo-GL-Y7F"/>
+                        <outlet property="buttonStart" destination="K2x-pI-NXx" id="KdU-YS-KU0"/>
+                        <outlet property="buttonStop" destination="2WA-kr-OsB" id="AKp-Z2-v30"/>
+                        <outlet property="labelCoordinate" destination="nJl-RP-M8I" id="18u-ub-iHM"/>
+                        <outlet property="labelGeoStatus" destination="iac-N3-spI" id="gsH-2M-oxh"/>
                         <outlet property="mapView" destination="Jhs-hh-bhk" id="zOd-UK-XMW"/>
                     </connections>
                 </viewController>
