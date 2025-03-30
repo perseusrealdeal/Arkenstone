@@ -150,15 +150,6 @@ class LocationView: NSView {
 
 extension LocationView {
 
-    private var geoCouple: String {
-        guard let location = AppGlobals.currentLocation
-        else {
-            return "Latitude, Longitude"
-        }
-
-        return "\(location.latitude.cut(.four)), \(location.longitude.cut(.four))"
-    }
-
     @objc private func locationDealerCurrentHandler(_ notification: Notification) {
         log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .info)
 
@@ -207,7 +198,7 @@ extension LocationView {
         let permit = "\(globals.locationDealer.locationPermit)".capitalized
 
         labelPermissionValue.stringValue = permit
-        labelGeoCoupleValue.stringValue = geoCouple
+        labelGeoCoupleValue.stringValue = CURRENT_GEO_POINT
     }
 
     private func callDarkModeSensitiveColours() {

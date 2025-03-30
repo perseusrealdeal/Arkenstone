@@ -19,6 +19,7 @@
 		2ECC35AB2D8957C60059FBCC /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ECC35AA2D8957C60059FBCC /* Location.storyboard */; };
 		2ECC35AD2D8960A00059FBCC /* LocationWC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC35AC2D8960A00059FBCC /* LocationWC.swift */; };
 		2ECC35AF2D8960AD0059FBCC /* LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC35AE2D8960AD0059FBCC /* LocationVC.swift */; };
+		2ED09DDD2D99621D00DA2AD7 /* GeoConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED09DDC2D99621D00DA2AD7 /* GeoConstants.swift */; };
 		4B0158E629103C0D009F1803 /* DarkModeDiscoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0158E529103C0D009F1803 /* DarkModeDiscoveryTests.swift */; };
 		4B0158ED29103C21009F1803 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00F83AD288A6F99000D0A01 /* TestingAppDelegate.swift */; };
 		4B26073D295DC238002813C6 /* PreferencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B26073C295DC238002813C6 /* PreferencesVC.swift */; };
@@ -67,6 +68,7 @@
 		2ECC35AA2D8957C60059FBCC /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
 		2ECC35AC2D8960A00059FBCC /* LocationWC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWC.swift; sourceTree = "<group>"; };
 		2ECC35AE2D8960AD0059FBCC /* LocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVC.swift; sourceTree = "<group>"; };
+		2ED09DDC2D99621D00DA2AD7 /* GeoConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoConstants.swift; sourceTree = "<group>"; };
 		4B0158E329103C0D009F1803 /* ArkenstoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArkenstoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B0158E529103C0D009F1803 /* DarkModeDiscoveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeDiscoveryTests.swift; sourceTree = "<group>"; };
 		4B0158E729103C0D009F1803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				2ECC35AA2D8957C60059FBCC /* Location.storyboard */,
 				2ECC35AC2D8960A00059FBCC /* LocationWC.swift */,
 				2ECC35AE2D8960AD0059FBCC /* LocationVC.swift */,
+				2ED09DDC2D99621D00DA2AD7 /* GeoConstants.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				2E26B7862D061B890009B96B /* AppGlobals.swift in Sources */,
 				E06FED13289A86ED00538B55 /* Race.swift in Sources */,
 				E01D2D3A289A76A6009B932F /* Companion.swift in Sources */,
+				2ED09DDD2D99621D00DA2AD7 /* GeoConstants.swift in Sources */,
 				4B6A98BB295CAF3400965FAF /* PreferencesWC.swift in Sources */,
 				4B6C3D2C29704130001299E6 /* ItemImageView.swift in Sources */,
 				E00F8383288A4A04000D0A01 /* ViewController.swift in Sources */,

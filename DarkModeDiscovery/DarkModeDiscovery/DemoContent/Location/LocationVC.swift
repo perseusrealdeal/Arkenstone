@@ -42,7 +42,18 @@ class LocationViewController: NSViewController {
     }
 
     @IBAction func actionButtonGoToPointTapped(_ sender: NSButton) {
-        log.message("\(#function)")
+        guard let location = AppGlobals.currentLocation else {
+            labelCoordinate.stringValue = DEFAULT_GEO_POINT
+            mapView.setRegion(DEFAULT_VISIBLE_REGION, animated: true)
+            return
+        }
+
+        let point = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        let region = MKCoordinateRegion(center: point.coordinate,
+                                        latitudinalMeters: DEFAULT_MAP_RADIUS,
+                                        longitudinalMeters: DEFAULT_MAP_RADIUS)
+
+        mapView.setRegion(region, animated: true)
     }
 
     @IBAction func actionButtonRefreshStatusTapped(_ sender: NSButton) {
@@ -54,22 +65,22 @@ class LocationViewController: NSViewController {
 
         // Set the defualt visible area
 
-        let point = CLLocation(latitude: 55.036857, longitude: 82.914063)
-        let radius: CLLocationDistance = 1000
-
-        let region = MKCoordinateRegion(center: point.coordinate,
-                                        latitudinalMeters: radius,
-                                        longitudinalMeters: radius)
-
-        mapView.setRegion(region, animated: true)
+        mapView.setRegion(DEFAULT_VISIBLE_REGION, animated: true)
     }
 
     override func viewDidAppear() {
         super.viewDidAppear()
 
         self.view.wantsLayer = true
-        // self.view.layer?.backgroundColor = NSColor.blue.cgColor
-
         self.parent?.view.window?.title = self.title!
+
+        refresh()
+    }
+
+    private func refresh() {
+        let permit = "\(globals.locationDealer.locationPermit)".capitalized
+
+        labelGeoStatus.stringValue = permit
+        labelCoordinate.stringValue = CURRENT_LOCATION
     }
 }
