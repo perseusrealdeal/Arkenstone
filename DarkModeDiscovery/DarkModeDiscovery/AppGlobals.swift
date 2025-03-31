@@ -27,10 +27,6 @@ struct AppGlobals {
         }
     }
 
-    // MARK: - Constants
-
-    static let preferedAccuracy = LocationAccuracy.threeKilometers
-
     // MARK: - System Services
 
     static let notificationCenter = NotificationCenter.default
@@ -38,6 +34,7 @@ struct AppGlobals {
     // MARK: - Custom Services
 
     public let locationDealer: LocationAgent
+    public let geoCoordinator: GeoCoordinator
 
     // MARK: - Initializer
 
@@ -45,11 +42,12 @@ struct AppGlobals {
         log.message("[\(type(of: self))].\(#function)", .info)
 
         locationDealer = LocationAgent.shared
+        geoCoordinator = GeoCoordinator.shared
 
         // Configure accuracy
 
         var lm = locationDealer.locationManager
-        lm?.desiredAccuracy = AppGlobals.preferedAccuracy.rawValue
+        lm?.desiredAccuracy = PREFERED_ACCURACY.rawValue
 
         // Configure GoTo Settings alert
         let text = ActionAlertText(title: "Custom Title",

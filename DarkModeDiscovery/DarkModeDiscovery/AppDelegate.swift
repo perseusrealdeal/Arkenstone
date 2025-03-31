@@ -28,9 +28,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
 
-        log.message("The app has been terminated.", .info)
-
+        log.message("[\(type(of: self))].\(#function)", .info)
         NSApplication.shared.terminate(self)
+
         return true
     }
 }

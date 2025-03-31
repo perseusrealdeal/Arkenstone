@@ -1,0 +1,184 @@
+//
+//  OptionsViewController.swift, Options.storyboard
+//  DarkModeDiscovery
+//
+//  Created by Mikhail Zhigulin in 7531.
+//
+//  Copyright © 7531 - 7533 Mikhail A. Zhigulin of Novosibirsk
+//  Copyright © 7531 - 7533 PerseusRealDeal
+//
+//  Licensed under the special license. See LICENSE file.
+//  All rights reserved.
+//
+
+import Cocoa
+
+import ConsolePerseusLogger
+import PerseusDarkMode
+
+class OptionsViewController: NSViewController {
+
+    @IBOutlet private(set) weak var labelInformation: NSTextField!
+    @IBOutlet private(set) weak var segmentedControl: NSSegmentedControl!
+
+    @IBAction func segmentedControlValueChanged(_ sender: NSSegmentedCell) {
+        applyDarkMode(selected: sender.selectedSegment)
+    }
+
+    // MARK: - System Dark Mode Group Actions
+
+    @IBAction func button1Tapped(_ sender: NSButton) {
+        let isDark = UserDefaults.standard.string(forKey: "AppleInterfaceStyle") ?? "nil"
+        let text = "1 = \(isDark)"
+
+        labelInformation.stringValue = text
+        log.message(text)
+    }
+
+    @IBAction func button2Tapped(_ sender: NSButton) {
+        let text = "2 = \(printApperance(NSApp.windows.first?.effectiveAppearance))"
+
+        labelInformation.stringValue = text
+        log.message(text)
+    }
+
+    @IBAction func button3Tapped(_ sender: NSButton) {
+        var text = "3 = tapped"
+
+        if #available(macOS 10.14, *) {
+            text = "3 = \(printApperance(NSApplication.shared.appearance))"
+        } else {
+            text = "3 = only from macOS 10.14"
+        }
+
+        labelInformation.stringValue = text
+        log.message(text)
+    }
+
+    @IBAction func button4Tapped(_ sender: NSButton) {
+        var text = "4 = tapped"
+
+        if #available(macOS 11.0, *) {
+            text = "4 = \(printApperance(NSAppearance.currentDrawing()))"
+        } else {
+            text = "4 = only from macOS 11.0"
+        }
+
+        labelInformation.stringValue = text
+        log.message(text)
+    }
+
+    // MARK: - Perseus Dark Mode Group Actions
+
+    @IBAction func button5Tapped(_ sender: NSButton) {
+        let text = "5 = \(DarkModeAgent.shared.style)"
+
+        labelInformation.stringValue = text
+        log.message(text)
+    }
+
+    @IBAction func button6Tapped(_ sender: NSButton) {
+        let observableNumber = DarkModeAgent.shared.styleObservable
+        let observableName = AppearanceStyle(rawValue: DarkModeAgent.shared.styleObservable)!
+
+        let text = "6 = \(observableName) (\(observableNumber))"
+
+        labelInformation.stringValue = text
+        log.message(text)
+    }
+
+    @IBAction func button7Tapped(_ sender: NSButton) {
+        let current = DarkModeAgent.currentSystemStyle()
+        let text = "7 = \(current)"
+
+        labelInformation.stringValue = text
+        log.message(text)
+    }
+
+    @IBAction func button8Tapped(_ sender: NSButton) {
+        let userChoice = DarkModeAgent.DarkModeUserChoice
+        let text = "8 = \(userChoice)"
+
+        labelInformation.stringValue = text
+        log.message(text)
+    }
+
+    // MARK: - Custom Code Group Actions
+
+    @IBAction func button9Tapped(_ sender: NSButton) {
+        let text = "9 = NSApplication.shared.appearance = nil"
+
+        NSApplication.shared.appearance = nil
+
+        labelInformation.stringValue = text
+        log.message(text)
+    }
+
+    @IBAction func button10Tapped(_ sender: NSButton) {
+        let text = "10 = tapped"
+
+        // TODO: - Anymore?
+
+        labelInformation.stringValue = text
+        log.message(text)
+    }
+
+    // MARK: - Content
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.preferredContentSize = NSSize(width: self.view.frame.size.width,
+                                           height: self.view.frame.size.height)
+    }
+
+    override func viewDidAppear() {
+        super.viewDidAppear()
+
+        self.view.wantsLayer = true
+        self.view.layer?.backgroundColor = NSColor.blue.cgColor
+
+        self.parent?.view.window?.title = self.title!
+        updateDarkModeOption()
+    }
+
+    private func updateDarkModeOption() {
+        switch DarkModeAgent.DarkModeUserChoice {
+        case .auto:
+            segmentedControl.selectedSegment = 2
+        case .on:
+            segmentedControl.selectedSegment = 1
+        case .off:
+            segmentedControl.selectedSegment = 0
+        }
+    }
+
+    private func applyDarkMode(selected: Int) {
+        switch selected {
+        case 0:
+            DarkModeAgent.forceDarkMode(.off)
+        case 1:
+            DarkModeAgent.forceDarkMode(.on)
+        case 2:
+            DarkModeAgent.forceDarkMode(.auto)
+        default:
+            break
+        }
+    }
+}
+
+private func printApperance(_ appearance: NSAppearance?) -> String {
+    guard appearance != nil else {
+        return "nil"
+    }
+
+    if let match = appearance?.bestMatch(from: [.darkAqua, .vibrantDark]) {
+        return "\(match.rawValue)"
+    }
+
+    if let match = appearance?.bestMatch(from: [.aqua, .vibrantLight]) {
+        return "\(match.rawValue)"
+    }
+
+    return "?"
+}

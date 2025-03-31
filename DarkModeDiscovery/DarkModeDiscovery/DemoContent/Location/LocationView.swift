@@ -10,8 +10,6 @@
 //  Licensed under the special license. See LICENSE file.
 //  All rights reserved.
 //
-// swiftlint:disable file_length
-//
 
 import Cocoa
 
@@ -30,14 +28,6 @@ class LocationView: NSView {
     @IBOutlet private(set) weak var labelGeoCoupleValue: NSTextField!
 
     @IBOutlet private(set) weak var buttonRefresh: NSButton!
-    @IBOutlet private(set) weak var buttonOpenMap: NSButton!
-
-    private lazy var locationController = { () -> NSWindowController in
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Location"), bundle: nil)
-        let screen = storyboard.instantiateInitialController() as? NSWindowController
-
-        return screen ?? NSWindowController()
-    }()
 
     // MARK: - Actions
 
@@ -71,10 +61,6 @@ class LocationView: NSView {
         } catch {
             log.message("[\(type(of: self))].\(#function) - something totally wrong", .error)
         }
-    }
-
-    @IBAction func buttonOpenMapTapped(_ sender: NSButton) {
-        locationController.showWindow(sender)
     }
 
     // MARK: - Initialization
@@ -151,12 +137,12 @@ class LocationView: NSView {
 extension LocationView {
 
     @objc private func locationDealerCurrentHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .info)
+        log.message("[\(type(of: self))]:[EVENT].\(#function)", .info)
 
         guard
             let result = notification.object as? Result<PerseusLocation, LocationError>
         else {
-            log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .error)
+            log.message("[\(type(of: self))]:[EVENT].\(#function)", .error)
             return
         }
 
@@ -171,12 +157,12 @@ extension LocationView {
     }
 
     @objc private func locationDealerStatusChangedHandler() {
-        log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .info)
+        log.message("[\(type(of: self))]:[EVENT].\(#function)", .info)
         refresh()
     }
 
     @objc private func locationDealerErrorHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .info)
+        log.message("[\(type(of: self))]:[EVENT].\(#function)", .info)
 
         guard
             let result = notification.object as? LocationError,

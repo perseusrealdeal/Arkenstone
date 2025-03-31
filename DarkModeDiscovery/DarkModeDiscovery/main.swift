@@ -14,11 +14,11 @@
 import Cocoa
 import ConsolePerseusLogger
 
-import class PerseusDarkMode.PerseusLogger
+// import class PerseusDarkMode.PerseusLogger
 import class PerseusGeoLocationKit.PerseusLogger
 
 // swiftlint:disable type_name
-typealias dmlog = PerseusDarkMode.PerseusLogger
+// typealias dmlog = PerseusDarkMode.PerseusLogger
 typealias geolog = PerseusGeoLocationKit.PerseusLogger
 // swiftlint:enable type_name
 

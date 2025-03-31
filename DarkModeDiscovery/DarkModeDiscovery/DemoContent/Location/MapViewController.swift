@@ -1,5 +1,5 @@
 //
-//  LocationVC.swift
+//  MapViewController.swift, Map.storyboard
 //  Arkenstone
 //
 //  Created by Mikhail Zhigulin in 7533 (18.03.2025).
@@ -16,15 +16,9 @@ import MapKit
 
 import ConsolePerseusLogger
 
-class LocationViewController: NSViewController {
+class MapViewController: NSViewController {
 
     @IBOutlet private(set) weak var mapView: MKMapView!
-
-    @IBOutlet private(set) weak var buttonStop: NSButton!
-    @IBOutlet private(set) weak var buttonStart: NSButton!
-    @IBOutlet private(set) weak var buttonCurrent: NSButton!
-    @IBOutlet private(set) weak var buttonGoToPoint: NSButton!
-    @IBOutlet private(set) weak var buttonRefreshStatus: NSButton!
 
     @IBOutlet private(set) weak var labelCoordinate: NSTextField!
     @IBOutlet private(set) weak var labelGeoStatus: NSTextField!
@@ -54,6 +48,7 @@ class LocationViewController: NSViewController {
                                         longitudinalMeters: DEFAULT_MAP_RADIUS)
 
         mapView.setRegion(region, animated: true)
+        // mapView.showsUserLocation = true
     }
 
     @IBAction func actionButtonRefreshStatusTapped(_ sender: NSButton) {

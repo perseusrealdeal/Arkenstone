@@ -10,25 +10,27 @@
 		2E26B77A2D05B7B80009B96B /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E26B7792D05B7B80009B96B /* LocationView.swift */; };
 		2E26B7842D05B95C0009B96B /* LocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E26B7832D05B95C0009B96B /* LocationView.xib */; };
 		2E26B7862D061B890009B96B /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E26B7852D061B890009B96B /* AppGlobals.swift */; };
-		2E8472BD2CFADD1B00209858 /* PerseusDarkMode in Frameworks */ = {isa = PBXBuildFile; productRef = 2E8472BC2CFADD1B00209858 /* PerseusDarkMode */; };
 		2E86555B2CFC7297006064D5 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2E86555A2CFC7297006064D5 /* .swiftlint.yml */; };
 		2E86555D2CFC73D9006064D5 /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2E86555C2CFC73D9006064D5 /* swiftlint.yml */; };
 		2E8655602CFCE77D006064D5 /* PerseusGeoLocationKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2E86555F2CFCE77D006064D5 /* PerseusGeoLocationKit */; };
 		2EA10A952CFDCB4900535E5A /* APPROBATION.md in Resources */ = {isa = PBXBuildFile; fileRef = 2EA10A942CFDCB4900535E5A /* APPROBATION.md */; };
 		2EA10AAD2CFE273C00535E5A /* ConsolePerseusLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 2EA10AAC2CFE273C00535E5A /* ConsolePerseusLogger */; };
-		2ECC35AB2D8957C60059FBCC /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ECC35AA2D8957C60059FBCC /* Location.storyboard */; };
-		2ECC35AD2D8960A00059FBCC /* LocationWC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC35AC2D8960A00059FBCC /* LocationWC.swift */; };
-		2ECC35AF2D8960AD0059FBCC /* LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC35AE2D8960AD0059FBCC /* LocationVC.swift */; };
+		2EC7D57F2D9BFB240003D90C /* PerseusDarkModeStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC7D57E2D9BFB240003D90C /* PerseusDarkModeStar.swift */; };
+		2ECA7B3B2DA549310024E7EA /* PerseusDarkModeSupportStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECA7B3A2DA549310024E7EA /* PerseusDarkModeSupportStar.swift */; };
+		2ECC27542D9A99510097BBF2 /* GeoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC27532D9A99510097BBF2 /* GeoCoordinator.swift */; };
+		2ECC35AB2D8957C60059FBCC /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ECC35AA2D8957C60059FBCC /* Map.storyboard */; };
+		2ECC35AD2D8960A00059FBCC /* MapWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC35AC2D8960A00059FBCC /* MapWindowController.swift */; };
+		2ECC35AF2D8960AD0059FBCC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC35AE2D8960AD0059FBCC /* MapViewController.swift */; };
 		2ED09DDD2D99621D00DA2AD7 /* GeoConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED09DDC2D99621D00DA2AD7 /* GeoConstants.swift */; };
 		4B0158E629103C0D009F1803 /* DarkModeDiscoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0158E529103C0D009F1803 /* DarkModeDiscoveryTests.swift */; };
 		4B0158ED29103C21009F1803 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00F83AD288A6F99000D0A01 /* TestingAppDelegate.swift */; };
-		4B26073D295DC238002813C6 /* PreferencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B26073C295DC238002813C6 /* PreferencesVC.swift */; };
+		4B26073D295DC238002813C6 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B26073C295DC238002813C6 /* OptionsViewController.swift */; };
 		4B3A67E329658C0A0024077F /* CompanionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3A67E129658C0A0024077F /* CompanionListViewController.swift */; };
 		4B3A67E72965932D0024077F /* CompanionCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3A67E52965932D0024077F /* CompanionCollectionViewItem.swift */; };
 		4B3A67E82965932D0024077F /* CompanionCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3A67E62965932D0024077F /* CompanionCollectionViewItem.xib */; };
 		4B44EDFB294661E80084C192 /* main.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4B44EDFA294661E80084C192 /* main.yml */; };
-		4B6A98B6295C83E100965FAF /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6A98B5295C83E100965FAF /* Preferences.storyboard */; };
-		4B6A98BB295CAF3400965FAF /* PreferencesWC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A98B9295CAF3400965FAF /* PreferencesWC.swift */; };
+		4B6A98B6295C83E100965FAF /* Options.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6A98B5295C83E100965FAF /* Options.storyboard */; };
+		4B6A98BB295CAF3400965FAF /* OptionsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A98B9295CAF3400965FAF /* OptionsWindowController.swift */; };
 		4B6C3D2C29704130001299E6 /* ItemImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C3D2B29704130001299E6 /* ItemImageView.swift */; };
 		4B6F459C2965AD1200859528 /* CompanionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6F459B2965AD1200859528 /* CompanionViewController.swift */; };
 		4B7DD3B0297D33B700172BD4 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DD3AF297D33B700172BD4 /* CustomColors.swift */; };
@@ -36,7 +38,7 @@
 		E002B00F288E9A8D00E46356 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E002B00E288E9A8D00E46356 /* README.md */; };
 		E002B011288E9A9200E46356 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E002B010288E9A9200E46356 /* LICENSE */; };
 		E002B013288E9AAD00E46356 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E002B012288E9AAD00E46356 /* .gitignore */; };
-		E00F8383288A4A04000D0A01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00F8382288A4A04000D0A01 /* ViewController.swift */; };
+		E00F8383288A4A04000D0A01 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00F8382288A4A04000D0A01 /* MainViewController.swift */; };
 		E00F8385288A4A0B000D0A01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E00F8384288A4A0B000D0A01 /* Assets.xcassets */; };
 		E00F83AC288A4A64000D0A01 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00F83AB288A4A64000D0A01 /* main.swift */; };
 		E01D2D3A289A76A6009B932F /* Companion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D2D39289A76A6009B932F /* Companion.swift */; };
@@ -65,21 +67,24 @@
 		2E86555A2CFC7297006064D5 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		2E86555C2CFC73D9006064D5 /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = swiftlint.yml; path = ../.github/workflows/swiftlint.yml; sourceTree = "<group>"; };
 		2EA10A942CFDCB4900535E5A /* APPROBATION.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = APPROBATION.md; path = ../APPROBATION.md; sourceTree = "<group>"; };
-		2ECC35AA2D8957C60059FBCC /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
-		2ECC35AC2D8960A00059FBCC /* LocationWC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWC.swift; sourceTree = "<group>"; };
-		2ECC35AE2D8960AD0059FBCC /* LocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVC.swift; sourceTree = "<group>"; };
+		2EC7D57E2D9BFB240003D90C /* PerseusDarkModeStar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerseusDarkModeStar.swift; sourceTree = "<group>"; };
+		2ECA7B3A2DA549310024E7EA /* PerseusDarkModeSupportStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerseusDarkModeSupportStar.swift; sourceTree = "<group>"; };
+		2ECC27532D9A99510097BBF2 /* GeoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCoordinator.swift; sourceTree = "<group>"; };
+		2ECC35AA2D8957C60059FBCC /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		2ECC35AC2D8960A00059FBCC /* MapWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWindowController.swift; sourceTree = "<group>"; };
+		2ECC35AE2D8960AD0059FBCC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		2ED09DDC2D99621D00DA2AD7 /* GeoConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoConstants.swift; sourceTree = "<group>"; };
 		4B0158E329103C0D009F1803 /* ArkenstoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArkenstoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B0158E529103C0D009F1803 /* DarkModeDiscoveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeDiscoveryTests.swift; sourceTree = "<group>"; };
 		4B0158E729103C0D009F1803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B26073C295DC238002813C6 /* PreferencesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesVC.swift; sourceTree = "<group>"; };
+		4B26073C295DC238002813C6 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		4B3A67E129658C0A0024077F /* CompanionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionListViewController.swift; sourceTree = "<group>"; };
 		4B3A67E52965932D0024077F /* CompanionCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionCollectionViewItem.swift; sourceTree = "<group>"; };
 		4B3A67E62965932D0024077F /* CompanionCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanionCollectionViewItem.xib; sourceTree = "<group>"; };
 		4B44EDFA294661E80084C192 /* main.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.yml; path = ../.github/workflows/main.yml; sourceTree = "<group>"; };
 		4B55925828F7422400D38256 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B6A98B5295C83E100965FAF /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
-		4B6A98B9295CAF3400965FAF /* PreferencesWC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWC.swift; sourceTree = "<group>"; };
+		4B6A98B5295C83E100965FAF /* Options.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Options.storyboard; sourceTree = "<group>"; };
+		4B6A98B9295CAF3400965FAF /* OptionsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsWindowController.swift; sourceTree = "<group>"; };
 		4B6C3D2B29704130001299E6 /* ItemImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemImageView.swift; sourceTree = "<group>"; };
 		4B6F459B2965AD1200859528 /* CompanionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionViewController.swift; sourceTree = "<group>"; };
 		4B7DD3AF297D33B700172BD4 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
@@ -88,7 +93,7 @@
 		E002B010288E9A9200E46356 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E002B012288E9AAD00E46356 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		E00F837D288A4A04000D0A01 /* Arkenstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arkenstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E00F8382288A4A04000D0A01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E00F8382288A4A04000D0A01 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E00F8384288A4A0B000D0A01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E00F8389288A4A0B000D0A01 /* DarkModeDiscovery.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DarkModeDiscovery.entitlements; sourceTree = "<group>"; };
 		E00F83AB288A4A64000D0A01 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -116,7 +121,6 @@
 			files = (
 				2EA10AAD2CFE273C00535E5A /* ConsolePerseusLogger in Frameworks */,
 				2E8655602CFCE77D006064D5 /* PerseusGeoLocationKit in Frameworks */,
-				2E8472BD2CFADD1B00209858 /* PerseusDarkMode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,10 +132,11 @@
 			children = (
 				2E26B7832D05B95C0009B96B /* LocationView.xib */,
 				2E26B7792D05B7B80009B96B /* LocationView.swift */,
-				2ECC35AA2D8957C60059FBCC /* Location.storyboard */,
-				2ECC35AC2D8960A00059FBCC /* LocationWC.swift */,
-				2ECC35AE2D8960AD0059FBCC /* LocationVC.swift */,
+				2ECC35AA2D8957C60059FBCC /* Map.storyboard */,
+				2ECC35AC2D8960A00059FBCC /* MapWindowController.swift */,
+				2ECC35AE2D8960AD0059FBCC /* MapViewController.swift */,
 				2ED09DDC2D99621D00DA2AD7 /* GeoConstants.swift */,
+				2ECC27532D9A99510097BBF2 /* GeoCoordinator.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -154,21 +159,21 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
-		4B6A98B4295C7EB800965FAF /* Preferences */ = {
+		4B6A98B4295C7EB800965FAF /* Options */ = {
 			isa = PBXGroup;
 			children = (
-				4B6A98B5295C83E100965FAF /* Preferences.storyboard */,
-				4B6A98B9295CAF3400965FAF /* PreferencesWC.swift */,
-				4B26073C295DC238002813C6 /* PreferencesVC.swift */,
+				4B6A98B5295C83E100965FAF /* Options.storyboard */,
+				4B6A98B9295CAF3400965FAF /* OptionsWindowController.swift */,
+				4B26073C295DC238002813C6 /* OptionsViewController.swift */,
 			);
-			path = Preferences;
+			path = Options;
 			sourceTree = "<group>";
 		};
 		4BD028FE295EF05800E294E9 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				E0A2934B288E520000F467E8 /* MainWindowController.swift */,
-				E00F8382288A4A04000D0A01 /* ViewController.swift */,
+				E00F8382288A4A04000D0A01 /* MainViewController.swift */,
 				E0A2934F288E653800F467E8 /* MainMenu.xib */,
 				E0A29351288E657900F467E8 /* MainWindowController.storyboard */,
 				4B3A67E129658C0A0024077F /* CompanionListViewController.swift */,
@@ -225,6 +230,8 @@
 				E00F8389288A4A0B000D0A01 /* DarkModeDiscovery.entitlements */,
 				E00F8384288A4A0B000D0A01 /* Assets.xcassets */,
 				4B7DD3AF297D33B700172BD4 /* CustomColors.swift */,
+				2EC7D57E2D9BFB240003D90C /* PerseusDarkModeStar.swift */,
+				2ECA7B3A2DA549310024E7EA /* PerseusDarkModeSupportStar.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -234,7 +241,7 @@
 			children = (
 				4BD028FE295EF05800E294E9 /* Main */,
 				2E26B7782D05B78F0009B96B /* Location */,
-				4B6A98B4295C7EB800965FAF /* Preferences */,
+				4B6A98B4295C7EB800965FAF /* Options */,
 				E0A9D8B32895996100B78B21 /* Model */,
 			);
 			path = DemoContent;
@@ -286,7 +293,6 @@
 			);
 			name = Arkenstone;
 			packageProductDependencies = (
-				2E8472BC2CFADD1B00209858 /* PerseusDarkMode */,
 				2E86555F2CFCE77D006064D5 /* PerseusGeoLocationKit */,
 				2EA10AAC2CFE273C00535E5A /* ConsolePerseusLogger */,
 			);
@@ -301,7 +307,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = PerseusRealDeal;
 				TargetAttributes = {
 					4B0158E229103C0D009F1803 = {
@@ -324,7 +330,6 @@
 			);
 			mainGroup = E00F8374288A4A04000D0A01;
 			packageReferences = (
-				2E8472BB2CFADD1B00209858 /* XCRemoteSwiftPackageReference "PerseusDarkMode" */,
 				2E86555E2CFCE77D006064D5 /* XCRemoteSwiftPackageReference "PerseusGeoLocationKit" */,
 				2EA10AAB2CFE273C00535E5A /* XCRemoteSwiftPackageReference "ConsolePerseusLogger" */,
 			);
@@ -350,13 +355,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2ECC35AB2D8957C60059FBCC /* Location.storyboard in Resources */,
+				2ECC35AB2D8957C60059FBCC /* Map.storyboard in Resources */,
 				2E86555B2CFC7297006064D5 /* .swiftlint.yml in Resources */,
 				2E86555D2CFC73D9006064D5 /* swiftlint.yml in Resources */,
 				E002B011288E9A9200E46356 /* LICENSE in Resources */,
 				4B3A67E82965932D0024077F /* CompanionCollectionViewItem.xib in Resources */,
 				E002B013288E9AAD00E46356 /* .gitignore in Resources */,
-				4B6A98B6295C83E100965FAF /* Preferences.storyboard in Resources */,
+				4B6A98B6295C83E100965FAF /* Options.storyboard in Resources */,
 				2EA10A952CFDCB4900535E5A /* APPROBATION.md in Resources */,
 				E00F8385288A4A0B000D0A01 /* Assets.xcassets in Resources */,
 				E002B00F288E9A8D00E46356 /* README.md in Resources */,
@@ -409,20 +414,23 @@
 				E06FED13289A86ED00538B55 /* Race.swift in Sources */,
 				E01D2D3A289A76A6009B932F /* Companion.swift in Sources */,
 				2ED09DDD2D99621D00DA2AD7 /* GeoConstants.swift in Sources */,
-				4B6A98BB295CAF3400965FAF /* PreferencesWC.swift in Sources */,
+				4B6A98BB295CAF3400965FAF /* OptionsWindowController.swift in Sources */,
 				4B6C3D2C29704130001299E6 /* ItemImageView.swift in Sources */,
-				E00F8383288A4A04000D0A01 /* ViewController.swift in Sources */,
-				2ECC35AD2D8960A00059FBCC /* LocationWC.swift in Sources */,
+				2ECC27542D9A99510097BBF2 /* GeoCoordinator.swift in Sources */,
+				E00F8383288A4A04000D0A01 /* MainViewController.swift in Sources */,
+				2ECC35AD2D8960A00059FBCC /* MapWindowController.swift in Sources */,
 				4B3A67E72965932D0024077F /* CompanionCollectionViewItem.swift in Sources */,
 				E00F83AC288A4A64000D0A01 /* main.swift in Sources */,
 				2E26B77A2D05B7B80009B96B /* LocationView.swift in Sources */,
 				4B7DD3B0297D33B700172BD4 /* CustomColors.swift in Sources */,
-				2ECC35AF2D8960AD0059FBCC /* LocationVC.swift in Sources */,
-				4B26073D295DC238002813C6 /* PreferencesVC.swift in Sources */,
+				2ECC35AF2D8960AD0059FBCC /* MapViewController.swift in Sources */,
+				4B26073D295DC238002813C6 /* OptionsViewController.swift in Sources */,
 				4B6F459C2965AD1200859528 /* CompanionViewController.swift in Sources */,
 				E0A29354288E70B200F467E8 /* AppDelegate.swift in Sources */,
 				E0A2934C288E520000F467E8 /* MainWindowController.swift in Sources */,
 				4B829B2729812D7F00FCE9FF /* TheMenu.swift in Sources */,
+				2EC7D57F2D9BFB240003D90C /* PerseusDarkModeStar.swift in Sources */,
+				2ECA7B3B2DA549310024E7EA /* PerseusDarkModeSupportStar.swift in Sources */,
 				4B3A67E329658C0A0024077F /* CompanionListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,13 +456,14 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = DarkModeDiscoveryTests/Configuration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.perseus.DarkModeDiscoveryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -472,13 +481,14 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = DarkModeDiscoveryTests/Configuration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.perseus.DarkModeDiscoveryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -511,6 +521,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -519,6 +530,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 6DRVN4F88C;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -573,6 +585,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -581,6 +594,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 6DRVN4F88C;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -612,13 +626,14 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/DarkModeDiscovery/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.perseus.lab.macos.DarkModeDiscovery;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME)";
 				PRODUCT_NAME = Arkenstone;
@@ -636,6 +651,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/DarkModeDiscovery/Configuration/Info.plist";
@@ -643,7 +659,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.perseus.lab.macos.DarkModeDiscovery;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME)";
 				PRODUCT_NAME = Arkenstone;
@@ -685,14 +701,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2E8472BB2CFADD1B00209858 /* XCRemoteSwiftPackageReference "PerseusDarkMode" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/perseusrealdeal/PerseusDarkMode";
-			requirement = {
-				branch = hotfix/approbation;
-				kind = branch;
-			};
-		};
 		2E86555E2CFCE77D006064D5 /* XCRemoteSwiftPackageReference "PerseusGeoLocationKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/perseusrealdeal/PerseusGeoLocationKit";
@@ -712,11 +720,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2E8472BC2CFADD1B00209858 /* PerseusDarkMode */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2E8472BB2CFADD1B00209858 /* XCRemoteSwiftPackageReference "PerseusDarkMode" */;
-			productName = PerseusDarkMode;
-		};
 		2E86555F2CFCE77D006064D5 /* PerseusGeoLocationKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2E86555E2CFCE77D006064D5 /* XCRemoteSwiftPackageReference "PerseusGeoLocationKit" */;
