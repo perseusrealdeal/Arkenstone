@@ -141,33 +141,20 @@
                                                 <action selector="button6Tapped:" target="2G3-pC-M2U" id="gzH-nm-Vzg"/>
                                             </connections>
                                         </button>
-                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ffx-kT-oqb" userLabel="7 = DarkModeAgent.currentSystemStyle">
-                                            <rect key="frame" x="-2" y="34" width="299" height="32"/>
-                                            <buttonCell key="cell" type="push" title="7 = DarkModeAgent.currentSystemStyle()" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dql-4N-JeQ">
-                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="button7Tapped:" target="2G3-pC-M2U" id="yyJ-k1-u5w"/>
-                                            </connections>
-                                        </button>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AVS-tF-zfx">
-                                            <rect key="frame" x="-2" y="9" width="299" height="32"/>
-                                            <buttonCell key="cell" type="push" title="8 = DarkModeAgent.DarkModeUserChoice" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Sbo-3A-CO3">
+                                            <rect key="frame" x="-2" y="34" width="299" height="32"/>
+                                            <buttonCell key="cell" type="push" title="7 = DarkModeAgent.DarkModeUserChoice" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Sbo-3A-CO3">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="button8Tapped:" target="2G3-pC-M2U" id="Rzh-M5-2EB"/>
+                                                <action selector="button7Tapped:" target="2G3-pC-M2U" id="LDY-c6-gFw"/>
                                             </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Ffx-kT-oqb" firstAttribute="width" secondItem="8Aw-5j-1Sr" secondAttribute="width" id="986-hQ-x5a"/>
-                                        <constraint firstItem="Ffx-kT-oqb" firstAttribute="leading" secondItem="8Aw-5j-1Sr" secondAttribute="leading" id="99P-v5-bl5"/>
+                                        <constraint firstItem="AVS-tF-zfx" firstAttribute="top" secondItem="Wc4-OF-VvF" secondAttribute="bottom" constant="5" id="4jp-Kc-ezX"/>
                                         <constraint firstItem="8Aw-5j-1Sr" firstAttribute="top" secondItem="2OK-0r-9bT" secondAttribute="top" constant="5" id="He9-bo-niP"/>
-                                        <constraint firstItem="Wc4-OF-VvF" firstAttribute="bottom" secondItem="Ffx-kT-oqb" secondAttribute="top" constant="-5" id="LEE-rd-hcW"/>
-                                        <constraint firstItem="AVS-tF-zfx" firstAttribute="top" secondItem="Ffx-kT-oqb" secondAttribute="bottom" constant="5" id="ORP-Sm-ML9"/>
                                         <constraint firstItem="Wc4-OF-VvF" firstAttribute="top" secondItem="8Aw-5j-1Sr" secondAttribute="bottom" constant="5" id="PSB-wS-aNp"/>
                                         <constraint firstItem="Wc4-OF-VvF" firstAttribute="leading" secondItem="8Aw-5j-1Sr" secondAttribute="leading" id="b3W-lD-0zz"/>
                                         <constraint firstItem="Wc4-OF-VvF" firstAttribute="width" secondItem="8Aw-5j-1Sr" secondAttribute="width" id="iM7-xf-1AW"/>
@@ -192,22 +179,22 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="280" id="6MV-vP-8c5"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="push" title="9 = NSAppearance.shared.appearance = nil" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="duq-DE-3Ri">
+                                            <buttonCell key="cell" type="push" title="A = NSAppearance.shared.appearance = nil" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="duq-DE-3Ri">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="button9Tapped:" target="2G3-pC-M2U" id="9bl-CW-qt2"/>
+                                                <action selector="buttonATapped:" target="2G3-pC-M2U" id="zaD-rg-mEX"/>
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rvz-Fu-S4D">
                                             <rect key="frame" x="-2" y="23" width="294" height="32"/>
-                                            <buttonCell key="cell" type="push" title="10 = Custom Code" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9Oq-6t-hYQ">
+                                            <buttonCell key="cell" type="push" title="B = Custom Code" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9Oq-6t-hYQ">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="button10Tapped:" target="2G3-pC-M2U" id="u14-N6-7fP"/>
+                                                <action selector="buttonBTapped:" target="2G3-pC-M2U" id="qRI-Jv-MCT"/>
                                             </connections>
                                         </button>
                                     </subviews>

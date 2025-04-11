@@ -12,7 +12,7 @@
 //
 
 import Cocoa
-import PerseusDarkMode
+// import PerseusDarkMode
 
 class CompanionCollectionViewItem: NSCollectionViewItem {
 
@@ -21,7 +21,7 @@ class CompanionCollectionViewItem: NSCollectionViewItem {
             super.isSelected = isSelected
 
             imageView?.layer?.borderWidth = isSelected ? 5.0 : 0.0
-            callDarkModeSensitiveColours()
+            makeUp()
         }
     }
 
@@ -29,7 +29,7 @@ class CompanionCollectionViewItem: NSCollectionViewItem {
         didSet {
             guard isViewLoaded else { return }
 
-            updateCompanionView()
+            updateData()
         }
     }
 
@@ -38,20 +38,20 @@ class CompanionCollectionViewItem: NSCollectionViewItem {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        darkModeObserver.action = { _ in self.callDarkModeSensitiveColours() }
+        darkModeObserver.action = { _ in self.makeUp() }
 
-        callDarkModeSensitiveColours()
-        updateCompanionView()
+        makeUp()
+        updateData()
     }
 
-    func updateCompanionView() {
+    func updateData() {
         guard let friend = self.companion else { return }
 
         textField?.stringValue = friend.name
         imageView?.image = NSImage(named: friend.iconName)
     }
 
-    private func callDarkModeSensitiveColours() {
+    private func makeUp() {
         imageView?.layer?.borderColor = NSColor.customChosenOne.cgColor
         textField?.textColor = isSelected ? NSColor.customChosenOne : NSColor.black
     }

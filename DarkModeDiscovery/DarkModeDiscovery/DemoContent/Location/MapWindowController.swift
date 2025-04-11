@@ -28,7 +28,7 @@ class MapWindowController: NSWindowController, NSWindowDelegate {
         }
 
         DarkModeAgent.register(stakeholder: self, selector: #selector(makeUp))
-        if DarkModeAgent.isEnabled { makeUp() }
+        makeUp()
     }
 
     @objc private func makeUp() {

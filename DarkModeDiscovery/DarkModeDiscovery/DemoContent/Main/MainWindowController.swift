@@ -34,7 +34,7 @@ class MainWindowController: NSWindowController, NSWindowDelegate {
         super.windowDidLoad()
 
         DarkModeAgent.register(stakeholder: self, selector: #selector(makeUp))
-        if DarkModeAgent.isEnabled { makeUp() }
+        makeUp()
     }
 
     @objc private func makeUp() {

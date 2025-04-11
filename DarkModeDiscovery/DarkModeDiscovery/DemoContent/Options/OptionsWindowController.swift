@@ -23,7 +23,7 @@ class OptionsWindowController: NSWindowController, NSWindowDelegate {
         if #available(macOS 10.14, *) { self.window?.title = "Options..." }
 
         DarkModeAgent.register(stakeholder: self, selector: #selector(makeUp))
-        if DarkModeAgent.isEnabled { makeUp() }
+        makeUp()
     }
 
     @objc private func makeUp() {

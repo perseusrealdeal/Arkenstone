@@ -88,16 +88,8 @@ class OptionsViewController: NSViewController {
     }
 
     @IBAction func button7Tapped(_ sender: NSButton) {
-        let current = DarkModeAgent.currentSystemStyle()
-        let text = "7 = \(current)"
-
-        labelInformation.stringValue = text
-        log.message(text)
-    }
-
-    @IBAction func button8Tapped(_ sender: NSButton) {
         let userChoice = DarkModeAgent.DarkModeUserChoice
-        let text = "8 = \(userChoice)"
+        let text = "7 = \(userChoice)"
 
         labelInformation.stringValue = text
         log.message(text)
@@ -105,8 +97,8 @@ class OptionsViewController: NSViewController {
 
     // MARK: - Custom Code Group Actions
 
-    @IBAction func button9Tapped(_ sender: NSButton) {
-        let text = "9 = NSApplication.shared.appearance = nil"
+    @IBAction func buttonATapped(_ sender: NSButton) {
+        let text = "A = NSApplication.shared.appearance = nil"
 
         NSApplication.shared.appearance = nil
 
@@ -114,8 +106,8 @@ class OptionsViewController: NSViewController {
         log.message(text)
     }
 
-    @IBAction func button10Tapped(_ sender: NSButton) {
-        let text = "10 = tapped"
+    @IBAction func buttonBTapped(_ sender: NSButton) {
+        let text = "B = tapped"
 
         // TODO: - Anymore?
 
@@ -167,7 +159,7 @@ class OptionsViewController: NSViewController {
     }
 }
 
-private func printApperance(_ appearance: NSAppearance?) -> String {
+public func printApperance(_ appearance: NSAppearance?) -> String {
     guard appearance != nil else {
         return "nil"
     }
