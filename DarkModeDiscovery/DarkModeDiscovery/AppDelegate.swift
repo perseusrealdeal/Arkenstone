@@ -14,7 +14,7 @@
 import Cocoa
 
 import ConsolePerseusLogger
-import PerseusDarkMode
+// import PerseusDarkMode
 
 class AppDelegate: NSObject, NSApplicationDelegate {
 
@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         log.message("Launching with business matter purpose...", .info)
         log.message("[\(type(of: self))].\(#function)")
 
-        DarkModeAgent.forceDarkMode(DarkModeAgent.DarkModeUserChoice)
+        DarkModeAgent.force(DarkModeUserChoice)
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {

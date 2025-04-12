@@ -12,7 +12,7 @@
 //
 
 import AppKit
-import PerseusDarkMode
+// import PerseusDarkMode
 
 public protocol CustomColorsProtocol {
 

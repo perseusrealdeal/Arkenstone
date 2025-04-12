@@ -44,7 +44,7 @@
 import Cocoa
 import ConsolePerseusLogger
 
-public typealias Responder = NSResponder
+public typealias DarkModeObject = NSObject
 
 public let APPEARANCE_DEFAULT = AppearanceStyle.light
 
@@ -75,8 +75,9 @@ public var LIGHT_APPEARANCE_DEFAULT_IN_USE: NSAppearance.Name = .aqua
 #endif
 
 // swiftlint:disable identifier_name
-public extension Responder {
+public extension DarkModeObject {
     var DarkMode: DarkMode { return DarkModeAgent.shared }
+    var DarkModeUserChoice: DarkModeOption { return DarkModeAgent.DarkModeUserChoice }
 }
 // swiftlint:enable identifier_name
 
@@ -181,7 +182,7 @@ public class DarkModeAgent {
                                  object: nil)
     }
 
-    public static func forceDarkMode(_ userChoice: DarkModeOption) {
+    public static func force(_ userChoice: DarkModeOption) {
         DarkModeAgent.userChoice = userChoice
         DarkModeAgent.instance.refresh()
         DarkModeAgent.instance.notifyAllRegistered()
@@ -239,8 +240,8 @@ extension UserDefaults {
 public class DarkModeObserver: NSObject {
 
     public var action: ((_ newStyle: AppearanceStyle) -> Void)?
-    private(set) var objectToObserve = DarkModeAgent.shared
 
+    private var objectToObserve = DarkModeAgent.shared
     private var observation: NSKeyValueObservation?
 
     public override init() {

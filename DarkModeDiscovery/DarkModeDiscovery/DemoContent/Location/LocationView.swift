@@ -15,7 +15,7 @@ import Cocoa
 
 import ConsolePerseusLogger
 import PerseusGeoLocationKit
-import PerseusDarkMode
+// import PerseusDarkMode
 
 @IBDesignable
 class LocationView: NSView {

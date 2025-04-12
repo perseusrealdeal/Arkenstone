@@ -14,7 +14,7 @@
 import Cocoa
 
 import ConsolePerseusLogger
-import PerseusDarkMode
+// import PerseusDarkMode
 
 class OptionsViewController: NSViewController {
 
@@ -148,11 +148,11 @@ class OptionsViewController: NSViewController {
     private func applyDarkMode(selected: Int) {
         switch selected {
         case 0:
-            DarkModeAgent.forceDarkMode(.off)
+            DarkModeAgent.force(.off)
         case 1:
-            DarkModeAgent.forceDarkMode(.on)
+            DarkModeAgent.force(.on)
         case 2:
-            DarkModeAgent.forceDarkMode(.auto)
+            DarkModeAgent.force(.auto)
         default:
             break
         }
