@@ -48,7 +48,7 @@ class OptionsViewController: NSViewController {
         if #available(macOS 10.14, *) {
             text = "3 = \(printApperance(NSApplication.shared.appearance))"
         } else {
-            text = "3 = only from macOS 10.14"
+            text = "3 = only available in macOS 10.14 or newer"
         }
 
         labelInformation.stringValue = text
@@ -61,7 +61,7 @@ class OptionsViewController: NSViewController {
         if #available(macOS 11.0, *) {
             text = "4 = \(printApperance(NSAppearance.currentDrawing()))"
         } else {
-            text = "4 = only from macOS 11.0"
+            text = "4 = only available in macOS 11.0 or newer"
         }
 
         labelInformation.stringValue = text
@@ -98,9 +98,14 @@ class OptionsViewController: NSViewController {
     // MARK: - Custom Code Group Actions
 
     @IBAction func buttonATapped(_ sender: NSButton) {
-        let text = "A = NSApplication.shared.appearance = nil"
+        var text = "A = tapped"
 
-        NSApplication.shared.appearance = nil
+        if #available(macOS 10.14, *) {
+            NSApplication.shared.appearance = nil
+            text = "A = NSApplication.shared.appearance = nil"
+        } else {
+            text = "4 = only available in macOS 10.14 or newer"
+        }
 
         labelInformation.stringValue = text
         log.message(text)
@@ -160,17 +165,19 @@ class OptionsViewController: NSViewController {
 }
 
 public func printApperance(_ appearance: NSAppearance?) -> String {
-    guard appearance != nil else {
-        return "nil"
+    if #available(macOS 10.14, *) {
+        if appearance != nil {
+            if let match = appearance?.bestMatch(from: [.darkAqua, .vibrantDark]) {
+                return "\(match.rawValue)"
+            }
+
+            if let match = appearance?.bestMatch(from: [.aqua, .vibrantLight]) {
+                return "\(match.rawValue)"
+            }
+        } else {
+            return "appearance == nil"
+        }
     }
 
-    if let match = appearance?.bestMatch(from: [.darkAqua, .vibrantDark]) {
-        return "\(match.rawValue)"
-    }
-
-    if let match = appearance?.bestMatch(from: [.aqua, .vibrantLight]) {
-        return "\(match.rawValue)"
-    }
-
-    return "?"
+    return "only available in macOS 10.14 or newer"
 }

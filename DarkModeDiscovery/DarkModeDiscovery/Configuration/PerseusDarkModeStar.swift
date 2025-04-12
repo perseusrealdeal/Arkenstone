@@ -61,17 +61,18 @@ public extension Notification.Name {
 }
 
 #if os(macOS)
-public var DARK_APPEARANCE_DEFAULT_IN_USE: NSAppearance.Name {
+// Default Appearance used to apply to system UI compoents i.e. buttons, borders, windows etc.
+public var DARK_APPEARANCE_DEFAULT_IN_USE: NSAppearance {
     guard let darkAppearanceOS = DARK_APPEARANCE_DEFAULT else {
         if #available(macOS 10.14, *) {
-            return .darkAqua
-        }
-        return .vibrantDark
+            return NSAppearance(named: .darkAqua)!
+        } // For HighSierra.
+        return NSAppearance(named: .vibrantDark)!
     }
     return darkAppearanceOS
 }
-public var DARK_APPEARANCE_DEFAULT: NSAppearance.Name?
-public var LIGHT_APPEARANCE_DEFAULT_IN_USE: NSAppearance.Name = .aqua
+public var DARK_APPEARANCE_DEFAULT: NSAppearance?
+public var LIGHT_APPEARANCE_DEFAULT_IN_USE = NSAppearance(named: .aqua)!
 #endif
 
 // swiftlint:disable identifier_name
@@ -162,14 +163,16 @@ public class DarkModeAgent {
                 name: .AppleInterfaceThemeChangedNotification,
                 object: nil
             )
-        }
+            observation = NSApp.observe(\.effectiveAppearance) { _, _ in
+                if DarkModeAgent.userChoice == .auto {
 
-        observation = NSApp.observe(\.effectiveAppearance) { _, _ in
-            if DarkModeAgent.DarkModeUserChoice == .auto {
-                DarkModeAgent.shared.appearance =
-                self.requiredAppearance(NSApplication.shared.effectiveAppearance)
+                    let effectiveAppearance = NSApplication.shared.effectiveAppearance
+                    let required = self.getRequired(from: effectiveAppearance)
+
+                    DarkModeAgent.shared.appearance = required
+                }
             }
-        }
+        } // For HighSierra there is no need in observation cos' system style never change.
 #endif
     }
 
@@ -200,15 +203,22 @@ public class DarkModeAgent {
     }
 
     private func refresh() {
-        switch DarkModeAgent.userChoice {
-        case .auto:
-            NSApp.appearance = nil
-        case .on:
-            NSApp.appearance = NSAppearance(named: DARK_APPEARANCE_DEFAULT_IN_USE)
-            DarkModeAgent.shared.appearance = .dark
-        case .off:
-            NSApp.appearance = NSAppearance(named: LIGHT_APPEARANCE_DEFAULT_IN_USE)
-            DarkModeAgent.shared.appearance = .light
+        let choice = DarkModeAgent.userChoice
+
+        if #available(macOS 10.14, *) {
+            switch choice {
+            case .auto:
+                NSApp.appearance = nil
+                // DarkModeAgent is informed about new appearance by observation.
+            case .on:
+                NSApp.appearance = DARK_APPEARANCE_DEFAULT_IN_USE
+                DarkModeAgent.shared.appearance = .dark
+            case .off:
+                NSApp.appearance = LIGHT_APPEARANCE_DEFAULT_IN_USE
+                DarkModeAgent.shared.appearance = .light
+            }
+        } else { // For HighSierra.
+            DarkModeAgent.shared.appearance = choice == .on ? .dark : .light
         }
     }
 
@@ -216,16 +226,22 @@ public class DarkModeAgent {
         DarkModeAgent.nCenter.post(name: .MakeAppearanceUpNotification, object: nil)
     }
 
-    private func requiredAppearance(_ appearance: NSAppearance?) -> AppearanceStyle {
-        guard DarkModeAgent.DarkModeUserChoice == .auto else {
-            return DarkModeAgent.DarkModeUserChoice == .off ? .dark : .light
-        }
+    private func getRequired(from appearance: NSAppearance?) -> AppearanceStyle {
+        let choice = DarkModeAgent.userChoice
 
-        if let match = appearance?.bestMatch(from: [.darkAqua, .vibrantDark]) {
-            return [.darkAqua, .vibrantDark].contains(match) ? .dark : .light
-        }
+        if #available(macOS 10.14, *) {
+            guard choice == .auto else {
+                return choice == .off ? .light : .dark
+            }
 
-        return .light
+            if let match = appearance?.bestMatch(from: [.darkAqua, .vibrantDark]) {
+                return [.darkAqua, .vibrantDark].contains(match) ? .dark : .light
+            }
+
+            return .light
+        } else { // For HighSierra.
+            return choice == .off ? .dark : .light
+        }
     }
 }
 
