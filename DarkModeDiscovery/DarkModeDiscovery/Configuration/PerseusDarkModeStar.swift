@@ -203,9 +203,17 @@ public class DarkModeAgent {
     }
 
     public static func force(_ userChoice: DarkModeOption) {
+
         DarkModeAgent.userChoice = userChoice
         DarkModeAgent.instance.refresh()
+
+#if os(macOS)
+        if DarkModeAgent.userChoice != .auto { // In auto mode observation notifies change.
+            DarkModeAgent.instance.notifyAllRegistered()
+        }
+#elseif os(iOS)
         DarkModeAgent.instance.notifyAllRegistered()
+#endif
     }
 
     public static func makeUp() {
@@ -223,13 +231,14 @@ public class DarkModeAgent {
         return settingsDarkMode != userChoice ? settingsDarkMode : nil
     }
 #endif
+
     // MARK: - Implementation
 
 #if os(iOS)
     @available(iOS 13.0, *)
     public static func processTraitCollectionDidChange(_ previous: UITraitCollection?) {
-        // TODO: iOS appearance change
-        log.message("[\(type(of: self))].\(#function) TODO: iOS appearance change")
+        // TODO: iOS app appearance change
+        log.message("[\(type(of: self))].\(#function) TODO: iOS app appearance change")
     }
 #endif
 
@@ -241,8 +250,8 @@ public class DarkModeAgent {
     private func refresh() {
         let choice = DarkModeAgent.userChoice
 #if os(iOS)
-        // TODO: iOS appearance change
-        log.message("[\(type(of: self))].\(#function) TODO: iOS appearance change")
+        // TODO: iOS app appearance change
+        log.message("[\(type(of: self))].\(#function) TODO: iOS app appearance change")
 #elseif os(macOS)
         if #available(macOS 10.14, *) {
             switch choice {
