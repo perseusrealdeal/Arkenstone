@@ -61,7 +61,6 @@ public extension Notification.Name {
 }
 
 #if os(macOS)
-// Default Appearance used to apply to system UI compoents i.e. buttons, borders, windows etc.
 public var DARK_APPEARANCE_DEFAULT_IN_USE: NSAppearance {
     guard let darkAppearanceOS = DARK_APPEARANCE_DEFAULT else {
         if #available(macOS 10.14, *) {
@@ -115,7 +114,7 @@ public enum DarkModeOption: Int, CustomStringConvertible {
     }
 }
 
-public class DarkMode: NSObject {
+public class DarkMode: DarkModeObject {
 
     public var style: AppearanceStyle { return appearance }
 
@@ -128,10 +127,14 @@ public class DarkMode: NSObject {
 
 public class DarkModeAgent {
 
+    // MARK: - Properties
+
     public static var shared: DarkMode = { _ = instance; return DarkMode() }()
     public static var DarkModeUserChoice: DarkModeOption {
         return userChoice
     }
+
+    // MARK: - Internals
 
     private static var userChoice: DarkModeOption {
         get {
@@ -151,10 +154,13 @@ public class DarkModeAgent {
     private static var nCenter = NotificationCenter.default
     private static var ud = UserDefaults.standard
 
-    private static var instance = { DarkModeAgent() }()
-
     private var observation: NSKeyValueObservation?
+
+    // MARK: - Singletone
+
+    private static var instance = { DarkModeAgent() }()
     private init() {
+        log.message("[\(type(of: self))].\(#function)")
 #if os(macOS)
         if #available(macOS 10.14, *) {
             DarkModeAgent.distributedNCenter.addObserver(
@@ -167,9 +173,10 @@ public class DarkModeAgent {
                 if DarkModeAgent.userChoice == .auto {
 
                     let effectiveAppearance = NSApplication.shared.effectiveAppearance
-                    let required = self.getRequired(from: effectiveAppearance)
+                    let wanted = self.getRequired(from: effectiveAppearance)
 
-                    DarkModeAgent.shared.appearance = required
+                    DarkModeAgent.shared.appearance = wanted
+                    self.notifyAllRegistered()
                 }
             }
         } // For HighSierra there is no need in observation cos' system style never change.

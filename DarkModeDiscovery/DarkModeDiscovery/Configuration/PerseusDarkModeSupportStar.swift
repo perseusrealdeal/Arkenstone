@@ -1,10 +1,12 @@
 //
 //  PerseusDarkModeSupportStar.swift
-//  Version: 1.0.0
+//  Version: 2.0.0 (PerseusUISystemKit previously)
+//
+//  For macOS and iOS only. Use Stars to adopt for platform specifics you need.
 //
 //  Created by Mikhail Zhigulin in 7530.
 //
-//  Copyright © 7530 - 7533 Mikhail Zhigulin of Novosibirsk.
+//  Copyright © 7530 - 7533 Mikhail Zhigulin of Novosibirsk
 //  Copyright © 7533 PerseusRealDeal
 //
 //  All rights reserved.

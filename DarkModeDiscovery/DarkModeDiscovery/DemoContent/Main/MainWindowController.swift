@@ -40,12 +40,19 @@ class MainWindowController: NSWindowController, NSWindowDelegate {
     @objc private func makeUp() {
         log.message("[\(type(of: self))].\(#function)")
 
-        let title = DarkMode.style == .light ? "The Lonely Mountain" : "Erebor"
+        let isDark = DarkMode.style == .dark
+        let title = isDark ? "Erebor" : "The Lonely Mountain"
 
         if #available(macOS 10.14, *) {
             self.window?.title = title
-        } else {
+        } else {  // For HighSierra only.
             self.windowTitle(forDocumentDisplayName: title)
+        }
+
+        if #unavailable(macOS 10.14) { // For HighSierra.
+
+            window?.appearance = isDark ?
+            DARK_APPEARANCE_DEFAULT_IN_USE : LIGHT_APPEARANCE_DEFAULT_IN_USE
         }
     }
 

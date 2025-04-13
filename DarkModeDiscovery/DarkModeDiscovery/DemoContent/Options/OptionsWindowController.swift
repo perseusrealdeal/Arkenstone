@@ -28,5 +28,12 @@ class OptionsWindowController: NSWindowController, NSWindowDelegate {
 
     @objc private func makeUp() {
         log.message("[\(type(of: self))].\(#function)")
+        if #unavailable(macOS 10.14) { // For HighSierra only.
+
+            let isDark = DarkMode.style == .dark
+
+            window?.appearance = isDark ?
+            DARK_APPEARANCE_DEFAULT_IN_USE : LIGHT_APPEARANCE_DEFAULT_IN_USE
+        }
     }
 }
