@@ -46,6 +46,7 @@ import UIKit
 #elseif canImport(Cocoa)
 import Cocoa
 #endif
+
 import ConsolePerseusLogger
 
 public let APPEARANCE_DEFAULT = AppearanceStyle.light
@@ -140,8 +141,6 @@ public class DarkModeAgent {
         return userChoice
     }
 
-    public static var isEnabled: Bool { return true }
-
     // MARK: - Internals
 
     private static var userChoice: DarkModeOption {
@@ -193,6 +192,17 @@ public class DarkModeAgent {
 #endif
     }
 
+#if os(iOS)
+    @available(iOS 13.0, *)
+    public static func processTraitCollectionDidChange(_ previous: UITraitCollection?) {
+        if let previous = previous?.userInterfaceStyle {
+            if UIWindow.systemStyle.rawValue != previous.rawValue {
+                DarkModeAgent.instance.processAppleInterfaceThemeChanged()
+            }
+        }
+    }
+#endif
+
     // MARK: - Contract
 
     public static func register(stakeholder: Any, selector: Selector) {
@@ -234,14 +244,6 @@ public class DarkModeAgent {
 
     // MARK: - Implementation
 
-#if os(iOS)
-    @available(iOS 13.0, *)
-    public static func processTraitCollectionDidChange(_ previous: UITraitCollection?) {
-        // TODO: iOS app appearance change
-        log.message("[\(type(of: self))].\(#function) TODO: iOS app appearance change")
-    }
-#endif
-
     @objc private func processAppleInterfaceThemeChanged() {
         refresh()
         notifyAllRegistered()
@@ -250,8 +252,14 @@ public class DarkModeAgent {
     private func refresh() {
         let choice = DarkModeAgent.userChoice
 #if os(iOS)
-        // TODO: iOS app appearance change
-        log.message("[\(type(of: self))].\(#function) TODO: iOS app appearance change")
+        let current = UIWindow.systemStyle
+        let required = makeDecision(current, choice)
+
+        if #available(iOS 13.0, *) {
+            UIWindow.refreshKeyWindow()
+        }
+
+        DarkModeAgent.shared.appearance = required
 #elseif os(macOS)
         if #available(macOS 10.14, *) {
             switch choice {
@@ -331,13 +339,108 @@ public class DarkModeObserver: NSObject {
 }
 
 #if os(iOS)
+public enum SystemStyle: Int, CustomStringConvertible {
+
+    case unspecified = 0
+    case light       = 1
+    case dark        = 2
+
+    public var description: String {
+        switch self {
+        case .unspecified:
+            return ".unspecified"
+        case .light:
+            return ".light"
+        case .dark:
+            return ".dark"
+        }
+    }
+}
+
 extension UIWindow {
+
     static var key: UIWindow? {
         if #available(iOS 13, *) {
             return UIApplication.shared.windows.first { $0.isKeyWindow }
         } else {
             return UIApplication.shared.keyWindow
         }
+    }
+
+    static var systemStyle: SystemStyle {
+        if #available(iOS 13.0, *) {
+            guard let keyWindow = UIWindow.key else { return .unspecified }
+
+            switch keyWindow.traitCollection.userInterfaceStyle {
+            case .unspecified:
+                return .unspecified
+            case .light:
+                return .light
+            case .dark:
+                return .dark
+
+            @unknown default:
+                return .unspecified
+            }
+        } else {
+            return .unspecified // For iOS 12.0 and earlier.
+        }
+    }
+}
+
+// MARK: - Calculating Dark Mode Required
+
+/// Calculates the current required appearance style of the app.
+///
+/// Dark Mode decision-making:
+///
+///                  | User
+///     -------------+-----------------------
+///     System       | auto    | on   | off
+///     -------------+---------+------+------
+///     .unspecified | default | dark | light
+///     .light       | light   | dark | light
+///     .dark        | dark    | dark | light
+///
+public func makeDecision(_ system: SystemStyle, _ user: DarkModeOption) -> AppearanceStyle {
+
+    if (system == .unspecified) && (user == .auto) { return APPEARANCE_DEFAULT }
+    if (system == .unspecified) && (user == .on) { return .dark }
+    if (system == .unspecified) && (user == .off) { return .light }
+
+    if (system == .light) && (user == .auto) { return .light }
+    if (system == .light) && (user == .on) { return .dark }
+    if (system == .light) && (user == .off) { return .light }
+
+    if (system == .dark) && (user == .auto) { return .dark }
+    if (system == .dark) && (user == .on) { return .dark }
+    if (system == .dark) && (user == .off) { return .light }
+
+    return APPEARANCE_DEFAULT
+
+}
+#endif
+
+#if os(iOS) && compiler(>=5)
+extension UIWindow {
+
+    @available(iOS 13.0, *)
+    public static func refreshKeyWindow() {
+
+        guard let keyWindow = UIWindow.key else { return }
+
+        var overrideStyle: UIUserInterfaceStyle = .unspecified
+
+        switch DarkModeAgent.DarkModeUserChoice {
+        case .auto:
+            overrideStyle = .unspecified
+        case .on:
+            overrideStyle = .dark
+        case .off:
+            overrideStyle = .light
+        }
+
+        keyWindow.overrideUserInterfaceStyle = overrideStyle
     }
 }
 #endif
