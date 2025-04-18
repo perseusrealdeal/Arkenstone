@@ -14,7 +14,7 @@
 import Foundation
 
 import ConsolePerseusLogger
-import PerseusGeoLocationKit
+import PerseusGeoKit
 
 class GeoCoordinator: NSObject {
 

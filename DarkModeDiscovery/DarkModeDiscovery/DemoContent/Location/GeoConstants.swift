@@ -12,7 +12,7 @@
 //
 
 import MapKit
-import PerseusGeoLocationKit
+import PerseusGeoKit
 
 let PREFERED_ACCURACY = LocationAccuracy.threeKilometers
 

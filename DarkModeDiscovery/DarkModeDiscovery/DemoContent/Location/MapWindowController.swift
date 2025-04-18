@@ -13,6 +13,7 @@
 
 import Cocoa
 import ConsolePerseusLogger
+import PerseusDarkMode
 
 class MapWindowController: NSWindowController, NSWindowDelegate {
 

@@ -15,11 +15,11 @@ import Cocoa
 import ConsolePerseusLogger
 
 // import class PerseusDarkMode.PerseusLogger
-import class PerseusGeoLocationKit.PerseusLogger
+import class PerseusGeoKit.PerseusLogger
 
 // swiftlint:disable type_name
 // typealias dmlog = PerseusDarkMode.PerseusLogger
-typealias geolog = PerseusGeoLocationKit.PerseusLogger
+typealias geolog = PerseusGeoKit.PerseusLogger
 // swiftlint:enable type_name
 
 // MARK: - Logger
@@ -28,7 +28,7 @@ typealias geolog = PerseusGeoLocationKit.PerseusLogger
 // dmlog.output = .consoleapp
 // geolog.output = .consoleapp
 
-geolog.turned = .off
+// geolog.turned = .off
 
 // MARK: - Construct the app's top elements
 

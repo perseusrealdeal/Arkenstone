@@ -12,7 +12,7 @@
 //
 
 import Cocoa
-// import PerseusDarkMode
+import PerseusDarkMode
 
 class CompanionCollectionViewItem: NSCollectionViewItem {
 

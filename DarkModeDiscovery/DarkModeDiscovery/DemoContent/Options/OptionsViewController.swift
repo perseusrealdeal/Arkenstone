@@ -14,7 +14,7 @@
 import Cocoa
 
 import ConsolePerseusLogger
-// import PerseusDarkMode
+import PerseusDarkMode
 
 class OptionsViewController: NSViewController {
 

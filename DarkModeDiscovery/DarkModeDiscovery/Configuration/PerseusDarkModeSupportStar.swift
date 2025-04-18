@@ -41,7 +41,7 @@
 // swiftlint:disable file_length
 //
 
-// import PerseusDarkMode
+import PerseusDarkMode
 
 #if canImport(UIKit)
 import UIKit
