@@ -1,42 +1,44 @@
 //
-//  PerseusDarkModeSupportStar.swift
-//  Version: 2.0.0 (PerseusUISystemKit previously)
+//  PDMSupportingStar.swift
+//  Version: 2.0.0
 //
-//  For iOS and macOS only. Use Stars to adopt for the platform specifics you need.
-//
-//  Created by Mikhail Zhigulin in 7530.
-//
-//  Copyright © 7530 - 7533 Mikhail Zhigulin of Novosibirsk
-//  Copyright © 7533 PerseusRealDeal
-//
-//  All rights reserved.
+//  The Darkness Support Classes (PerseusUISystemKit previously)
 //
 //
-//  MIT License
+//  For iOS and macOS only. Use Stars to adopt for the specifics you need.
 //
-//  Copyright © 7530 - 7533 Mikhail A. Zhigulin of Novosibirsk
-//  Copyright © 7533 PerseusRealDeal
+//  Created by Mikhail Zhigulin of Novosibirsk in 7530.
 //
 //  The year starts from the creation of the world according to a Slavic calendar.
 //  September, the 1st of Slavic year.
 //
-//  Permission is hereby granted, free of charge, to any person obtaining a copy
-//  of this software and associated documentation files (the "Software"), to deal
-//  in the Software without restriction, including without limitation the rights
-//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions:
 //
-//  The above copyright notice and this permission notice shall be included in all
-//  copies or substantial portions of the Software.
+//  Unlicensed Free Software
 //
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-//  SOFTWARE.
+//  This is free and unencumbered software released into the public domain.
+//
+//  Anyone is free to copy, modify, publish, use, compile, sell, or
+//  distribute this software, either in source code form or as a compiled
+//  binary, for any purpose, commercial or non-commercial, and by any
+//  means.
+//
+//  In jurisdictions that recognize copyright laws, the author or authors
+//  of this software dedicate any and all copyright interest in the
+//  software to the public domain. We make this dedication for the benefit
+//  of the public at large and to the detriment of our heirs and
+//  successors. We intend this dedication to be an overt act of
+//  relinquishment in perpetuity of all present and future rights to this
+//  software under copyright law.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+//  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+//  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+//  IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+//  OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+//  ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+//  OTHER DEALINGS IN THE SOFTWARE.
+//
+//  For more information, please refer to <http://unlicense.org/>
 //
 // swiftlint:disable file_length
 //
@@ -55,8 +57,12 @@ public typealias Color = UIColor
 public typealias Color = NSColor
 #endif
 
-public func rgba255(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat, _ alpha: CGFloat = 1.0)
-    -> Color { return Color(red: red/255, green: green/255, blue: blue/255, alpha: alpha) }
+public func rgba255(_ red: CGFloat,
+                    _ green: CGFloat,
+                    _ blue: CGFloat,
+                    _ alpha: CGFloat = 1.0) -> Color {
+    return Color(red: red/255, green: green/255, blue: blue/255, alpha: alpha)
+}
 
 public extension Color {
 
@@ -674,7 +680,7 @@ public class DarkModeImageView: NSImageView {
         }
     }
 
-    private(set) var darkModeObserver: DarkModeObserver?
+    private(set) var theDarknessTrigger: DarkModeObserver?
 
     override public func awakeFromNib() {
         guard aspectFillClipToBounds else { return }
@@ -703,7 +709,7 @@ public class DarkModeImageView: NSImageView {
     }
 
     private func configure() {
-        darkModeObserver = DarkModeObserver { style in
+        theDarknessTrigger = DarkModeObserver { style in
             self.image = style == .light ? self.imageLight : self.imageDark
         }
     }

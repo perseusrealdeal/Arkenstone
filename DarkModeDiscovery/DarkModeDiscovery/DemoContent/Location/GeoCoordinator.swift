@@ -49,18 +49,18 @@ class GeoCoordinator: NSObject {
 extension GeoCoordinator {
 
     @objc private func locationDealerCurrentHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))]:[EVENT].\(#function)", .info)
+        log.message("[\(type(of: self))].\(#function) [EVENT]", .info)
     }
 
     @objc private func locationDealerStatusChangedHandler() {
-        log.message("[\(type(of: self))]:[EVENT].\(#function)", .info)
+        log.message("[\(type(of: self))].\(#function) [EVENT]", .info)
     }
 
     @objc private func locationDealerErrorHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))]:[EVENT].\(#function)", .info)
+        log.message("[\(type(of: self))].\(#function) [EVENT]", .info)
     }
 
     @objc private func locationDealerUpdatesHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))]:[EVENT].\(#function)", .info)
+        log.message("[\(type(of: self))].\(#function) [EVENT]", .info)
     }
 }

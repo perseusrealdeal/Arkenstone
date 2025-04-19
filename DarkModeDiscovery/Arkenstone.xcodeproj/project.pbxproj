@@ -20,7 +20,8 @@
 		2ECC35AB2D8957C60059FBCC /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ECC35AA2D8957C60059FBCC /* Map.storyboard */; };
 		2ECC35AD2D8960A00059FBCC /* MapWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC35AC2D8960A00059FBCC /* MapWindowController.swift */; };
 		2ECC35AF2D8960AD0059FBCC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC35AE2D8960AD0059FBCC /* MapViewController.swift */; };
-		2ECF7ADF2DB29A1600ECB6B7 /* PerseusDarkModeSupportStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECF7ADE2DB29A1600ECB6B7 /* PerseusDarkModeSupportStar.swift */; };
+		2ECF7ADF2DB29A1600ECB6B7 /* PDMSupportingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECF7ADE2DB29A1600ECB6B7 /* PDMSupportingStar.swift */; };
+		2ECFE08B2DB3705F0083FDBE /* PGKSupportingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECFE08A2DB3705F0083FDBE /* PGKSupportingStar.swift */; };
 		2ED09DDD2D99621D00DA2AD7 /* GeoConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED09DDC2D99621D00DA2AD7 /* GeoConstants.swift */; };
 		4B0158E629103C0D009F1803 /* DarkModeDiscoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0158E529103C0D009F1803 /* DarkModeDiscoveryTests.swift */; };
 		4B0158ED29103C21009F1803 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00F83AD288A6F99000D0A01 /* TestingAppDelegate.swift */; };
@@ -71,7 +72,8 @@
 		2ECC35AA2D8957C60059FBCC /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		2ECC35AC2D8960A00059FBCC /* MapWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWindowController.swift; sourceTree = "<group>"; };
 		2ECC35AE2D8960AD0059FBCC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		2ECF7ADE2DB29A1600ECB6B7 /* PerseusDarkModeSupportStar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerseusDarkModeSupportStar.swift; sourceTree = "<group>"; };
+		2ECF7ADE2DB29A1600ECB6B7 /* PDMSupportingStar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDMSupportingStar.swift; sourceTree = "<group>"; };
+		2ECFE08A2DB3705F0083FDBE /* PGKSupportingStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGKSupportingStar.swift; sourceTree = "<group>"; };
 		2ED09DDC2D99621D00DA2AD7 /* GeoConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoConstants.swift; sourceTree = "<group>"; };
 		4B0158E329103C0D009F1803 /* ArkenstoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArkenstoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B0158E529103C0D009F1803 /* DarkModeDiscoveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeDiscoveryTests.swift; sourceTree = "<group>"; };
@@ -230,7 +232,8 @@
 				E00F8389288A4A0B000D0A01 /* DarkModeDiscovery.entitlements */,
 				E00F8384288A4A0B000D0A01 /* Assets.xcassets */,
 				4B7DD3AF297D33B700172BD4 /* CustomColors.swift */,
-				2ECF7ADE2DB29A1600ECB6B7 /* PerseusDarkModeSupportStar.swift */,
+				2ECF7ADE2DB29A1600ECB6B7 /* PDMSupportingStar.swift */,
+				2ECFE08A2DB3705F0083FDBE /* PGKSupportingStar.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -412,7 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E26B7862D061B890009B96B /* AppGlobals.swift in Sources */,
-				2ECF7ADF2DB29A1600ECB6B7 /* PerseusDarkModeSupportStar.swift in Sources */,
+				2ECF7ADF2DB29A1600ECB6B7 /* PDMSupportingStar.swift in Sources */,
 				E06FED13289A86ED00538B55 /* Race.swift in Sources */,
 				E01D2D3A289A76A6009B932F /* Companion.swift in Sources */,
 				2ED09DDD2D99621D00DA2AD7 /* GeoConstants.swift in Sources */,
@@ -420,6 +423,7 @@
 				4B6C3D2C29704130001299E6 /* ItemImageView.swift in Sources */,
 				2ECC27542D9A99510097BBF2 /* GeoCoordinator.swift in Sources */,
 				E00F8383288A4A04000D0A01 /* MainViewController.swift in Sources */,
+				2ECFE08B2DB3705F0083FDBE /* PGKSupportingStar.swift in Sources */,
 				2ECC35AD2D8960A00059FBCC /* MapWindowController.swift in Sources */,
 				4B3A67E72965932D0024077F /* CompanionCollectionViewItem.swift in Sources */,
 				E00F83AC288A4A64000D0A01 /* main.swift in Sources */,

@@ -157,7 +157,7 @@ extension LocationView {
     }
 
     @objc private func locationDealerStatusChangedHandler() {
-        log.message("[\(type(of: self))]:[EVENT].\(#function)", .info)
+        // log.message("[\(type(of: self))]:[EVENT].\(#function)", .info)
         refresh()
     }
 

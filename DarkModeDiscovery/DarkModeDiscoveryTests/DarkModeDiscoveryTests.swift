@@ -12,11 +12,16 @@
 //
 
 import XCTest
+import ConsolePerseusLogger
+
 @testable import Arkenstone
 
 class DarkModeDiscoveryTests: XCTestCase {
 
     // func test_zero() { XCTFail("Tests not yet implemented in \(type(of: self)).") }
 
-    func test_the_first_success() { XCTAssertTrue(true, "It's done!") }
+    func test_the_first_success() {
+        log.time = true
+        log.message(#function)
+    }
 }
