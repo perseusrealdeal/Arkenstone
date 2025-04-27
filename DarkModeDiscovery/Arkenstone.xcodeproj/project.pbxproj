@@ -10,12 +10,10 @@
 		2E26B77A2D05B7B80009B96B /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E26B7792D05B7B80009B96B /* LocationView.swift */; };
 		2E26B7842D05B95C0009B96B /* LocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E26B7832D05B95C0009B96B /* LocationView.xib */; };
 		2E26B7862D061B890009B96B /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E26B7852D061B890009B96B /* AppGlobals.swift */; };
-		2E7CE3F92DB2C35F00AC3A34 /* PerseusDarkMode in Frameworks */ = {isa = PBXBuildFile; productRef = 2E7CE3F82DB2C35F00AC3A34 /* PerseusDarkMode */; };
 		2E7CE3FF2DB2D8C500AC3A34 /* PerseusGeoKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2E7CE3FE2DB2D8C500AC3A34 /* PerseusGeoKit */; };
 		2E86555B2CFC7297006064D5 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2E86555A2CFC7297006064D5 /* .swiftlint.yml */; };
 		2E86555D2CFC73D9006064D5 /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2E86555C2CFC73D9006064D5 /* swiftlint.yml */; };
 		2EA10A952CFDCB4900535E5A /* APPROBATION.md in Resources */ = {isa = PBXBuildFile; fileRef = 2EA10A942CFDCB4900535E5A /* APPROBATION.md */; };
-		2EA10AAD2CFE273C00535E5A /* ConsolePerseusLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 2EA10AAC2CFE273C00535E5A /* ConsolePerseusLogger */; };
 		2ECC27542D9A99510097BBF2 /* GeoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC27532D9A99510097BBF2 /* GeoCoordinator.swift */; };
 		2ECC35AB2D8957C60059FBCC /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ECC35AA2D8957C60059FBCC /* Map.storyboard */; };
 		2ECC35AD2D8960A00059FBCC /* MapWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC35AC2D8960A00059FBCC /* MapWindowController.swift */; };
@@ -23,6 +21,8 @@
 		2ECF7ADF2DB29A1600ECB6B7 /* PDMSupportingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECF7ADE2DB29A1600ECB6B7 /* PDMSupportingStar.swift */; };
 		2ECFE08B2DB3705F0083FDBE /* PGKSupportingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECFE08A2DB3705F0083FDBE /* PGKSupportingStar.swift */; };
 		2ED09DDD2D99621D00DA2AD7 /* GeoConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED09DDC2D99621D00DA2AD7 /* GeoConstants.swift */; };
+		2EE1B7812DBE5D5400375792 /* ConsolePerseusLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 2EE1B7802DBE5D5400375792 /* ConsolePerseusLogger */; };
+		2EE1B7842DBE5D6300375792 /* PerseusDarkMode in Frameworks */ = {isa = PBXBuildFile; productRef = 2EE1B7832DBE5D6300375792 /* PerseusDarkMode */; };
 		4B0158E629103C0D009F1803 /* DarkModeDiscoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0158E529103C0D009F1803 /* DarkModeDiscoveryTests.swift */; };
 		4B0158ED29103C21009F1803 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00F83AD288A6F99000D0A01 /* TestingAppDelegate.swift */; };
 		4B26073D295DC238002813C6 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B26073C295DC238002813C6 /* OptionsViewController.swift */; };
@@ -120,8 +120,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E7CE3F92DB2C35F00AC3A34 /* PerseusDarkMode in Frameworks */,
-				2EA10AAD2CFE273C00535E5A /* ConsolePerseusLogger in Frameworks */,
+				2EE1B7842DBE5D6300375792 /* PerseusDarkMode in Frameworks */,
+				2EE1B7812DBE5D5400375792 /* ConsolePerseusLogger in Frameworks */,
 				2E7CE3FF2DB2D8C500AC3A34 /* PerseusGeoKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,9 +295,9 @@
 			);
 			name = Arkenstone;
 			packageProductDependencies = (
-				2EA10AAC2CFE273C00535E5A /* ConsolePerseusLogger */,
-				2E7CE3F82DB2C35F00AC3A34 /* PerseusDarkMode */,
 				2E7CE3FE2DB2D8C500AC3A34 /* PerseusGeoKit */,
+				2EE1B7802DBE5D5400375792 /* ConsolePerseusLogger */,
+				2EE1B7832DBE5D6300375792 /* PerseusDarkMode */,
 			);
 			productName = DarkModeDiscovery;
 			productReference = E00F837D288A4A04000D0A01 /* Arkenstone.app */;
@@ -333,9 +333,9 @@
 			);
 			mainGroup = E00F8374288A4A04000D0A01;
 			packageReferences = (
-				2EA10AAB2CFE273C00535E5A /* XCRemoteSwiftPackageReference "ConsolePerseusLogger" */,
-				2E7CE3F72DB2C35F00AC3A34 /* XCRemoteSwiftPackageReference "PerseusDarkMode" */,
 				2E7CE3FD2DB2D8C500AC3A34 /* XCRemoteSwiftPackageReference "PerseusGeoKit" */,
+				2EE1B77F2DBE5D5400375792 /* XCRemoteSwiftPackageReference "ConsolePerseusLogger" */,
+				2EE1B7822DBE5D6300375792 /* XCRemoteSwiftPackageReference "PerseusDarkMode" */,
 			);
 			productRefGroup = E00F837E288A4A04000D0A01 /* Products */;
 			projectDirPath = "";
@@ -705,14 +705,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2E7CE3F72DB2C35F00AC3A34 /* XCRemoteSwiftPackageReference "PerseusDarkMode" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/perseusrealdeal/PerseusDarkMode";
-			requirement = {
-				branch = hotfix/approbation;
-				kind = branch;
-			};
-		};
 		2E7CE3FD2DB2D8C500AC3A34 /* XCRemoteSwiftPackageReference "PerseusGeoKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/perseusrealdeal/PerseusGeoKit";
@@ -721,31 +713,39 @@
 				kind = branch;
 			};
 		};
-		2EA10AAB2CFE273C00535E5A /* XCRemoteSwiftPackageReference "ConsolePerseusLogger" */ = {
+		2EE1B77F2DBE5D5400375792 /* XCRemoteSwiftPackageReference "ConsolePerseusLogger" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/perseusrealdeal/ConsolePerseusLogger";
 			requirement = {
-				branch = prepare/v1.1.0;
-				kind = branch;
+				kind = exactVersion;
+				version = 1.1.0;
+			};
+		};
+		2EE1B7822DBE5D6300375792 /* XCRemoteSwiftPackageReference "PerseusDarkMode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/perseusrealdeal/PerseusDarkMode";
+			requirement = {
+				kind = exactVersion;
+				version = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2E7CE3F82DB2C35F00AC3A34 /* PerseusDarkMode */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2E7CE3F72DB2C35F00AC3A34 /* XCRemoteSwiftPackageReference "PerseusDarkMode" */;
-			productName = PerseusDarkMode;
-		};
 		2E7CE3FE2DB2D8C500AC3A34 /* PerseusGeoKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2E7CE3FD2DB2D8C500AC3A34 /* XCRemoteSwiftPackageReference "PerseusGeoKit" */;
 			productName = PerseusGeoKit;
 		};
-		2EA10AAC2CFE273C00535E5A /* ConsolePerseusLogger */ = {
+		2EE1B7802DBE5D5400375792 /* ConsolePerseusLogger */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2EA10AAB2CFE273C00535E5A /* XCRemoteSwiftPackageReference "ConsolePerseusLogger" */;
+			package = 2EE1B77F2DBE5D5400375792 /* XCRemoteSwiftPackageReference "ConsolePerseusLogger" */;
 			productName = ConsolePerseusLogger;
+		};
+		2EE1B7832DBE5D6300375792 /* PerseusDarkMode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EE1B7822DBE5D6300375792 /* XCRemoteSwiftPackageReference "PerseusDarkMode" */;
+			productName = PerseusDarkMode;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

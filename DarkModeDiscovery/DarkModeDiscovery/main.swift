@@ -24,8 +24,8 @@ typealias geolog = PerseusGeoKit.PerseusLogger
 
 // MARK: - Logger
 
-log.output = .consoleapp
-dmlog.output = .consoleapp
+// log.output = .consoleapp
+// dmlog.output = .consoleapp
 // geolog.output = .consoleapp
 
 // dmlog.turned = .off
