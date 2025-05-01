@@ -34,11 +34,11 @@ class LocationView: NSView {
     @IBAction func buttonRefreshStatusTapped(_ sender: NSButton) {
         let dealer = globals.locationDealer
 
-        labelPermissionValue.stringValue = "\(dealer.locationPermit)".capitalized
+        labelPermissionValue.stringValue = "\(dealer.permit)".capitalized
 
         dealer.requestPermission { permit in
             if permit != .allowed {
-                dealer.alert.show()
+                GeoAgent.showRedirectAlert()
             }
         }
     }
@@ -47,7 +47,7 @@ class LocationView: NSView {
         let dealer = globals.locationDealer
 
         do {
-            try dealer.requestCurrentLocation()
+            try dealer.getCurrent()
         } catch LocationError.permissionRequired(let permit) {
 
             log.message("[\(type(of: self))].\(#function) - permission required", .notice)
@@ -55,7 +55,7 @@ class LocationView: NSView {
             if permit == .notDetermined {
                 dealer.requestPermission()
             } else {
-                dealer.alert.show()
+                GeoAgent.showRedirectAlert()
             }
 
         } catch {
@@ -108,17 +108,17 @@ class LocationView: NSView {
 
         // Setup location event handlers.
 
-        LocationAgent.getNotified(with: self,
-                                  selector: #selector(locationDealerCurrentHandler(_:)),
-                                  name: .locationDealerCurrentNotification)
+        GeoAgent.register(with: self,
+                          selector: #selector(locationDealerCurrentHandler(_:)),
+                          name: .locationDealerCurrentNotification)
 
-        LocationAgent.getNotified(with: self,
-                                  selector: #selector(locationDealerStatusChangedHandler),
-                                  name: .locationDealerStatusChangedNotification)
+        GeoAgent.register(with: self,
+                          selector: #selector(locationDealerStatusChangedHandler),
+                          name: .locationDealerStatusChangedNotification)
 
-        LocationAgent.getNotified(with: self,
-                                  selector: #selector(locationDealerErrorHandler(_:)),
-                                  name: .locationDealerErrorNotification)
+        GeoAgent.register(with: self,
+                          selector: #selector(locationDealerErrorHandler(_:)),
+                          name: .locationDealerErrorNotification)
 
         // Setup Dark Mode event handlers.
 
@@ -140,7 +140,7 @@ extension LocationView {
         log.message("[\(type(of: self))]:[EVENT].\(#function)", .info)
 
         guard
-            let result = notification.object as? Result<PerseusLocation, LocationError>
+            let result = notification.object as? Result<GeoPoint, LocationError>
         else {
             log.message("[\(type(of: self))]:[EVENT].\(#function)", .error)
             return
@@ -181,7 +181,7 @@ extension LocationView {
     }
 
     private func refresh() {
-        let permit = "\(globals.locationDealer.locationPermit)".capitalized
+        let permit = "\(globals.locationDealer.permit)".capitalized
 
         labelPermissionValue.stringValue = permit
         labelGeoCoupleValue.stringValue = CURRENT_GEO_POINT

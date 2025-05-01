@@ -20,7 +20,7 @@ struct AppGlobals {
 
     // MARK: - Business Data
 
-    static var currentLocation: PerseusLocation? {
+    static var currentLocation: GeoPoint? {
         didSet {
             let location = currentLocation?.description ?? "current location is erased"
             log.message("\(location) [\(type(of: self))].\(#function)", .info)
@@ -33,28 +33,16 @@ struct AppGlobals {
 
     // MARK: - Custom Services
 
-    public let locationDealer: LocationAgent
+    public let locationDealer: GeoAgent
     public let geoCoordinator: GeoCoordinator
 
     // MARK: - Initializer
 
     init() {
+
         log.message("[\(type(of: self))].\(#function)", .info)
 
-        locationDealer = LocationAgent.shared
+        locationDealer = GeoAgent.shared
         geoCoordinator = GeoCoordinator.shared
-
-        // Configure accuracy
-
-        var lm = locationDealer.locationManager
-        lm?.desiredAccuracy = PREFERED_ACCURACY.rawValue
-
-        // Configure GoTo Settings alert
-        let text = ActionAlertText(title: "Custom Title",
-                                   message: "Custom Message",
-                                   buttonCancel: "MyCancel",
-                                   buttonFunction: "MyAction")
-
-        locationDealer.alert.titles = text
     }
 }

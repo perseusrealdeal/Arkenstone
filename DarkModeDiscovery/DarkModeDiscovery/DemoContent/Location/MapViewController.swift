@@ -73,7 +73,7 @@ class MapViewController: NSViewController {
     }
 
     private func refresh() {
-        let permit = "\(globals.locationDealer.locationPermit)".capitalized
+        let permit = "\(globals.locationDealer.permit)".capitalized
 
         labelGeoStatus.stringValue = permit
         labelCoordinate.stringValue = CURRENT_LOCATION

@@ -31,18 +31,18 @@ class GeoCoordinator: NSObject {
 
         super.init()
 
-        LocationAgent.getNotified(with: self,
-                                  selector: #selector(locationDealerCurrentHandler(_:)),
-                                  name: .locationDealerCurrentNotification)
-        LocationAgent.getNotified(with: self,
-                                  selector: #selector(locationDealerStatusChangedHandler),
-                                  name: .locationDealerStatusChangedNotification)
-        LocationAgent.getNotified(with: self,
-                                  selector: #selector(locationDealerErrorHandler(_:)),
-                                  name: .locationDealerErrorNotification)
-        LocationAgent.getNotified(with: self,
-                                  selector: #selector(locationDealerUpdatesHandler(_:)),
-                                  name: .locationDealerUpdatesNotification)
+        GeoAgent.register(with: self,
+                          selector: #selector(locationDealerCurrentHandler(_:)),
+                          name: .locationDealerCurrentNotification)
+        GeoAgent.register(with: self,
+                          selector: #selector(locationDealerStatusChangedHandler),
+                          name: .locationDealerStatusChangedNotification)
+        GeoAgent.register(with: self,
+                          selector: #selector(locationDealerErrorHandler(_:)),
+                          name: .locationDealerErrorNotification)
+        GeoAgent.register(with: self,
+                          selector: #selector(locationDealerUpdatesHandler(_:)),
+                          name: .locationDealerUpdatesNotification)
     }
 }
 

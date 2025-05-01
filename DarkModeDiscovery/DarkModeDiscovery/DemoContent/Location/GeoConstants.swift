@@ -14,7 +14,7 @@
 import MapKit
 import PerseusGeoKit
 
-let PREFERED_ACCURACY = LocationAccuracy.threeKilometers
+let PREFERED_ACCURACY = GeoAccuracy.threeKilometers
 
 let DEFAULT_MAP_POINT = CLLocation(latitude: 55.036857, longitude: 82.914063)
 let DEFAULT_MAP_RADIUS: CLLocationDistance = 1000
