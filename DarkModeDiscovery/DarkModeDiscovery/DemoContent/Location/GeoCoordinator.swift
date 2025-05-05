@@ -18,10 +18,12 @@ import PerseusGeoKit
 
 class GeoCoordinator: NSObject {
 
+    // MARK: - UI Geo Components
+
     public var locationView: LocationView?
     public var mapViewController: MapViewController?
 
-    // MARK: - Singleton constructor
+    // MARK: - Singletone
 
     public static let shared: GeoCoordinator = { return GeoCoordinator() }()
 
@@ -31,36 +33,117 @@ class GeoCoordinator: NSObject {
 
         super.init()
 
-        GeoAgent.register(with: self,
-                          selector: #selector(locationDealerCurrentHandler(_:)),
-                          name: .locationDealerCurrentNotification)
-        GeoAgent.register(with: self,
-                          selector: #selector(locationDealerStatusChangedHandler),
-                          name: .locationDealerStatusChangedNotification)
-        GeoAgent.register(with: self,
-                          selector: #selector(locationDealerErrorHandler(_:)),
-                          name: .locationDealerErrorNotification)
-        GeoAgent.register(with: self,
-                          selector: #selector(locationDealerUpdatesHandler(_:)),
-                          name: .locationDealerUpdatesNotification)
+        GeoAgent.register(self, #selector(locationErrorHandler(_:)), .locationError)
+        GeoAgent.register(self, #selector(locationStatusHandler(_:)), .locationStatus)
+        GeoAgent.register(self, #selector(currentLocationHandler(_:)), .currentLocation)
+        GeoAgent.register(self, #selector(locationUpdatesHandler(_:)), .locationUpdates)
     }
 }
 
+// MARK: - Implementation
+
+extension GeoCoordinator {
+    private func updateGeoComponents() {
+        self.locationView?.reloadData()
+        self.mapViewController?.reloadData()
+    }
+}
+
+// MARK: - Geo Event Handlers
+
 extension GeoCoordinator {
 
-    @objc private func locationDealerCurrentHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))].\(#function) [EVENT]", .info)
+    @objc private func locationErrorHandler(_ notification: Notification) {
+
+        log.message("[\(type(of: self))].\(#function) [EVENT]")
+        var errtext = ""
+
+        guard let error = notification.object as? LocationError else {
+            errtext = "nothing is about error"
+            log.message("[\(type(of: self))].\(#function) \(errtext)", .error)
+            return
+        }
+
+        switch error {
+        case .failedRequest(_, let domain, let code):
+            let domaincode = "domain: \(domain), code: \(code)"
+            switch code {
+            case 0:
+                errtext = "hardware issue: try to tap Wi-Fi in system tray, \(domaincode)"
+            case 1:
+                errtext = "permission required, \(domaincode)"
+            default:
+                break
+            }
+        default:
+            break
+        }
+
+        log.message("[\(type(of: self))].\(#function) \(errtext)", .error)
     }
 
-    @objc private func locationDealerStatusChangedHandler() {
-        log.message("[\(type(of: self))].\(#function) [EVENT]", .info)
+    @objc private func locationStatusHandler(_ notification: Notification) {
+
+        let status = GeoAgent.currentStatus
+        log.message("[\(type(of: self))].\(#function) status: \(status) [EVENT]")
+
+        updateGeoComponents()
     }
 
-    @objc private func locationDealerErrorHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))].\(#function) [EVENT]", .info)
+    @objc private func currentLocationHandler(_ notification: Notification) {
+
+        log.message("[\(type(of: self))].\(#function) [EVENT]")
+
+        var errtext = ""
+        var location: GeoPoint?
+
+        guard let result = notification.object as? Result<GeoPoint, LocationError> else {
+            errtext = "nothing is about location"
+            log.message("[\(type(of: self))].\(#function) \(errtext)", .error)
+            return
+        }
+
+        switch result {
+        case .success(let point):
+            location = point
+        case .failure(let error):
+            errtext = "\(error)"
+        }
+
+        if let current = location {
+            AppGlobals.currentLocation = current
+        } else if !errtext.isEmpty {
+            log.message("[\(type(of: self))].\(#function) \(errtext)", .error)
+        }
+
+        updateGeoComponents()
     }
 
-    @objc private func locationDealerUpdatesHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))].\(#function) [EVENT]", .info)
+    @objc private func locationUpdatesHandler(_ notification: Notification) {
+        log.message("[\(type(of: self))].\(#function) [EVENT]")
+
+        var errtext = ""
+        var updates: [GeoPoint]?
+
+        guard let result = notification.object as? Result<[GeoPoint], LocationError> else {
+            errtext = "nothing is about location updates"
+            log.message("[\(type(of: self))].\(#function) \(errtext)", .error)
+            return
+        }
+
+        switch result {
+        case .success(let points):
+            updates = points
+        case .failure(let error):
+            errtext = "\(error)"
+        }
+
+        if updates != nil {
+            // Location updates are here!
+        } else if !errtext.isEmpty {
+            log.message("[\(type(of: self))].\(#function) \(errtext)", .error)
+        }
+
+        updateGeoComponents()
     }
 }

@@ -44,7 +44,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="aspectFillClipToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <box title="System Dark Mode" transparent="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GBL-iE-Fvd" userLabel="System Dark Mode Box">
+                            <box title="System Dark Mode" translatesAutoresizingMaskIntoConstraints="NO" id="GBL-iE-Fvd" userLabel="System Dark Mode Box">
                                 <rect key="frame" x="7" y="6" width="266" height="124"/>
                                 <view key="contentView" id="Stj-JW-3vX">
                                     <rect key="frame" x="3" y="3" width="260" height="106"/>
@@ -113,7 +113,7 @@
                                     <constraint firstAttribute="height" constant="120" id="o7A-Xe-tlJ"/>
                                 </constraints>
                             </box>
-                            <box title="Perseus Dark Mode" transparent="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ixr-qO-4tF" userLabel="Perseus Dark Mode Box">
+                            <box title="Perseus Dark Mode" translatesAutoresizingMaskIntoConstraints="NO" id="ixr-qO-4tF" userLabel="Perseus Dark Mode Box">
                                 <rect key="frame" x="7" y="136" width="301" height="134"/>
                                 <view key="contentView" id="2OK-0r-9bT">
                                     <rect key="frame" x="3" y="3" width="295" height="116"/>
@@ -169,7 +169,7 @@
                                     <constraint firstAttribute="width" constant="295" id="k0e-VV-RXO"/>
                                 </constraints>
                             </box>
-                            <box title="Custom Code" transparent="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gmO-cU-9Q3" userLabel="Custom Code Box">
+                            <box title="Custom Code" translatesAutoresizingMaskIntoConstraints="NO" id="gmO-cU-9Q3" userLabel="Custom Code Box">
                                 <rect key="frame" x="327" y="191" width="296" height="99"/>
                                 <view key="contentView" id="PdL-in-mbV">
                                     <rect key="frame" x="3" y="3" width="290" height="81"/>
@@ -253,6 +253,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="boxCustomCode" destination="gmO-cU-9Q3" id="tNV-Xx-LpQ"/>
+                        <outlet property="boxPerseusDarkMode" destination="ixr-qO-4tF" id="mWz-re-H1d"/>
+                        <outlet property="boxSystemDarkMode" destination="GBL-iE-Fvd" id="zFB-jE-eAn"/>
                         <outlet property="labelInformation" destination="RjB-X5-OIo" id="hDL-Ir-bc6"/>
                         <outlet property="segmentedControl" destination="9E1-6F-RRP" id="qBA-yd-Mz7"/>
                         <outlet property="segmentedControlValueChanged" destination="9E1-6F-RRP" id="bfK-dV-dyx"/>

@@ -137,6 +137,7 @@
 				2ECC35AA2D8957C60059FBCC /* Map.storyboard */,
 				2ECC35AC2D8960A00059FBCC /* MapWindowController.swift */,
 				2ECC35AE2D8960AD0059FBCC /* MapViewController.swift */,
+				2ED09DDC2D99621D00DA2AD7 /* GeoConstants.swift */,
 				2ECC27532D9A99510097BBF2 /* GeoCoordinator.swift */,
 			);
 			path = Location;
@@ -231,7 +232,6 @@
 				E00F8389288A4A0B000D0A01 /* DarkModeDiscovery.entitlements */,
 				E00F8384288A4A0B000D0A01 /* Assets.xcassets */,
 				4B7DD3AF297D33B700172BD4 /* CustomColors.swift */,
-				2ED09DDC2D99621D00DA2AD7 /* GeoConstants.swift */,
 				2ECF7ADE2DB29A1600ECB6B7 /* PDMSupportingStar.swift */,
 				2ECFE08A2DB3705F0083FDBE /* PGKSupportingStar.swift */,
 			);

@@ -15,6 +15,7 @@ import Cocoa
 import MapKit
 
 import ConsolePerseusLogger
+import PerseusGeoKit
 
 class MapViewController: NSViewController {
 
@@ -59,8 +60,10 @@ class MapViewController: NSViewController {
         super.viewDidLoad()
 
         // Set the defualt visible area
-
         mapView.setRegion(DEFAULT_VISIBLE_REGION, animated: true)
+
+        // Connect to Geo coordinator
+        globals.geoCoordinator.mapViewController = self
     }
 
     override func viewDidAppear() {
@@ -69,13 +72,21 @@ class MapViewController: NSViewController {
         self.view.wantsLayer = true
         self.parent?.view.window?.title = self.title!
 
-        refresh()
+        reload()
     }
 
-    private func refresh() {
-        let permit = "\(globals.locationDealer.permit)".capitalized
+    // MARK: - Contract
 
-        labelGeoStatus.stringValue = permit
+    public func reloadData() {
+        reload()
+    }
+}
+
+// MARK: - Implementation
+
+extension MapViewController {
+    private func reload() {
+        labelGeoStatus.stringValue = "\(GeoAgent.currentStatus)".capitalized
         labelCoordinate.stringValue = CURRENT_LOCATION
     }
 }

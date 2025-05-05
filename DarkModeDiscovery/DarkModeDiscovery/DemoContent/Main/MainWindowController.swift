@@ -50,7 +50,6 @@ class MainWindowController: NSWindowController, NSWindowDelegate {
         }
 
         if #unavailable(macOS 10.14) { // For HighSierra.
-
             window?.appearance = isDark ?
             DARK_APPEARANCE_DEFAULT_IN_USE : LIGHT_APPEARANCE_DEFAULT_IN_USE
         }

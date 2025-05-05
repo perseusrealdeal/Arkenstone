@@ -30,7 +30,7 @@ typealias geolog = PerseusGeoKit.PerseusLogger
 
 dmlog.turned = .off
 // geolog.turned = .off
-log.turned = .off
+// log.turned = .off
 
 // MARK: - Construct the app's top elements
 

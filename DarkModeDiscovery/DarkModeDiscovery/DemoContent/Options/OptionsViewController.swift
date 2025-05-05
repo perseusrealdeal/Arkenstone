@@ -18,6 +18,10 @@ import PerseusDarkMode
 
 class OptionsViewController: NSViewController {
 
+    @IBOutlet private(set) weak var boxPerseusDarkMode: NSBox!
+    @IBOutlet private(set) weak var boxSystemDarkMode: NSBox!
+    @IBOutlet private(set) weak var boxCustomCode: NSBox!
+
     @IBOutlet private(set) weak var labelInformation: NSTextField!
     @IBOutlet private(set) weak var segmentedControl: NSSegmentedControl!
 
@@ -127,6 +131,12 @@ class OptionsViewController: NSViewController {
 
         self.preferredContentSize = NSSize(width: self.view.frame.size.width,
                                            height: self.view.frame.size.height)
+
+        if #unavailable(macOS 10.14) { // For HighSierra only.
+            boxPerseusDarkMode.isTransparent = true
+            boxSystemDarkMode.isTransparent = true
+            boxCustomCode.isTransparent = true
+        }
     }
 
     override func viewDidAppear() {

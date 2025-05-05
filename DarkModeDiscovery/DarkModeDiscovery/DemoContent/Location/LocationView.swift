@@ -20,7 +20,7 @@ import PerseusDarkMode
 @IBDesignable
 class LocationView: NSView {
 
-    let darkModeObserver = DarkModeObserver()
+    private let darkModeObserver = DarkModeObserver()
 
     @IBOutlet private(set) var viewContent: NSView!
 
@@ -32,11 +32,10 @@ class LocationView: NSView {
     // MARK: - Actions
 
     @IBAction func buttonRefreshStatusTapped(_ sender: NSButton) {
-        let dealer = globals.locationDealer
 
-        labelPermissionValue.stringValue = "\(dealer.permit)".capitalized
+        labelPermissionValue.stringValue = "\(GeoAgent.currentStatus)".capitalized
 
-        dealer.requestPermission { permit in
+        GeoAgent.shared.requestPermission { permit in
             if permit != .allowed {
                 GeoAgent.showRedirectAlert(REDIRECT_ALERT_TITLES)
             }
@@ -47,10 +46,10 @@ class LocationView: NSView {
         let dealer = globals.locationDealer
 
         do {
-            try dealer.getCurrent()
+            try dealer.requestCurrentLocation()
         } catch LocationError.permissionRequired(let permit) {
 
-            log.message("[\(type(of: self))].\(#function) - permission required", .notice)
+            log.message("[\(type(of: self))].\(#function) permission required", .notice)
 
             if permit == .notDetermined {
                 dealer.requestPermission()
@@ -59,7 +58,7 @@ class LocationView: NSView {
             }
 
         } catch {
-            log.message("[\(type(of: self))].\(#function) - something totally wrong", .error)
+            log.message("[\(type(of: self))].\(#function) something went wrong", .error)
         }
     }
 
@@ -73,7 +72,7 @@ class LocationView: NSView {
         guard let className = type(of: self).className().components(separatedBy: ".").last,
               let nib = NSNib(nibNamed: className, bundle: Bundle(for: type(of: self)))
         else {
-            let text = "[\(type(of: self))].\(#function) No nib loaded."
+            let text = "[\(type(of: self))].\(#function) no nib loaded"
             log.message(text, .fault); fatalError(text)
         }
 
@@ -106,88 +105,32 @@ class LocationView: NSView {
 
         self.addConstraints(newConstraints)
 
-        // Setup location event handlers.
+        // Connect to Geo coordinator
+        globals.geoCoordinator.locationView = self
 
-        GeoAgent.register(with: self,
-                          selector: #selector(locationDealerCurrentHandler(_:)),
-                          name: .locationDealerCurrentNotification)
-
-        GeoAgent.register(with: self,
-                          selector: #selector(locationDealerStatusChangedHandler),
-                          name: .locationDealerStatusChangedNotification)
-
-        GeoAgent.register(with: self,
-                          selector: #selector(locationDealerErrorHandler(_:)),
-                          name: .locationDealerErrorNotification)
-
-        // Setup Dark Mode event handlers.
-
-        darkModeObserver.action = { _ in self.callDarkModeSensitiveColours() }
-
-        callDarkModeSensitiveColours()
+        // Give Dark Mode observer the action
+        darkModeObserver.action = { _ in self.makeUp() }
     }
 
     // MARK: - Contract
 
-    public func update() {
-        refresh()
+    public func reloadData() {
+        reload()
     }
 }
 
+// MARK: - Implementation
+
 extension LocationView {
 
-    @objc private func locationDealerCurrentHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))]:[EVENT].\(#function)", .info)
-
-        guard
-            let result = notification.object as? Result<GeoPoint, LocationError>
-        else {
-            log.message("[\(type(of: self))]:[EVENT].\(#function)", .error)
-            return
-        }
-
-        switch result {
-        case .success(let data):
-            AppGlobals.currentLocation = data
-        case .failure(let error):
-            log.message("\(error)", .error)
-        }
-
-        refresh()
-    }
-
-    @objc private func locationDealerStatusChangedHandler() {
-        // log.message("[\(type(of: self))]:[EVENT].\(#function)", .info)
-        refresh()
-    }
-
-    @objc private func locationDealerErrorHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))]:[EVENT].\(#function)", .info)
-
-        guard
-            let result = notification.object as? LocationError,
-            let failedRequestDetails = result.failedRequestDetails
-        else {
-            log.message("[\(type(of: self))].\(#function) - no error details", .error)
-            return
-        }
-
-        switch failedRequestDetails.code {
-        case 0: log.message("Wireless issue takes place. Try tap Wi-Fi.", .notice)
-        case 1: log.message("Permission deal required.", .notice)
-        default:
-            break
-        }
-    }
-
-    private func refresh() {
-        let permit = "\(globals.locationDealer.permit)".capitalized
-
-        labelPermissionValue.stringValue = permit
+    private func reload() {
+        labelPermissionValue.stringValue = "\(GeoAgent.currentStatus)".capitalized
         labelGeoCoupleValue.stringValue = CURRENT_GEO_POINT
     }
 
-    private func callDarkModeSensitiveColours() {
+    private func makeUp() {
+        log.message("[\(type(of: self))].\(#function)")
+
         labelPermissionValue.textColor = .customLabel
         labelGeoCoupleValue.textColor = .customLabel
     }
