@@ -33,18 +33,12 @@ struct AppGlobals {
 
     // MARK: - Custom Services
 
-    public let locationDealer: GeoAgent
-    public let geoCoordinator: GeoCoordinator
+    static let geoCoordinator =  GeoCoordinator.shared
 
     // MARK: - Initializer
 
     init() {
-
         log.message("[\(type(of: self))].\(#function)", .info)
-
-        locationDealer = GeoAgent.shared
-        geoCoordinator = GeoCoordinator.shared
-
         GeoAgent.currentAccuracy = PREFERED_ACCURACY
     }
 }

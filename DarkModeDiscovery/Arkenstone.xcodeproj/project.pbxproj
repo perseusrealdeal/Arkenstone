@@ -21,6 +21,7 @@
 		2ECF7ADF2DB29A1600ECB6B7 /* PDMSupportingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECF7ADE2DB29A1600ECB6B7 /* PDMSupportingStar.swift */; };
 		2ECFE08B2DB3705F0083FDBE /* PGKSupportingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECFE08A2DB3705F0083FDBE /* PGKSupportingStar.swift */; };
 		2ED09DDD2D99621D00DA2AD7 /* GeoConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED09DDC2D99621D00DA2AD7 /* GeoConstants.swift */; };
+		2EE0A1242DCDF59600C95C17 /* LocationDealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0A1232DCDF59600C95C17 /* LocationDealer.swift */; };
 		2EE1B7812DBE5D5400375792 /* ConsolePerseusLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 2EE1B7802DBE5D5400375792 /* ConsolePerseusLogger */; };
 		2EE1B7842DBE5D6300375792 /* PerseusDarkMode in Frameworks */ = {isa = PBXBuildFile; productRef = 2EE1B7832DBE5D6300375792 /* PerseusDarkMode */; };
 		4B0158E629103C0D009F1803 /* DarkModeDiscoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0158E529103C0D009F1803 /* DarkModeDiscoveryTests.swift */; };
@@ -75,6 +76,7 @@
 		2ECF7ADE2DB29A1600ECB6B7 /* PDMSupportingStar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDMSupportingStar.swift; sourceTree = "<group>"; };
 		2ECFE08A2DB3705F0083FDBE /* PGKSupportingStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGKSupportingStar.swift; sourceTree = "<group>"; };
 		2ED09DDC2D99621D00DA2AD7 /* GeoConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoConstants.swift; sourceTree = "<group>"; };
+		2EE0A1232DCDF59600C95C17 /* LocationDealer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDealer.swift; sourceTree = "<group>"; };
 		4B0158E329103C0D009F1803 /* ArkenstoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArkenstoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B0158E529103C0D009F1803 /* DarkModeDiscoveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeDiscoveryTests.swift; sourceTree = "<group>"; };
 		4B0158E729103C0D009F1803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				2ECC35AE2D8960AD0059FBCC /* MapViewController.swift */,
 				2ED09DDC2D99621D00DA2AD7 /* GeoConstants.swift */,
 				2ECC27532D9A99510097BBF2 /* GeoCoordinator.swift */,
+				2EE0A1232DCDF59600C95C17 /* LocationDealer.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				2ECC35AD2D8960A00059FBCC /* MapWindowController.swift in Sources */,
 				4B3A67E72965932D0024077F /* CompanionCollectionViewItem.swift in Sources */,
 				E00F83AC288A4A64000D0A01 /* main.swift in Sources */,
+				2EE0A1242DCDF59600C95C17 /* LocationDealer.swift in Sources */,
 				2E26B77A2D05B7B80009B96B /* LocationView.swift in Sources */,
 				4B7DD3B0297D33B700172BD4 /* CustomColors.swift in Sources */,
 				2ECC35AF2D8960AD0059FBCC /* MapViewController.swift in Sources */,

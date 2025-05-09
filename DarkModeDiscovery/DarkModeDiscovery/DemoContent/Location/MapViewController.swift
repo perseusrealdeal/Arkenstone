@@ -63,7 +63,7 @@ class MapViewController: NSViewController {
         mapView.setRegion(DEFAULT_VISIBLE_REGION, animated: true)
 
         // Connect to Geo coordinator
-        globals.geoCoordinator.mapViewController = self
+        AppGlobals.geoCoordinator.mapViewController = self
     }
 
     override func viewDidAppear() {

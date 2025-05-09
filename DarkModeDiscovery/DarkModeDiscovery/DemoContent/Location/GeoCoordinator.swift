@@ -42,6 +42,7 @@ class GeoCoordinator: NSObject {
     // MARK: - Contract
 
     public func reloadGeoComponents() {
+        log.message("[\(type(of: self))].\(#function)")
         updateGeoComponents()
     }
 }
@@ -50,6 +51,7 @@ class GeoCoordinator: NSObject {
 
 extension GeoCoordinator {
     private func updateGeoComponents() {
+        log.message("[\(type(of: self))].\(#function)")
         self.locationView?.reloadData()
         self.mapViewController?.reloadData()
     }
@@ -94,6 +96,10 @@ extension GeoCoordinator {
         log.message("[\(type(of: self))].\(#function) status: \(status) [EVENT]")
 
         updateGeoComponents()
+
+        if status == .allowed {
+            LocationDealer.requestCurrent()
+        }
     }
 
     @objc private func currentLocationHandler(_ notification: Notification) {

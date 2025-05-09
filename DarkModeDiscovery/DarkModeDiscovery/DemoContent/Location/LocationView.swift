@@ -32,34 +32,12 @@ class LocationView: NSView {
     // MARK: - Actions
 
     @IBAction func buttonRefreshStatusTapped(_ sender: NSButton) {
-
         labelPermissionValue.stringValue = "\(GeoAgent.currentStatus)".capitalized
-
-        GeoAgent.shared.requestPermission { permit in
-            if permit != .allowed {
-                GeoAgent.showRedirectAlert(REDIRECT_ALERT_TITLES)
-            }
-        }
+        LocationDealer.requestPermission()
     }
 
     @IBAction func buttonRefreshCurrentTapped(_ sender: NSButton) {
-        let dealer = globals.locationDealer
-
-        do {
-            try dealer.requestCurrentLocation()
-        } catch LocationError.permissionRequired(let permit) {
-
-            log.message("[\(type(of: self))].\(#function) permission required", .notice)
-
-            if permit == .notDetermined {
-                dealer.requestPermission()
-            } else {
-                GeoAgent.showRedirectAlert(REDIRECT_ALERT_TITLES)
-            }
-
-        } catch {
-            log.message("[\(type(of: self))].\(#function) something went wrong", .error)
-        }
+        LocationDealer.requestCurrent()
     }
 
     // MARK: - Initialization
@@ -106,7 +84,7 @@ class LocationView: NSView {
         self.addConstraints(newConstraints)
 
         // Connect to Geo coordinator
-        globals.geoCoordinator.locationView = self
+        AppGlobals.geoCoordinator.locationView = self
 
         // Connect to Dark Mode explicitly
         theDarknessTrigger.action = { _ in self.makeUp() }
