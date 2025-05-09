@@ -24,7 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         log.message("[\(type(of: self))].\(#function)")
 
         DarkModeAgent.force(DarkModeUserChoice)
-        AppGlobals.geoCoordinator.reloadGeoComponents()
+        GeoCoordinator.reloadGeoComponents()
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {

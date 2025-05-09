@@ -16,6 +16,24 @@ import Cocoa
 import ConsolePerseusLogger
 import PerseusGeoKit
 
+// MARK: - Geo Constants
+
+var DEFAULT_GEO_POINT: String { "\(DEFAULT_MAP_POINT.point)" }
+var CURRENT_GEO_POINT: String {
+
+    guard let point = AppGlobals.currentLocation else {
+        return "Latitude, Longitude"
+    }
+
+    return "\(point)"
+}
+
+var CURRENT_LOCATION: String {
+    return AppGlobals.currentLocation == nil ? DEFAULT_GEO_POINT : CURRENT_GEO_POINT
+}
+
+// MARK: - App Globals
+
 struct AppGlobals {
 
     // MARK: - Business Data
@@ -31,14 +49,16 @@ struct AppGlobals {
 
     static let notificationCenter = NotificationCenter.default
 
-    // MARK: - Custom Services
-
-    static let geoCoordinator =  GeoCoordinator.shared
-
     // MARK: - Initializer
 
     init() {
         log.message("[\(type(of: self))].\(#function)", .info)
+
         GeoAgent.currentAccuracy = PREFERED_ACCURACY
+        GeoCoordinator.shared.notifier = AppGlobals.notificationCenter
+
+        GeoCoordinator.shared.locationRecieved = { point in
+            AppGlobals.currentLocation = point
+        }
     }
 }

@@ -83,17 +83,11 @@ class LocationView: NSView {
 
         self.addConstraints(newConstraints)
 
-        // Connect to Geo coordinator
-        AppGlobals.geoCoordinator.locationView = self
+        // Connect to Geo Coordinator
+        GeoCoordinator.register(stakeholder: self, selector: #selector(reload))
 
         // Connect to Dark Mode explicitly
         theDarknessTrigger.action = { _ in self.makeUp() }
-    }
-
-    // MARK: - Contract
-
-    public func reloadData() {
-        reload()
     }
 }
 
@@ -101,7 +95,7 @@ class LocationView: NSView {
 
 extension LocationView {
 
-    private func reload() {
+    @objc private func reload() {
         labelPermissionValue.stringValue = "\(GeoAgent.currentStatus)".capitalized
         labelGeoCoupleValue.stringValue = CURRENT_GEO_POINT
     }

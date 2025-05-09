@@ -62,8 +62,8 @@ class MapViewController: NSViewController {
         // Set the defualt visible area
         mapView.setRegion(DEFAULT_VISIBLE_REGION, animated: true)
 
-        // Connect to Geo coordinator
-        AppGlobals.geoCoordinator.mapViewController = self
+        // Connect to Geo Coordinator
+        GeoCoordinator.register(stakeholder: self, selector: #selector(reload))
     }
 
     override func viewDidAppear() {
@@ -74,18 +74,12 @@ class MapViewController: NSViewController {
 
         reload()
     }
-
-    // MARK: - Contract
-
-    public func reloadData() {
-        reload()
-    }
 }
 
 // MARK: - Implementation
 
 extension MapViewController {
-    private func reload() {
+    @objc private func reload() {
         labelGeoStatus.stringValue = "\(GeoAgent.currentStatus)".capitalized
         labelCoordinate.stringValue = CURRENT_LOCATION
     }
