@@ -28,20 +28,20 @@ typealias geolog = PerseusGeoKit.PerseusLogger
 // dmlog.output = .consoleapp
 // geolog.output = .consoleapp
 
-dmlog.turned = .off
+// dmlog.turned = .off
 // geolog.turned = .off
 // log.turned = .off
 
-// MARK: - Construct the app's top elements
-
 log.message("The app's start point...", .info)
+
+let globals = AppGlobals()
+
+// MARK: - Construct the app's top elements
 
 let app = NSApplication.shared
 
 let appPurpose = NSClassFromString("TestingAppDelegate") as? NSObject.Type
 let appDelegate = appPurpose?.init() ?? AppDelegate()
-
-let globals = AppGlobals()
 
 let storyboard = NSStoryboard(name: String(describing: MainWindowController.self), bundle: nil)
 let screen = storyboard.instantiateInitialController() as? NSWindowController
@@ -77,8 +77,8 @@ func setMainWindow() {
        NSApplication.shared.windows.first?.windowController is MainWindowController,
        var frame = NSApplication.shared.windows.first?.frame {
 
-        let height: CGFloat = 500 // Default main window height
-        let width: CGFloat = 500 // Default main window width
+        let height: CGFloat = 600 // Default main window height
+        let width: CGFloat = 800 // Default main window width
 
         let origin_x = screen.frame.size.width / 2 - width / 2
         let origin_y = screen.frame.size.height / 2 - height / 2

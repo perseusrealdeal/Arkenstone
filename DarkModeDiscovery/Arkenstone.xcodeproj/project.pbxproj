@@ -71,6 +71,7 @@
 		2ECC35AE2D8960AD0059FBCC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		2ECF7ADE2DB29A1600ECB6B7 /* PDMSupportingStar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDMSupportingStar.swift; sourceTree = "<group>"; };
 		2ECFE08A2DB3705F0083FDBE /* PGKSupportingStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGKSupportingStar.swift; sourceTree = "<group>"; };
+		2EE5FCCE2DD06D22000AC9CD /* UpdatingLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = UpdatingLocation.gpx; sourceTree = "<group>"; };
 		4B0158E329103C0D009F1803 /* ArkenstoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArkenstoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B0158E529103C0D009F1803 /* DarkModeDiscoveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeDiscoveryTests.swift; sourceTree = "<group>"; };
 		4B0158E729103C0D009F1803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -228,6 +229,7 @@
 				4B7DD3AF297D33B700172BD4 /* CustomColors.swift */,
 				2ECF7ADE2DB29A1600ECB6B7 /* PDMSupportingStar.swift */,
 				2ECFE08A2DB3705F0083FDBE /* PGKSupportingStar.swift */,
+				2EE5FCCE2DD06D22000AC9CD /* UpdatingLocation.gpx */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";

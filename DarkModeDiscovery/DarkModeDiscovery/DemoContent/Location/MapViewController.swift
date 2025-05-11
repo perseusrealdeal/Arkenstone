@@ -25,45 +25,33 @@ class MapViewController: NSViewController {
     @IBOutlet private(set) weak var labelGeoStatus: NSTextField!
 
     @IBAction func actionButtonStopTapped(_ sender: NSButton) {
-        log.message("\(#function)")
+        GeoAgent.shared.stopUpdatingLocation()
     }
 
     @IBAction func actionButtonStartTapped(_ sender: NSButton) {
-        log.message("\(#function)")
+        LocationDealer.requestUpdatingLocation()
     }
 
     @IBAction func actionButtonCurrentTapped(_ sender: NSButton) {
-        log.message("\(#function)")
+        LocationDealer.requestCurrent()
     }
 
     @IBAction func actionButtonGoToPointTapped(_ sender: NSButton) {
-        guard let location = AppGlobals.currentLocation else {
-            labelCoordinate.stringValue = DEFAULT_GEO_POINT
-            mapView.setRegion(DEFAULT_VISIBLE_REGION, animated: true)
-            return
-        }
-
-        let point = CLLocation(latitude: location.latitude, longitude: location.longitude)
-        let region = MKCoordinateRegion(center: point.coordinate,
-                                        latitudinalMeters: DEFAULT_MAP_RADIUS,
-                                        longitudinalMeters: DEFAULT_MAP_RADIUS)
-
-        mapView.setRegion(region, animated: true)
-        // mapView.showsUserLocation = true
+        mapToCurrent()
     }
 
     @IBAction func actionButtonRefreshStatusTapped(_ sender: NSButton) {
-        log.message("\(#function)")
+        labelGeoStatus.stringValue = "\(GeoAgent.currentStatus)".capitalized
+        LocationDealer.requestPermission()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Set the defualt visible area
-        mapView.setRegion(DEFAULT_VISIBLE_REGION, animated: true)
-
         // Connect to Geo Coordinator
         GeoCoordinator.register(stakeholder: self, selector: #selector(reload))
+
+        log.message("[\(type(of: self))].\(#function)")
     }
 
     override func viewDidAppear() {
@@ -72,7 +60,14 @@ class MapViewController: NSViewController {
         self.view.wantsLayer = true
         self.parent?.view.window?.title = self.title!
 
-        reload()
+        if AppGlobals.currentLocation == nil {
+            labelCoordinate.stringValue = "Default: \(DEFAULT_GEO_POINT)"
+            mapView.setRegion(DEFAULT_VISIBLE_REGION, animated: true)
+        } else {
+            reload()
+        }
+
+        log.message("[\(type(of: self))].\(#function)")
     }
 }
 
@@ -82,5 +77,19 @@ extension MapViewController {
     @objc private func reload() {
         labelGeoStatus.stringValue = "\(GeoAgent.currentStatus)".capitalized
         labelCoordinate.stringValue = CURRENT_LOCATION
+
+        mapToCurrent()
+    }
+
+    private func mapToCurrent() {
+        guard let location = AppGlobals.currentLocation else { return }
+
+        let point = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        let region = MKCoordinateRegion(center: point.coordinate,
+                                        latitudinalMeters: DEFAULT_MAP_RADIUS,
+                                        longitudinalMeters: DEFAULT_MAP_RADIUS)
+
+        mapView.setRegion(region, animated: true)
+        mapView.showsUserLocation = true
     }
 }

@@ -24,15 +24,15 @@ class LocationView: NSView {
 
     @IBOutlet private(set) var viewContent: NSView!
 
-    @IBOutlet private(set) weak var labelPermissionValue: NSTextField!
-    @IBOutlet private(set) weak var labelGeoCoupleValue: NSTextField!
+    @IBOutlet private(set) weak var labelGeoStatus: NSTextField!
+    @IBOutlet private(set) weak var labelCoordinate: NSTextField!
 
     @IBOutlet private(set) weak var buttonRefresh: NSButton!
 
     // MARK: - Actions
 
     @IBAction func buttonRefreshStatusTapped(_ sender: NSButton) {
-        labelPermissionValue.stringValue = "\(GeoAgent.currentStatus)".capitalized
+        labelGeoStatus.stringValue = "\(GeoAgent.currentStatus)".capitalized
         LocationDealer.requestPermission()
     }
 
@@ -96,14 +96,14 @@ class LocationView: NSView {
 extension LocationView {
 
     @objc private func reload() {
-        labelPermissionValue.stringValue = "\(GeoAgent.currentStatus)".capitalized
-        labelGeoCoupleValue.stringValue = CURRENT_GEO_POINT
+        labelGeoStatus.stringValue = "\(GeoAgent.currentStatus)".capitalized
+        labelCoordinate.stringValue = CURRENT_GEO_POINT
     }
 
     private func makeUp() {
         log.message("[\(type(of: self))].\(#function)")
 
-        labelPermissionValue.textColor = .customLabel
-        labelGeoCoupleValue.textColor = .customLabel
+        labelGeoStatus.textColor = .customLabel
+        labelCoordinate.textColor = .customLabel
     }
 }

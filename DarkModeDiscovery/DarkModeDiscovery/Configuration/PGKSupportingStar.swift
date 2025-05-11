@@ -182,6 +182,8 @@ class GeoCoordinator: NSObject {
     public var locationRecieved: ((GeoPoint) -> Void)?
     public var locationUpdatesRecieved: (([GeoPoint]) -> Void)?
 
+    public var onStatusAllowed: (() -> Void)?
+
     // MARK: - Singletone
 
     public static let shared = GeoCoordinator()
@@ -258,7 +260,7 @@ class GeoCoordinator: NSObject {
         updateGeoComponents()
 
         if status == .allowed {
-            LocationDealer.requestCurrent()
+            onStatusAllowed?()
         }
     }
 

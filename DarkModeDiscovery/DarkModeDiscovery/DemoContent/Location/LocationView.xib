@@ -8,8 +8,8 @@
         <customObject id="-2" userLabel="File's Owner" customClass="LocationView" customModule="Arkenstone" customModuleProvider="target">
             <connections>
                 <outlet property="buttonRefresh" destination="Rt4-6V-u2J" id="qkB-sK-34A"/>
-                <outlet property="labelGeoCoupleValue" destination="H7e-9Y-s10" id="snC-12-neE"/>
-                <outlet property="labelPermissionValue" destination="71x-jc-6gh" id="8yG-LG-RbX"/>
+                <outlet property="labelCoordinate" destination="H7e-9Y-s10" id="snC-12-neE"/>
+                <outlet property="labelGeoStatus" destination="71x-jc-6gh" id="8yG-LG-RbX"/>
                 <outlet property="viewContent" destination="c22-O7-iKe" id="WvP-Mb-qzz"/>
             </connections>
         </customObject>

@@ -41,7 +41,7 @@ struct AppGlobals {
     static var currentLocation: GeoPoint? {
         didSet {
             let location = currentLocation?.description ?? "current location is erased"
-            log.message("\(location) [\(type(of: self))].\(#function)", .info)
+            log.message("\(location) \(#function)", .info)
         }
     }
 
@@ -55,10 +55,22 @@ struct AppGlobals {
         log.message("[\(type(of: self))].\(#function)", .info)
 
         GeoAgent.currentAccuracy = PREFERED_ACCURACY
+
+        GeoCoordinator.shared.onStatusAllowed = {
+            // LocationDealer.requestCurrent()
+            LocationDealer.requestUpdatingLocation()
+        }
         GeoCoordinator.shared.notifier = AppGlobals.notificationCenter
 
         GeoCoordinator.shared.locationRecieved = { point in
             AppGlobals.currentLocation = point
+        }
+
+        GeoCoordinator.shared.locationUpdatesRecieved = { updates in
+            if let lastone = updates.last {
+                log.message("recieved location updates: \(updates.count)")
+                AppGlobals.currentLocation = lastone
+            }
         }
     }
 }
