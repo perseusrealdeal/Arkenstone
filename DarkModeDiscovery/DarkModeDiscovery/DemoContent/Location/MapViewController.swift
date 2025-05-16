@@ -21,6 +21,11 @@ class MapViewController: NSViewController {
 
     @IBOutlet private(set) weak var mapView: MKMapView!
 
+    @IBOutlet private(set) weak var textScrollViewLog: NSScrollView!
+    @IBOutlet private(set) weak var textViewLog: NSTextView!
+
+    private var observation: NSKeyValueObservation?
+
     @IBOutlet private(set) weak var labelCoordinate: NSTextField!
     @IBOutlet private(set) weak var labelGeoStatus: NSTextField!
 
@@ -48,8 +53,18 @@ class MapViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        textViewLog.backgroundColor = .clear
+        textViewLog.textColor = .darkGray
+
         // Connect to Geo Coordinator
         GeoCoordinator.register(stakeholder: self, selector: #selector(reload))
+
+        // Connect to Log Reporting
+        observation = geoReport.observe(\.text) { _, _ in
+            self.refreshLogReportTextView()
+        }
+
+        refreshLogReportTextView()
     }
 
     override func viewDidAppear() {
@@ -87,5 +102,12 @@ extension MapViewController {
 
         mapView.setRegion(region, animated: true)
         mapView.showsUserLocation = true
+    }
+
+    private func refreshLogReportTextView() {
+        textViewLog.string = geoReport.text
+
+        let point = NSPoint(x: 0, y: textScrollViewLog.documentView?.frame.size.height ?? 0)
+        textScrollViewLog.contentView.scroll(to: point)
     }
 }
