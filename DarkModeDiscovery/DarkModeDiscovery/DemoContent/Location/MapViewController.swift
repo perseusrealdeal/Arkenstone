@@ -60,7 +60,7 @@ class MapViewController: NSViewController {
         GeoCoordinator.register(stakeholder: self, selector: #selector(reload))
 
         // Connect to Log Reporting
-        observation = geoReport.observe(\.text) { _, _ in
+        observation = geoReport.observe(\.lastMessage, options: .new) { _, _ in
             self.refreshLogReportTextView()
         }
 

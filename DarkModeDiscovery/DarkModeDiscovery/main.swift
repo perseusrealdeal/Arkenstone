@@ -27,7 +27,26 @@ typealias geolog = PerseusGeoKit.PerseusLogger
 typealias GeologLevel = PerseusGeoKit.PerseusLogger.Level
 
 class LocationServicesReport: NSObject {
-    @objc dynamic var text: String = ""
+
+    public var text: String { report }
+
+    @objc dynamic var lastMessage: String = "" {
+        didSet {
+            let count = report.count
+            if count > LIMIT {
+
+                let dropFirst = count - LIMIT
+                let text = report.dropFirst(dropFirst)
+
+                report = text.description
+            }
+
+            report.append(lastMessage)
+        }
+    }
+
+    private var report = ""
+    private let LIMIT = 2000
 }
 
 func reportGeoEvent(_ text: String, _ type: GeologLevel, _ localTime: LocalTime) {
@@ -35,7 +54,7 @@ func reportGeoEvent(_ text: String, _ type: GeologLevel, _ localTime: LocalTime)
     let newline = "\r\n" + "--" + "\r\n"
     let message = "[\(localTime.date)] [\(localTime.time)]\r\n> \(text)" + newline
 
-    geoReport.text.append(message)
+    geoReport.lastMessage = message
 }
 
 let geoReport = LocationServicesReport()

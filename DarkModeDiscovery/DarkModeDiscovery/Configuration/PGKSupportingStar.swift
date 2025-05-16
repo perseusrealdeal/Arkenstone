@@ -62,10 +62,17 @@ let DEFAULT_VISIBLE_REGION = MKCoordinateRegion(center: DEFAULT_MAP_POINT.coordi
                                                 latitudinalMeters: DEFAULT_MAP_RADIUS,
                                                 longitudinalMeters: DEFAULT_MAP_RADIUS)
 
-let REDIRECT_ALERT_TITLES = ActionAlertText(title: "Geo Locator for The App",
-                                            message: "Open System Settings?",
-                                            buttonCancel: "Cancel",
-                                            buttonFunction: "Open")
+var REDIRECT_ALERT_TITLES = ActionAlertText(
+    title: "Location Services.",
+    message: "It's possible to grant the app for the Location Services in System Services.",
+    buttonCancel: "OK",
+    buttonFunction: "System Services")
+
+extension ActionAlertText {
+    var titleWithStatus: String {
+        return "Location Services: \(GeoAgent.currentStatus)."
+    }
+}
 
 extension Notification.Name {
     static let ReloadGeoDataNotification = Notification.Name("ReloadGeoDataNotification")
@@ -82,6 +89,7 @@ class LocationDealer {
     public class func requestPermission(_ alertViewController: UIViewController? = nil) {
         GeoAgent.shared.requestPermission { status in
             if status != .allowed, let parentVC = alertViewController {
+                REDIRECT_ALERT_TITLES.title = REDIRECT_ALERT_TITLES.titleWithStatus
                 GeoAgent.showRedirectAlert(parentVC, REDIRECT_ALERT_TITLES) // Offer redirect.
             }
         }
@@ -97,6 +105,7 @@ class LocationDealer {
             if status == .notDetermined {
                 GeoAgent.shared.requestPermission() // Request permission.
             } else if let parentVC = alertViewController {
+                REDIRECT_ALERT_TITLES.title = REDIRECT_ALERT_TITLES.titleWithStatus
                 GeoAgent.showRedirectAlert(parentVC, REDIRECT_ALERT_TITLES) // Offer redirect.
             }
 
@@ -113,6 +122,7 @@ class LocationDealer {
             if status == .notDetermined {
                 GeoAgent.shared.requestPermission() // Request permission.
             } else if let parentVC = alertViewController {
+                REDIRECT_ALERT_TITLES.title = REDIRECT_ALERT_TITLES.titleWithStatus
                 GeoAgent.showRedirectAlert(parentVC, REDIRECT_ALERT_TITLES) // Offer redirect.
             }
 
@@ -128,7 +138,8 @@ class LocationDealer {
     public class func requestPermission() {
         GeoAgent.shared.requestPermission { status in
             if status != .allowed {
-                GeoAgent.showRedirectAlert(REDIRECT_ALERT_TITLES)
+                REDIRECT_ALERT_TITLES.title = REDIRECT_ALERT_TITLES.titleWithStatus
+                GeoAgent.showRedirectAlert(REDIRECT_ALERT_TITLES)  // Offer redirect.
             }
         }
     }
@@ -143,6 +154,7 @@ class LocationDealer {
             if status == .notDetermined {
                 GeoAgent.shared.requestPermission() // Request permission.
             } else {
+                REDIRECT_ALERT_TITLES.title = REDIRECT_ALERT_TITLES.titleWithStatus
                 GeoAgent.showRedirectAlert(REDIRECT_ALERT_TITLES) // Offer redirect.
             }
 
@@ -159,6 +171,7 @@ class LocationDealer {
             if status == .notDetermined {
                 GeoAgent.shared.requestPermission() // Request permission.
             } else {
+                REDIRECT_ALERT_TITLES.title = REDIRECT_ALERT_TITLES.titleWithStatus
                 GeoAgent.showRedirectAlert(REDIRECT_ALERT_TITLES) // Offer redirect.
             }
 
