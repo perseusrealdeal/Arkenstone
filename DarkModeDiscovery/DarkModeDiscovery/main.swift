@@ -34,27 +34,25 @@ class LocationServicesReport: NSObject {
         didSet {
             let count = report.count
             if count > LIMIT {
+                report = report.dropFirst(count - LIMIT).description
 
-                let dropFirst = count - LIMIT
-                let text = report.dropFirst(dropFirst)
-
-                report = text.description
+                if let position = report.range(of: newline)?.upperBound {
+                    report.removeFirst(position.utf16Offset(in: report)-2)
+                }
             }
 
-            report.append(lastMessage)
+            report.append(lastMessage + newline)
         }
     }
 
     private var report = ""
+
     private let LIMIT = 2000
+    private let newline = "\r\n--\r\n"
 }
 
 func reportGeoEvent(_ text: String, _ type: GeologLevel, _ localTime: LocalTime) {
-
-    let newline = "\r\n" + "--" + "\r\n"
-    let message = "[\(localTime.date)] [\(localTime.time)]\r\n> \(text)" + newline
-
-    geoReport.lastMessage = message
+    geoReport.lastMessage = "[\(localTime.date)] [\(localTime.time)]\r\n> \(text)"
 }
 
 let geoReport = LocationServicesReport()
