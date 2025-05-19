@@ -65,15 +65,18 @@ let geoReport = LocationServicesReport()
 
 log.output = .consoleapp
 dmlog.output = .consoleapp
-// geolog.output = .consoleapp
+geolog.output = .consoleapp
 
+log.format = .textonly
+dmlog.format = .textonly
 geolog.format = .textonly
-geolog.output = .custom
 
-geolog.customActionOnMessage = reportGeoEvent(_:_:_:)
+// geolog.output = .custom
+// geolog.customActionOnMessage = reportGeoEvent(_:_:_:)
 
-dmlog.time = true
-log.time = true
+// log.time = true
+// dmlog.time = true
+// geolog.time = true
 
 log.message("The app's start point...", .info)
 

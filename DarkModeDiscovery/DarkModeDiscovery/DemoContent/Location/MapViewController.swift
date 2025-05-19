@@ -11,7 +11,7 @@
 //  All rights reserved.
 //
 
-import Cocoa
+import AppKit
 import MapKit
 
 import ConsolePerseusLogger
@@ -24,7 +24,10 @@ class MapViewController: NSViewController {
     @IBOutlet private(set) weak var textScrollViewLog: NSScrollView!
     @IBOutlet private(set) weak var textViewLog: NSTextView!
 
+    @IBOutlet private(set) weak var checkButtonAutoMapToCurrent: NSButton!
+
     private var observation: NSKeyValueObservation?
+    private var autoMapToCurrent = true
 
     @IBOutlet private(set) weak var labelCoordinate: NSTextField!
     @IBOutlet private(set) weak var labelGeoStatus: NSTextField!
@@ -50,11 +53,17 @@ class MapViewController: NSViewController {
         LocationDealer.requestPermission()
     }
 
+    @IBAction func actionButtonAutoMapTapped(_ sender: NSButton) {
+        autoMapToCurrent = sender.state == .off ? false : true
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         textViewLog.backgroundColor = .clear
         textViewLog.textColor = .darkGray
+
+        checkButtonAutoMapToCurrent.state = autoMapToCurrent ? .on : .off
 
         // Connect to Geo Coordinator
         GeoCoordinator.register(stakeholder: self, selector: #selector(reload))
@@ -64,7 +73,7 @@ class MapViewController: NSViewController {
             self.refreshLogReportTextView()
         }
 
-        refreshLogReportTextView()
+        textScrollViewLog.isHidden = true
     }
 
     override func viewDidAppear() {
@@ -79,17 +88,22 @@ class MapViewController: NSViewController {
         } else {
             reload()
         }
+
+        refreshLogReportTextView()
     }
 }
 
 // MARK: - Implementation
 
 extension MapViewController {
+
     @objc private func reload() {
         labelGeoStatus.stringValue = "\(GeoAgent.currentStatus)".capitalized
         labelCoordinate.stringValue = CURRENT_LOCATION
 
-        mapToCurrent()
+        if autoMapToCurrent {
+            mapToCurrent()
+        }
     }
 
     private func mapToCurrent() {
@@ -105,9 +119,8 @@ extension MapViewController {
     }
 
     private func refreshLogReportTextView() {
-        textViewLog.string = geoReport.text
+        // textViewLog.string = geoReport.text
 
-        let point = NSPoint(x: 0, y: textScrollViewLog.documentView?.frame.size.height ?? 0)
-        textScrollViewLog.contentView.scroll(to: point)
+        // TODO: - Scroll to bottom
     }
 }

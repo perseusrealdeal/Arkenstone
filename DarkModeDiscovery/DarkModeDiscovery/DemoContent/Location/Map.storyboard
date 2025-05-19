@@ -47,7 +47,7 @@
                                 <standardMapConfiguration key="preferredConfiguration" elevationStyle="realistic"/>
                             </mapView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f43-QN-Yp7">
-                                <rect key="frame" x="413" y="243" width="104" height="32"/>
+                                <rect key="frame" x="413" y="233" width="104" height="32"/>
                                 <buttonCell key="cell" type="push" title="Go To Point" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JPL-CU-Rqp">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -57,7 +57,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2WA-kr-OsB">
-                                <rect key="frame" x="353" y="243" width="64" height="32"/>
+                                <rect key="frame" x="353" y="233" width="64" height="32"/>
                                 <buttonCell key="cell" type="push" title="Stop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AFn-2o-doV">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -67,7 +67,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="K2x-pI-NXx">
-                                <rect key="frame" x="293" y="243" width="64" height="32"/>
+                                <rect key="frame" x="293" y="233" width="64" height="32"/>
                                 <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VNQ-Ec-Xdc">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -77,7 +77,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9Pp-XI-Fid">
-                                <rect key="frame" x="217" y="243" width="80" height="32"/>
+                                <rect key="frame" x="217" y="233" width="80" height="32"/>
                                 <buttonCell key="cell" type="push" title="Current" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cHz-CX-a9n">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -87,7 +87,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nJl-RP-M8I">
-                                <rect key="frame" x="390" y="224" width="122" height="16"/>
+                                <rect key="frame" x="390" y="214" width="122" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="Latitude, Longitude" id="5xy-Mv-fjx">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -95,7 +95,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FhB-70-nHJ">
-                                <rect key="frame" x="77" y="243" width="144" height="32"/>
+                                <rect key="frame" x="77" y="233" width="144" height="32"/>
                                 <buttonCell key="cell" type="push" title="Permission Status" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mQY-e1-Bso">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -105,7 +105,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iac-N3-spI">
-                                <rect key="frame" x="114" y="224" width="71" height="16"/>
+                                <rect key="frame" x="114" y="214" width="71" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="Permission" id="ean-d0-Rd5">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -113,17 +113,17 @@
                                 </textFieldCell>
                             </textField>
                             <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0h-3g-MZP">
-                                <rect key="frame" x="0.0" y="0.0" width="520" height="135"/>
+                                <rect key="frame" x="0.0" y="0.0" width="364" height="135"/>
                                 <clipView key="contentView" drawsBackground="NO" id="LlO-0p-ltB">
-                                    <rect key="frame" x="0.0" y="0.0" width="520" height="135"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="364" height="135"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Z8z-CC-Qmn">
-                                            <rect key="frame" x="0.0" y="0.0" width="520" height="135"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="364" height="135"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="520" height="135"/>
+                                            <size key="minSize" width="364" height="135"/>
                                             <size key="maxSize" width="520" height="10000000"/>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -134,15 +134,25 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="PYh-oh-3hq">
-                                    <rect key="frame" x="504" y="0.0" width="16" height="135"/>
+                                    <rect key="frame" x="348" y="0.0" width="16" height="135"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cnK-fo-iiD">
+                                <rect key="frame" x="418" y="268" width="93" height="18"/>
+                                <buttonCell key="cell" type="check" title="Auto Go To" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Nr3-2F-v4j">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="actionButtonAutoMapTapped:" target="TeN-YK-hyK" id="jNy-gV-r9X"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="2WA-kr-OsB" firstAttribute="leading" secondItem="K2x-pI-NXx" secondAttribute="trailing" constant="10" id="61L-32-UHp"/>
                             <constraint firstItem="iac-N3-spI" firstAttribute="centerX" secondItem="FhB-70-nHJ" secondAttribute="centerX" id="D52-3g-1tz"/>
-                            <constraint firstItem="f43-QN-Yp7" firstAttribute="top" secondItem="BCN-XX-VIt" secondAttribute="top" constant="30" id="JF5-lD-qYC"/>
+                            <constraint firstItem="f43-QN-Yp7" firstAttribute="top" secondItem="BCN-XX-VIt" secondAttribute="top" constant="40" id="JF5-lD-qYC"/>
                             <constraint firstAttribute="trailing" secondItem="f43-QN-Yp7" secondAttribute="trailing" constant="10" id="Jdy-RV-8Mu"/>
                             <constraint firstItem="K2x-pI-NXx" firstAttribute="centerY" secondItem="2WA-kr-OsB" secondAttribute="centerY" id="JxO-b8-bIE"/>
                             <constraint firstItem="FhB-70-nHJ" firstAttribute="centerY" secondItem="2WA-kr-OsB" secondAttribute="centerY" id="MCa-bn-4MV"/>
@@ -151,20 +161,23 @@
                             <constraint firstItem="9Pp-XI-Fid" firstAttribute="leading" secondItem="FhB-70-nHJ" secondAttribute="trailing" constant="10" id="R9d-73-wju"/>
                             <constraint firstAttribute="bottom" secondItem="Jhs-hh-bhk" secondAttribute="bottom" id="RDk-7l-9rY"/>
                             <constraint firstItem="l0h-3g-MZP" firstAttribute="height" secondItem="BCN-XX-VIt" secondAttribute="height" multiplier="0.45" id="SJg-zq-UoB"/>
+                            <constraint firstItem="cnK-fo-iiD" firstAttribute="top" secondItem="Jhs-hh-bhk" secondAttribute="top" constant="15" id="SXb-U3-bAx"/>
                             <constraint firstItem="2WA-kr-OsB" firstAttribute="centerY" secondItem="f43-QN-Yp7" secondAttribute="centerY" id="VXi-Xr-cSC"/>
                             <constraint firstItem="9Pp-XI-Fid" firstAttribute="centerY" secondItem="2WA-kr-OsB" secondAttribute="centerY" id="aFy-4v-ZuZ"/>
                             <constraint firstAttribute="trailing" secondItem="Jhs-hh-bhk" secondAttribute="trailing" id="awc-fK-gbB"/>
                             <constraint firstAttribute="bottom" secondItem="l0h-3g-MZP" secondAttribute="bottom" id="eUd-DK-ZiK"/>
+                            <constraint firstItem="l0h-3g-MZP" firstAttribute="width" secondItem="BCN-XX-VIt" secondAttribute="width" multiplier="0.7" id="fJy-um-Bu5"/>
+                            <constraint firstItem="cnK-fo-iiD" firstAttribute="leading" secondItem="f43-QN-Yp7" secondAttribute="leading" id="imu-fN-Cd3"/>
                             <constraint firstItem="Jhs-hh-bhk" firstAttribute="top" secondItem="BCN-XX-VIt" secondAttribute="top" id="jNP-7R-SFQ"/>
                             <constraint firstItem="Jhs-hh-bhk" firstAttribute="leading" secondItem="BCN-XX-VIt" secondAttribute="leading" id="mKV-xZ-9Wi"/>
                             <constraint firstAttribute="trailing" secondItem="nJl-RP-M8I" secondAttribute="trailing" constant="10" id="pY0-YA-Mge"/>
                             <constraint firstItem="iac-N3-spI" firstAttribute="top" secondItem="FhB-70-nHJ" secondAttribute="bottom" constant="10" id="tek-WC-pfn"/>
                             <constraint firstItem="l0h-3g-MZP" firstAttribute="leading" secondItem="BCN-XX-VIt" secondAttribute="leading" id="vhU-pD-0Qu"/>
-                            <constraint firstAttribute="trailing" secondItem="l0h-3g-MZP" secondAttribute="trailing" id="xdk-9Q-Hk3"/>
                             <constraint firstItem="K2x-pI-NXx" firstAttribute="leading" secondItem="9Pp-XI-Fid" secondAttribute="trailing" constant="10" id="zy6-hM-xmM"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="checkButtonAutoMapToCurrent" destination="cnK-fo-iiD" id="wO7-Ul-0G7"/>
                         <outlet property="labelCoordinate" destination="nJl-RP-M8I" id="18u-ub-iHM"/>
                         <outlet property="labelGeoStatus" destination="iac-N3-spI" id="gsH-2M-oxh"/>
                         <outlet property="mapView" destination="Jhs-hh-bhk" id="zOd-UK-XMW"/>
