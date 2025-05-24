@@ -14,7 +14,7 @@
 import Cocoa
 
 import ConsolePerseusLogger
-import PerseusGeoKit
+// import PerseusGeoKit
 
 // MARK: - Geo Constants
 
@@ -42,7 +42,7 @@ struct AppGlobals {
         didSet {
             let location = currentLocation?.description ?? "current location is erased"
             log.message("\(location) \(#function)", .info)
-            geolog.message("\(location)")
+            log.message("\(location)", .debug, .custom)
         }
     }
 
@@ -70,7 +70,7 @@ struct AppGlobals {
         GeoCoordinator.shared.locationUpdatesRecieved = { updates in
             if let thelastone = updates.last {
                 log.message("recieved location updates: \(updates.count)")
-                geolog.message("recieved location updates: \(updates.count)")
+                log.message("recieved location updates: \(updates.count)", .debug, .custom)
                 AppGlobals.currentLocation = thelastone
             }
         }

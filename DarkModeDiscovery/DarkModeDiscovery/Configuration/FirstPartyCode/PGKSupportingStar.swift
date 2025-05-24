@@ -43,13 +43,13 @@
 // swiftlint:disable file_length
 //
 
+import ConsolePerseusLogger
+// import PerseusGeoKit
+
 #if os(iOS)
 import UIKit
 #endif
 import MapKit
-
-import ConsolePerseusLogger
-import PerseusGeoKit
 
 // MARK: - Geo Constants
 
@@ -267,8 +267,22 @@ class GeoCoordinator: NSObject {
 
     @objc private func locationStatusHandler(_ notification: Notification) {
 
+        guard let sysStatus = notification.object as? CLAuthorizationStatus else {
+            let errtext = "nothing is about status event"
+            log.message("[\(type(of: self))].\(#function) \(errtext)", .error)
+            return
+        }
+
+        let lmStatus = GeoAgent.aboutLocationServices().auth
+
+        if lmStatus != sysStatus {
+            let statues = "lm status: \(lmStatus), system status: \(sysStatus)"
+            log.message("[\(type(of: self))].\(#function) \(statues)", .error)
+        }
+
         let status = GeoAgent.currentStatus
-        log.message("[\(type(of: self))].\(#function) status: \(status) [EVENT]")
+
+        log.message("[\(type(of: self))].\(#function) currentStatus: \(status) [EVENT]")
 
         updateGeoComponents()
 

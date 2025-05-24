@@ -14,7 +14,7 @@
 import Cocoa
 
 import ConsolePerseusLogger
-import PerseusGeoKit
+// import PerseusGeoKit
 import PerseusDarkMode
 
 @IBDesignable

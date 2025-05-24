@@ -15,7 +15,7 @@ import AppKit
 import MapKit
 
 import ConsolePerseusLogger
-import PerseusGeoKit
+// import PerseusGeoKit
 
 class MapViewController: NSViewController {
 
@@ -35,6 +35,8 @@ class MapViewController: NSViewController {
     @IBOutlet private(set) weak var labelAboutStatus: NSTextField!
 
     @IBAction func buttonAboutStatusTapped(_ sender: NSButton) {
+        labelGeoStatus.stringValue = "\(GeoAgent.currentStatus)".capitalized
+
         let status = GeoAgent.aboutLocationServices()
         labelAboutStatus.stringValue = "enabled: \(status.enabled), auth: \(status.auth)"
     }
@@ -52,13 +54,10 @@ class MapViewController: NSViewController {
     }
 
     @IBAction func actionButtonGoToPointTapped(_ sender: NSButton) {
-
         mapToCurrent()
     }
 
     @IBAction func actionButtonRefreshStatusTapped(_ sender: NSButton) {
-        labelGeoStatus.stringValue = "\(GeoAgent.currentStatus)".capitalized
-
         if GeoAgent.currentStatus == .allowed {
             REDIRECT_ALERT_TITLES.title = REDIRECT_ALERT_TITLES.titleWithStatus
             GeoAgent.showRedirectAlert(REDIRECT_ALERT_TITLES)  // Offer redirect.
@@ -69,6 +68,10 @@ class MapViewController: NSViewController {
 
     @IBAction func actionButtonAutoMapTapped(_ sender: NSButton) {
         autoMapToCurrent = sender.state == .off ? false : true
+    }
+
+    @IBAction func actionButtonReinitTapped(_ sender: NSButton) {
+        GeoAgent.shared.reInitLocationManager()
     }
 
     override func viewDidLoad() {
