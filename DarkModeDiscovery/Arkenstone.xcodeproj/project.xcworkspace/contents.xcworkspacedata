@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/perseus/Documents/GitHub/macOS.DarkMode.Discovery/DarkModeDiscovery/Arkenstone.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>

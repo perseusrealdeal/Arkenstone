@@ -4,6 +4,19 @@
 
 ## macOS
 
+> Approbated capability: Logging<br/>
+
+| macOS       | Version  | DarkMode | Details |
+| ----------- | -------- | :------: | ------- |
+| High Sierra | 10.13.6  | ??       | -       |
+| Mojave      | 10.14.6  | ??       | -       |
+| Catalina    | 10.15.7  | ??       | -       |
+| Big Sur     | 11.7.10  | ??       | -       |
+| Monterey    | 12.7.6   | ??       | -       |
+| Ventura     | 13.7     | ??       | -       |
+| Sonoma      | 14.7.1   | ??       | -       |
+| Sequoia     | 15.1.1   | ??       | -       |
+
 > Approbated capability: Dark Mode<br/>
 
 | macOS       | Version  | DarkMode | Details |

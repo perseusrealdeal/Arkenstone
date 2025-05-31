@@ -9,11 +9,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-        <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6" customClass="TheMenu" customModule="DarkModeDiscovery" customModuleProvider="target">
+        <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6" customClass="TheMenu" customModule="Arkenstone" customModuleProvider="target">
             <items>
-                <menuItem title="Dark Mode Discovery" id="1Xt-HY-uBw">
+                <menuItem title="Arkenstone" id="1Xt-HY-uBw">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Dark Mode Discovery" systemMenu="apple" id="uQy-DD-JDr">
+                    <menu key="submenu" title="Arkenstone" systemMenu="apple" id="uQy-DD-JDr">
                         <items>
                             <menuItem title="About this App" id="5kV-Vb-QxS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -24,7 +24,7 @@
                             <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                             <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
                                 <connections>
-                                    <action selector="showPreferences:" target="-1" id="OZp-6r-RQN"/>
+                                    <action selector="showOptions:" target="-1" id="pHV-XC-xl9"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>

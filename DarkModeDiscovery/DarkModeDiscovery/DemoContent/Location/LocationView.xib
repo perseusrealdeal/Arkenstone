@@ -6,11 +6,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="LocationView" customModule="DarkModeDiscovery" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="LocationView" customModule="Arkenstone" customModuleProvider="target">
             <connections>
                 <outlet property="buttonRefresh" destination="Rt4-6V-u2J" id="qkB-sK-34A"/>
-                <outlet property="labelGeoCoupleValue" destination="H7e-9Y-s10" id="snC-12-neE"/>
-                <outlet property="labelPermissionValue" destination="71x-jc-6gh" id="8yG-LG-RbX"/>
+                <outlet property="labelAboutStatus" destination="AMS-cJ-zj7" id="KSc-FX-rrF"/>
+                <outlet property="labelCoordinate" destination="H7e-9Y-s10" id="CFm-fY-KgE"/>
+                <outlet property="labelGeoStatus" destination="71x-jc-6gh" id="8yG-LG-RbX"/>
                 <outlet property="viewContent" destination="c22-O7-iKe" id="WvP-Mb-qzz"/>
             </connections>
         </customObject>
@@ -20,20 +21,9 @@
             <rect key="frame" x="0.0" y="0.0" width="325" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="71x-jc-6gh">
-                    <rect key="frame" x="18" y="67" width="169" height="16"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="Location Permission Status" id="ZoO-i7-WgI">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3uB-QI-UYp">
-                    <rect key="frame" x="183" y="58" width="144" height="32"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="130" id="Llc-n0-hms"/>
-                    </constraints>
-                    <buttonCell key="cell" type="push" title="Refresh Status" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dIT-tv-qcR">
+                    <rect key="frame" x="3" y="33" width="144" height="32"/>
+                    <buttonCell key="cell" type="push" title="Update Status" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dIT-tv-qcR">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -42,11 +32,11 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rt4-6V-u2J">
-                    <rect key="frame" x="-2" y="-2" width="144" height="32"/>
+                    <rect key="frame" x="3" y="3" width="144" height="32"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="130" id="chu-IU-ZvB"/>
                     </constraints>
-                    <buttonCell key="cell" type="push" title="Current Location" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2fS-RZ-UW3">
+                    <buttonCell key="cell" type="push" title="Current Location" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2fS-RZ-UW3">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -55,8 +45,34 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H7e-9Y-s10">
-                    <rect key="frame" x="138" y="7" width="122" height="16"/>
+                    <rect key="frame" x="143" y="12" width="122" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="Latitude, Longitude" id="EHa-6H-vdu">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="71x-jc-6gh">
+                    <rect key="frame" x="143" y="42" width="169" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="Location Permission Status" id="ZoO-i7-WgI">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pyl-tJ-WN8">
+                    <rect key="frame" x="3" y="63" width="144" height="32"/>
+                    <buttonCell key="cell" type="push" title="About Status" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="d6M-5C-MQf">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="buttonAboutStatusTapped:" target="-2" id="PcY-Ov-d1I"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AMS-cJ-zj7">
+                    <rect key="frame" x="143" y="72" width="152" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="About Location Services" id="tuk-iY-50g">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -64,14 +80,20 @@
                 </textField>
             </subviews>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Rt4-6V-u2J" secondAttribute="bottom" constant="5" id="7Zp-Sr-b4H"/>
-                <constraint firstItem="3uB-QI-UYp" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="5" id="Fv2-6s-Rap"/>
-                <constraint firstItem="3uB-QI-UYp" firstAttribute="leading" secondItem="71x-jc-6gh" secondAttribute="trailing" constant="5" id="Kgd-bD-ZqO"/>
-                <constraint firstAttribute="trailing" secondItem="3uB-QI-UYp" secondAttribute="trailing" constant="5" id="PaF-si-h11"/>
+                <constraint firstItem="AMS-cJ-zj7" firstAttribute="centerY" secondItem="pyl-tJ-WN8" secondAttribute="centerY" id="1M3-YJ-yF2"/>
+                <constraint firstItem="Rt4-6V-u2J" firstAttribute="top" secondItem="3uB-QI-UYp" secondAttribute="bottom" constant="10" id="2CO-4S-Gbm"/>
+                <constraint firstAttribute="bottom" secondItem="Rt4-6V-u2J" secondAttribute="bottom" constant="10" id="7Zp-Sr-b4H"/>
+                <constraint firstItem="3uB-QI-UYp" firstAttribute="trailing" secondItem="Rt4-6V-u2J" secondAttribute="trailing" id="9o5-AK-o1v"/>
+                <constraint firstItem="71x-jc-6gh" firstAttribute="leading" secondItem="3uB-QI-UYp" secondAttribute="trailing" constant="5" id="Bvw-0F-Pu4"/>
+                <constraint firstItem="3uB-QI-UYp" firstAttribute="width" secondItem="Rt4-6V-u2J" secondAttribute="width" id="CHh-DE-33J"/>
+                <constraint firstItem="AMS-cJ-zj7" firstAttribute="leading" secondItem="pyl-tJ-WN8" secondAttribute="trailing" constant="5" id="G3C-xa-bI3"/>
+                <constraint firstItem="3uB-QI-UYp" firstAttribute="top" secondItem="pyl-tJ-WN8" secondAttribute="bottom" constant="10" id="KsB-J5-R5E"/>
                 <constraint firstItem="H7e-9Y-s10" firstAttribute="centerY" secondItem="Rt4-6V-u2J" secondAttribute="centerY" id="RpO-rW-dMo"/>
+                <constraint firstItem="71x-jc-6gh" firstAttribute="centerY" secondItem="3uB-QI-UYp" secondAttribute="centerY" id="TP6-0u-RLQ"/>
+                <constraint firstItem="pyl-tJ-WN8" firstAttribute="trailing" secondItem="3uB-QI-UYp" secondAttribute="trailing" id="fYn-fL-1GT"/>
                 <constraint firstItem="H7e-9Y-s10" firstAttribute="leading" secondItem="Rt4-6V-u2J" secondAttribute="trailing" constant="5" id="hhW-L5-hqJ"/>
-                <constraint firstItem="Rt4-6V-u2J" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="5" id="kO0-jp-Wff"/>
-                <constraint firstItem="71x-jc-6gh" firstAttribute="centerY" secondItem="3uB-QI-UYp" secondAttribute="centerY" id="v81-m5-yKW"/>
+                <constraint firstItem="Rt4-6V-u2J" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="10" id="kO0-jp-Wff"/>
+                <constraint firstItem="pyl-tJ-WN8" firstAttribute="width" secondItem="3uB-QI-UYp" secondAttribute="width" id="mrf-s6-J2r"/>
             </constraints>
             <point key="canvasLocation" x="-278" y="65"/>
         </customView>

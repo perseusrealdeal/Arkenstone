@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="VHw-gu-uhd">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="plz-Dn-1Nb">
+            <objects>
+                <windowController id="VHw-gu-uhd" customClass="OptionsWindowController" customModule="Arkenstone" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="dQe-r5-h6F">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" fullSizeContentView="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="163" y="199" width="630" height="300"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
+                        <connections>
+                            <outlet property="delegate" destination="VHw-gu-uhd" id="x67-Fn-1td"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="2G3-pC-M2U" kind="relationship" relationship="window.shadowedContentViewController" id="y5c-Bk-J3O"/>
+                    </connections>
+                </windowController>
+                <customObject id="Foj-6z-ksK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="671" y="-148"/>
+        </scene>
+        <!--General-->
+        <scene sceneID="zYJ-So-2PA">
+            <objects>
+                <viewController title="General" id="2G3-pC-M2U" customClass="OptionsViewController" customModule="Arkenstone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="5RK-HS-UFI">
+                        <rect key="frame" x="0.0" y="0.0" width="630" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qmk-kD-jq1" customClass="DarkModeImageView" customModule="Arkenstone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="630" height="300"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Ktr-Lg-9Ke"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="imageLight" value="BilboAndRing"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="imageDark" value="BilboDark"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="aspectFillClipToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <box title="System Dark Mode" translatesAutoresizingMaskIntoConstraints="NO" id="GBL-iE-Fvd" userLabel="System Dark Mode Box">
+                                <rect key="frame" x="7" y="6" width="266" height="124"/>
+                                <view key="contentView" id="Stj-JW-3vX">
+                                    <rect key="frame" x="3" y="3" width="260" height="106"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MgC-4T-TOh">
+                                            <rect key="frame" x="-2" y="74" width="264" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="250" id="5uf-wL-na9"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="push" title="1 = AppleInterfaceStyle" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ojw-ZE-jHp">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="button1Tapped:" target="2G3-pC-M2U" id="LpM-SI-8hE"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tgr-ub-jqn">
+                                            <rect key="frame" x="-2" y="49" width="264" height="32"/>
+                                            <buttonCell key="cell" type="push" title="2 = NSApp.windows.first" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="e1H-xL-bMJ">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="button2Tapped:" target="2G3-pC-M2U" id="hbF-29-HDd"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zHr-LF-ffP">
+                                            <rect key="frame" x="-2" y="24" width="264" height="32"/>
+                                            <buttonCell key="cell" type="push" title="3 = NSApplication.shared.appearance" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jhZ-yr-17M">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="button3Tapped:" target="2G3-pC-M2U" id="THQ-BJ-DUl"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jac-fc-yeH">
+                                            <rect key="frame" x="-2" y="-1" width="264" height="32"/>
+                                            <buttonCell key="cell" type="push" title="4 = NSAppearance.currentDrawing" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="acg-bN-47W">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="button4Tapped:" target="2G3-pC-M2U" id="MDL-U3-e3y"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Tgr-ub-jqn" firstAttribute="top" secondItem="MgC-4T-TOh" secondAttribute="bottom" constant="5" id="1Gw-LJ-7YE"/>
+                                        <constraint firstItem="zHr-LF-ffP" firstAttribute="leading" secondItem="MgC-4T-TOh" secondAttribute="leading" id="3EL-v4-aOP"/>
+                                        <constraint firstItem="Tgr-ub-jqn" firstAttribute="leading" secondItem="MgC-4T-TOh" secondAttribute="leading" id="A0c-6c-acR"/>
+                                        <constraint firstItem="zHr-LF-ffP" firstAttribute="top" secondItem="Tgr-ub-jqn" secondAttribute="bottom" constant="5" id="Ecp-mL-kkc"/>
+                                        <constraint firstItem="jac-fc-yeH" firstAttribute="leading" secondItem="MgC-4T-TOh" secondAttribute="leading" id="FVt-P3-asv"/>
+                                        <constraint firstItem="Tgr-ub-jqn" firstAttribute="width" secondItem="MgC-4T-TOh" secondAttribute="width" id="P0A-4n-E7V"/>
+                                        <constraint firstItem="MgC-4T-TOh" firstAttribute="top" secondItem="Stj-JW-3vX" secondAttribute="top" constant="5" id="aIp-xx-AhD"/>
+                                        <constraint firstItem="jac-fc-yeH" firstAttribute="width" secondItem="MgC-4T-TOh" secondAttribute="width" id="bJN-mu-jT4"/>
+                                        <constraint firstItem="jac-fc-yeH" firstAttribute="top" secondItem="zHr-LF-ffP" secondAttribute="bottom" constant="5" id="hbN-LS-jWk"/>
+                                        <constraint firstItem="zHr-LF-ffP" firstAttribute="width" secondItem="MgC-4T-TOh" secondAttribute="width" id="kHm-gf-7h9"/>
+                                        <constraint firstAttribute="trailing" secondItem="MgC-4T-TOh" secondAttribute="trailing" constant="5" id="nOq-le-ugq"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="gFn-GU-Feg"/>
+                                    <constraint firstAttribute="height" constant="120" id="o7A-Xe-tlJ"/>
+                                </constraints>
+                            </box>
+                            <box title="Perseus Dark Mode" translatesAutoresizingMaskIntoConstraints="NO" id="ixr-qO-4tF" userLabel="Perseus Dark Mode Box">
+                                <rect key="frame" x="7" y="136" width="301" height="134"/>
+                                <view key="contentView" id="2OK-0r-9bT">
+                                    <rect key="frame" x="3" y="3" width="295" height="116"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8Aw-5j-1Sr">
+                                            <rect key="frame" x="-2" y="84" width="299" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="285" id="AMz-uc-3dI"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="push" title="5 = DarkModeAgent.shared.style" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GLn-Or-Xag">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="button5Tapped:" target="2G3-pC-M2U" id="uu9-ET-qQ8"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wc4-OF-VvF">
+                                            <rect key="frame" x="-2" y="59" width="299" height="32"/>
+                                            <buttonCell key="cell" type="push" title="6 = DarkModeAgent.shared.styleObservable" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="G5Q-ln-V57">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="button6Tapped:" target="2G3-pC-M2U" id="gzH-nm-Vzg"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AVS-tF-zfx">
+                                            <rect key="frame" x="-2" y="34" width="299" height="32"/>
+                                            <buttonCell key="cell" type="push" title="7 = DarkModeAgent.DarkModeUserChoice" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Sbo-3A-CO3">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="button7Tapped:" target="2G3-pC-M2U" id="LDY-c6-gFw"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="AVS-tF-zfx" firstAttribute="top" secondItem="Wc4-OF-VvF" secondAttribute="bottom" constant="5" id="4jp-Kc-ezX"/>
+                                        <constraint firstItem="8Aw-5j-1Sr" firstAttribute="top" secondItem="2OK-0r-9bT" secondAttribute="top" constant="5" id="He9-bo-niP"/>
+                                        <constraint firstItem="Wc4-OF-VvF" firstAttribute="top" secondItem="8Aw-5j-1Sr" secondAttribute="bottom" constant="5" id="PSB-wS-aNp"/>
+                                        <constraint firstItem="Wc4-OF-VvF" firstAttribute="leading" secondItem="8Aw-5j-1Sr" secondAttribute="leading" id="b3W-lD-0zz"/>
+                                        <constraint firstItem="Wc4-OF-VvF" firstAttribute="width" secondItem="8Aw-5j-1Sr" secondAttribute="width" id="iM7-xf-1AW"/>
+                                        <constraint firstItem="AVS-tF-zfx" firstAttribute="leading" secondItem="8Aw-5j-1Sr" secondAttribute="leading" id="lbe-dQ-Dgl"/>
+                                        <constraint firstItem="8Aw-5j-1Sr" firstAttribute="leading" secondItem="2OK-0r-9bT" secondAttribute="leading" constant="5" id="sx1-nU-7Ul"/>
+                                        <constraint firstItem="AVS-tF-zfx" firstAttribute="width" secondItem="8Aw-5j-1Sr" secondAttribute="width" id="w9R-Wh-IHf"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="LQc-H2-SNc"/>
+                                    <constraint firstAttribute="width" constant="295" id="k0e-VV-RXO"/>
+                                </constraints>
+                            </box>
+                            <box title="Custom Code" translatesAutoresizingMaskIntoConstraints="NO" id="gmO-cU-9Q3" userLabel="Custom Code Box">
+                                <rect key="frame" x="327" y="191" width="296" height="99"/>
+                                <view key="contentView" id="PdL-in-mbV">
+                                    <rect key="frame" x="3" y="3" width="290" height="81"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u6P-hX-gjj">
+                                            <rect key="frame" x="-2" y="48" width="294" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="280" id="6MV-vP-8c5"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="push" title="A = NSAppearance.shared.appearance = nil" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="duq-DE-3Ri">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="buttonATapped:" target="2G3-pC-M2U" id="zaD-rg-mEX"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rvz-Fu-S4D">
+                                            <rect key="frame" x="-2" y="23" width="294" height="32"/>
+                                            <buttonCell key="cell" type="push" title="B = Custom Code" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9Oq-6t-hYQ">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="buttonBTapped:" target="2G3-pC-M2U" id="qRI-Jv-MCT"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Rvz-Fu-S4D" firstAttribute="top" secondItem="u6P-hX-gjj" secondAttribute="bottom" constant="5" id="9rt-IC-pA3"/>
+                                        <constraint firstItem="u6P-hX-gjj" firstAttribute="leading" secondItem="PdL-in-mbV" secondAttribute="leading" constant="5" id="kRt-04-vIJ"/>
+                                        <constraint firstItem="u6P-hX-gjj" firstAttribute="top" secondItem="PdL-in-mbV" secondAttribute="top" constant="6" id="pEM-2F-VmY"/>
+                                        <constraint firstItem="Rvz-Fu-S4D" firstAttribute="leading" secondItem="u6P-hX-gjj" secondAttribute="leading" id="pYv-L6-1TG"/>
+                                        <constraint firstItem="Rvz-Fu-S4D" firstAttribute="width" secondItem="u6P-hX-gjj" secondAttribute="width" id="x88-AF-ilT"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="CPy-q5-3eT"/>
+                                    <constraint firstAttribute="height" constant="95" id="khc-Ey-NUt"/>
+                                </constraints>
+                            </box>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RjB-X5-OIo" userLabel="Information">
+                                <rect key="frame" x="512" y="37" width="110" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="About Dark Mode" id="OS5-z3-fSJ">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9E1-6F-RRP">
+                                <rect key="frame" x="415" y="9" width="207" height="24"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="lmg-4Q-6Wl">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="Light" width="65"/>
+                                        <segment label="Dark" width="65" selected="YES" tag="1"/>
+                                        <segment label="Auto" width="65"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="segmentedControlValueChanged:" target="2G3-pC-M2U" id="l1m-1g-xNa"/>
+                                    </connections>
+                                </segmentedCell>
+                            </segmentedControl>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="qmk-kD-jq1" secondAttribute="bottom" id="3ph-d5-fcd"/>
+                            <constraint firstAttribute="leading" secondItem="GBL-iE-Fvd" secondAttribute="leading" constant="-10" id="7o9-zq-8P2"/>
+                            <constraint firstItem="RjB-X5-OIo" firstAttribute="trailing" secondItem="9E1-6F-RRP" secondAttribute="trailing" id="9O2-jp-y8V"/>
+                            <constraint firstItem="RjB-X5-OIo" firstAttribute="bottom" secondItem="9E1-6F-RRP" secondAttribute="top" constant="-5" id="C1G-my-ene"/>
+                            <constraint firstItem="GBL-iE-Fvd" firstAttribute="bottom" secondItem="5RK-HS-UFI" secondAttribute="bottom" constant="-10" id="CKJ-xw-ucH"/>
+                            <constraint firstItem="gmO-cU-9Q3" firstAttribute="trailing" secondItem="5RK-HS-UFI" secondAttribute="trailing" constant="-10" id="FVl-ZN-8Wq"/>
+                            <constraint firstItem="ixr-qO-4tF" firstAttribute="top" secondItem="5RK-HS-UFI" secondAttribute="top" constant="30" id="Fe4-r6-vdC"/>
+                            <constraint firstItem="qmk-kD-jq1" firstAttribute="leading" secondItem="5RK-HS-UFI" secondAttribute="leading" id="LtI-3r-L1i"/>
+                            <constraint firstItem="qmk-kD-jq1" firstAttribute="top" secondItem="5RK-HS-UFI" secondAttribute="top" id="Q0p-wx-huc"/>
+                            <constraint firstAttribute="trailing" secondItem="9E1-6F-RRP" secondAttribute="trailing" constant="10" id="Syn-zC-QfX"/>
+                            <constraint firstAttribute="top" secondItem="gmO-cU-9Q3" secondAttribute="top" constant="-10" id="mdO-Ge-pRU"/>
+                            <constraint firstAttribute="trailing" secondItem="qmk-kD-jq1" secondAttribute="trailing" id="quy-Zf-wQu"/>
+                            <constraint firstAttribute="bottom" secondItem="9E1-6F-RRP" secondAttribute="bottom" constant="10" id="tJT-1F-AvQ"/>
+                            <constraint firstAttribute="leading" secondItem="ixr-qO-4tF" secondAttribute="leading" constant="-10" id="tfg-9L-zHG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="boxCustomCode" destination="gmO-cU-9Q3" id="tNV-Xx-LpQ"/>
+                        <outlet property="boxPerseusDarkMode" destination="ixr-qO-4tF" id="mWz-re-H1d"/>
+                        <outlet property="boxSystemDarkMode" destination="GBL-iE-Fvd" id="zFB-jE-eAn"/>
+                        <outlet property="labelInformation" destination="RjB-X5-OIo" id="hDL-Ir-bc6"/>
+                        <outlet property="segmentedControl" destination="9E1-6F-RRP" id="qBA-yd-Mz7"/>
+                        <outlet property="segmentedControlValueChanged" destination="9E1-6F-RRP" id="bfK-dV-dyx"/>
+                    </connections>
+                </viewController>
+                <customObject id="em9-f4-Owv" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="671" y="364"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BilboAndRing" width="720" height="304"/>
+        <image name="BilboDark" width="950" height="392"/>
+    </resources>
+</document>

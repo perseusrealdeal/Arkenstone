@@ -9,14 +9,14 @@
         <!--Window Controller-->
         <scene sceneID="MXA-Sv-x0g">
             <objects>
-                <windowController id="zEn-H0-fel" customClass="MainWindowController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="macOS.DarkMode.Discovery" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="t5D-0x-IF4">
+                <windowController id="zEn-H0-fel" customClass="MainWindowController" customModule="Arkenstone" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Window" separatorStyle="none" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="t5D-0x-IF4">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
-                        <rect key="contentRect" x="99" y="99" width="500" height="500"/>
+                        <rect key="contentRect" x="99" y="99" width="800" height="600"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1025"/>
-                        <value key="minSize" type="size" width="500" height="500"/>
+                        <value key="minSize" type="size" width="800" height="600"/>
                         <view key="contentView" id="GXa-t6-a7S">
-                            <rect key="frame" x="0.0" y="0.0" width="500" height="500"/>
+                            <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </view>
                         <connections>
@@ -31,10 +31,10 @@
             </objects>
             <point key="canvasLocation" x="-126" y="-301"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="NpT-E3-ygb">
             <objects>
-                <viewController id="kd7-lM-5g6" customClass="ViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kd7-lM-5g6" customClass="MainViewController" customModule="Arkenstone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Wzp-zk-jds">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="250"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -45,7 +45,7 @@
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="ggy-pj-ydL">
                                         <rect key="frame" x="0.0" y="150" width="450" height="100"/>
                                         <subviews>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="pch-xV-LUR" customClass="DarkModeImageView" customModule="PerseusDarkMode">
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="pch-xV-LUR" customClass="DarkModeImageView" customModule="Arkenstone" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="450" height="100"/>
                                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="Mol-TW-rN3"/>
                                                 <userDefinedRuntimeAttributes>
@@ -54,17 +54,47 @@
                                                     <userDefinedRuntimeAttribute type="image" keyPath="imageDark" value="DwarvesAndHiddenDoor"/>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Qj0-cm-h4X" customClass="LocationView" customModule="DarkModeDiscovery" customModuleProvider="target">
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Qj0-cm-h4X" customClass="LocationView" customModule="Arkenstone" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="450" height="100"/>
                                             </customView>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pVi-7H-eo4">
+                                                <rect key="frame" x="303" y="3" width="144" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="130" id="ghZ-q9-cmJ"/>
+                                                </constraints>
+                                                <buttonCell key="cell" type="push" title="Options" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6vg-gg-noP">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="showOptions:" target="E1e-1t-HN6" id="HB1-Xy-H7A"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FxC-EW-g57">
+                                                <rect key="frame" x="303" y="33" width="144" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="130" id="sS2-f3-wwc"/>
+                                                </constraints>
+                                                <buttonCell key="cell" type="push" title="Map" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vWE-Uv-2lv">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="showMap:" target="E1e-1t-HN6" id="WMS-OL-x6b"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="pch-xV-LUR" firstAttribute="centerY" secondItem="ggy-pj-ydL" secondAttribute="centerY" id="49R-kT-shj"/>
                                             <constraint firstItem="pch-xV-LUR" firstAttribute="height" secondItem="ggy-pj-ydL" secondAttribute="height" id="AxD-dD-CkH"/>
+                                            <constraint firstAttribute="bottom" secondItem="pVi-7H-eo4" secondAttribute="bottom" constant="10" id="NAL-bd-3JX"/>
                                             <constraint firstAttribute="trailing" secondItem="Qj0-cm-h4X" secondAttribute="trailing" id="NES-Pg-sQG"/>
                                             <constraint firstItem="Qj0-cm-h4X" firstAttribute="top" secondItem="ggy-pj-ydL" secondAttribute="top" id="Ozl-YE-S7k"/>
                                             <constraint firstItem="pch-xV-LUR" firstAttribute="width" secondItem="ggy-pj-ydL" secondAttribute="width" id="PBe-yA-LZj"/>
+                                            <constraint firstItem="FxC-EW-g57" firstAttribute="leading" secondItem="pVi-7H-eo4" secondAttribute="leading" id="PZR-xq-h4p"/>
+                                            <constraint firstItem="pVi-7H-eo4" firstAttribute="top" secondItem="FxC-EW-g57" secondAttribute="bottom" constant="10" id="TD2-uc-aVg"/>
                                             <constraint firstAttribute="bottom" secondItem="Qj0-cm-h4X" secondAttribute="bottom" id="XGu-oN-DQX"/>
+                                            <constraint firstAttribute="trailing" secondItem="pVi-7H-eo4" secondAttribute="trailing" constant="10" id="e9X-0W-JIR"/>
                                             <constraint firstItem="pch-xV-LUR" firstAttribute="centerX" secondItem="ggy-pj-ydL" secondAttribute="centerX" id="fvI-Te-MmL"/>
                                             <constraint firstItem="Qj0-cm-h4X" firstAttribute="leading" secondItem="ggy-pj-ydL" secondAttribute="leading" id="t4H-7n-pLV"/>
                                         </constraints>
@@ -102,7 +132,7 @@
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="dXU-fX-v5M">
                                         <rect key="frame" x="0.0" y="0.0" width="450" height="50"/>
                                         <subviews>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mj2-Gc-sLl" customClass="DarkModeImageView" customModule="PerseusDarkMode">
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mj2-Gc-sLl" customClass="DarkModeImageView" customModule="Arkenstone" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="450" height="50"/>
                                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="uaX-XN-hFq"/>
                                                 <userDefinedRuntimeAttributes>
@@ -158,12 +188,12 @@
         <!--Companion List View Controller-->
         <scene sceneID="iCx-tK-FpQ">
             <objects>
-                <viewController id="gk4-fw-Opv" customClass="CompanionListViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gk4-fw-Opv" customClass="CompanionListViewController" customModule="Arkenstone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="DrT-Ou-tXg">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wLm-68-HNO" customClass="DarkModeImageView" customModule="PerseusDarkMode">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wLm-68-HNO" customClass="DarkModeImageView" customModule="Arkenstone" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="MjK-VM-7uu"/>
                                 <userDefinedRuntimeAttributes>
@@ -224,12 +254,12 @@
         <!--Companion View Controller-->
         <scene sceneID="0lK-y3-FRD">
             <objects>
-                <viewController id="54o-HC-niy" customClass="CompanionViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="54o-HC-niy" customClass="CompanionViewController" customModule="Arkenstone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="t5z-Ty-2yq">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5au-tj-4bR" customClass="DarkModeImageView" customModule="PerseusDarkMode">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5au-tj-4bR" customClass="DarkModeImageView" customModule="Arkenstone" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="xzx-Gy-l7r"/>
                             </imageView>

@@ -15,29 +15,79 @@ import Cocoa
 import ConsolePerseusLogger
 
 import class PerseusDarkMode.PerseusLogger
-import class PerseusGeoLocationKit.PerseusLogger
+import class PerseusGeoKit.PerseusLogger
 
 // swiftlint:disable type_name
 typealias dmlog = PerseusDarkMode.PerseusLogger
-typealias geolog = PerseusGeoLocationKit.PerseusLogger
+typealias geolog = PerseusGeoKit.PerseusLogger
 // swiftlint:enable type_name
+
+// MARK: - Log Reports
+
+class LogReport: NSObject {
+
+    public var text: String { report }
+
+    @objc dynamic var lastMessage: String = "" {
+        didSet {
+            let count = report.count
+            if count > LIMIT {
+                report = report.dropFirst(count - LIMIT).description
+
+                if let position = report.range(of: newline)?.upperBound {
+                    report.removeFirst(position.utf16Offset(in: report)-2)
+                }
+            }
+
+            report.append(lastMessage + newline)
+        }
+    }
+
+    private var report = ""
+
+    private let LIMIT = 1000
+    private let newline = "\r\n--\r\n"
+}
+
+typealias LogLevel = ConsolePerseusLogger.PerseusLogger.Level
+
+func reportGeoEvent(_ text: String, _ type: LogLevel, _ localTime: LocalTime) {
+    logReport.lastMessage = "[\(localTime.date)] [\(localTime.time)]\r\n> \(text)"
+}
+
+let logReport = LogReport()
 
 // MARK: - Logger
 
+// log.turned = .off
+dmlog.turned = .off
+// geolog.turned = .off
+
 log.output = .consoleapp
-dmlog.output = .consoleapp
+// dmlog.output = .consoleapp
 geolog.output = .consoleapp
 
-// MARK: - Construct the app's top elements
+log.format = .textonly
+// dmlog.format = .textonly
+geolog.format = .textonly
+
+// geolog.output = .custom
+log.customActionOnMessage = reportGeoEvent(_:_:_:)
+
+// log.time = true
+// dmlog.time = true
+// geolog.time = true
 
 log.message("The app's start point...", .info)
+
+let globals = AppGlobals()
+
+// MARK: - Construct the app's top elements
 
 let app = NSApplication.shared
 
 let appPurpose = NSClassFromString("TestingAppDelegate") as? NSObject.Type
 let appDelegate = appPurpose?.init() ?? AppDelegate()
-
-let globals = AppGlobals()
 
 let storyboard = NSStoryboard(name: String(describing: MainWindowController.self), bundle: nil)
 let screen = storyboard.instantiateInitialController() as? NSWindowController
@@ -73,8 +123,8 @@ func setMainWindow() {
        NSApplication.shared.windows.first?.windowController is MainWindowController,
        var frame = NSApplication.shared.windows.first?.frame {
 
-        let height: CGFloat = 500 // Default main window height
-        let width: CGFloat = 500 // Default main window width
+        let height: CGFloat = 600 // Default main window height
+        let width: CGFloat = 800 // Default main window width
 
         let origin_x = screen.frame.size.width / 2 - width / 2
         let origin_y = screen.frame.size.height / 2 - height / 2
