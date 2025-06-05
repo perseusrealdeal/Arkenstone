@@ -1,13 +1,13 @@
-# Dark Mode discovery for macOS — Xcode 14.2+
+# macOS discovery project — Xcode 14.2+
 
 > This is a fan macOS app themed with the Middle-earth adventures from the motion picture `The Hobbit` based on the novel by `J.R.R. Tolkien`.
 
-[![Actions Status](https://github.com/perseusrealdeal/Arkenstone/actions/workflows/main.yml/badge.svg)](https://github.com/perseusrealdeal/Arkenstone/actions/workflows/main.yml)
-[![Style](https://github.com/perseusrealdeal/Arkenstone/actions/workflows/swiftlint.yml/badge.svg)](https://github.com/perseusrealdeal/Arkenstone/actions/workflows/swiftlint.yml)
+[![Actions Status](https://github.com/perseusrealdeal/arkenstone/actions/workflows/main.yml/badge.svg)](https://github.com/perseusrealdeal/arkenstone/actions/workflows/main.yml)
+[![Style](https://github.com/perseusrealdeal/arkenstone/actions/workflows/swiftlint.yml/badge.svg)](https://github.com/perseusrealdeal/arkenstone/actions/workflows/swiftlint.yml)
 ![Version](https://img.shields.io/badge/Version-2.0-green.svg)
 [![Platforms](https://img.shields.io/badge/Platform-macOS%2010.13+-orange.svg)](https://en.wikipedia.org/wiki/MacOS_version_history)
-[![Xcode 14.2](https://img.shields.io/badge/Xcode-14.2+-red.svg)](https://en.wikipedia.org/wiki/Xcode)
-[![Swift Version](https://img.shields.io/badge/Swift-5-orange.svg)](https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html)
+[![Xcode](https://img.shields.io/badge/Xcode-14.2+-red.svg)](https://en.wikipedia.org/wiki/Xcode)
+[![Swift](https://img.shields.io/badge/Swift-5-orange.svg)](https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html)
 [![SDK](https://img.shields.io/badge/SDK-UIKit%20-blueviolet.svg)](https://developer.apple.com/documentation/uikit)
 [![License](http://img.shields.io/:License-Unlicense-green.svg)](/LICENSE)
 
@@ -46,11 +46,22 @@
 
 # Third-party software
 
-| Type   | Name                                                                                                 | License                            |
-| ------ | ---------------------------------------------------------------------------------------------------- | ---------------------------------- |
-| Style  | [SwiftLint](https://github.com/realm/SwiftLint)                                                      | MIT                                |
-| Action | [mxcl/xcodebuild@v3.3](https://github.com/mxcl/xcodebuild/releases/tag/v3.3.0)                       | [Unlicense](https://unlicense.org) |
-| Action | [cirruslabs/swiftlint-action@v1](https://github.com/cirruslabs/swiftlint-action/releases/tag/v1.0.0) | MIT                                |
+| Type   | Name                                                                                                                              | License                            |
+| ------ | --------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| Style  | [SwiftLint](https://github.com/realm/SwiftLint) / [v0.57.0 for Monterey+](https://github.com/realm/SwiftLint/releases/tag/0.57.0) | MIT                                |
+| Action | [mxcl/xcodebuild@v3](https://github.com/mxcl/xcodebuild)                                                                          | [Unlicense](https://unlicense.org) |
+| Action | [cirruslabs/swiftlint-action@v1](https://github.com/cirruslabs/swiftlint-action/)                                                 | MIT                                |
+
+# Unlicensed Free Software
+
+- [License](/LICENSE)
+
+## Required License Notices
+
+© Mikhail A. Zhigulin of Novosibirsk **for** ConsolePerseusLogger, PerseusDarkMode, PerseusGeoKit</br>
+© PerseusRealDeal **for** ConsolePerseusLogger, PerseusDarkMode, PerseusGeoKit</br>
+© 2025 The SwiftLint Contributors **for** SwiftLint</br>
+© GitHub **for** GitHub Action cirruslabs/swiftlint-action@v1</br>
 
 # Credits
 
@@ -80,9 +91,6 @@
 - Language support: [Reverso](https://www.reverso.net/)
 - Git clients: [SmartGit](https://syntevo.com/) and [GitHub Desktop](https://github.com/apps/desktop)
 
-# Editors, prepared by
+# Prepared by
 
-> © 7530 - 7533 Mikhail A. Zhigulin of Novosibirsk
-
-- The year starts from the creation of the world according to a Slavic calendar.
-- September, the 1st of Slavic year.
+> © Mikhail A. Zhigulin of Novosibirsk
