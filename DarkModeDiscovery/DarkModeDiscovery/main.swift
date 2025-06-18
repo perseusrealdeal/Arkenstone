@@ -7,6 +7,9 @@
 //  Unlicensed Free Software.
 //
 
+import Foundation
+import os
+
 import Cocoa
 import ConsolePerseusLogger
 
@@ -47,7 +50,7 @@ class LogReport: NSObject {
 
 typealias LogLevel = ConsolePerseusLogger.PerseusLogger.Level
 
-func reportGeoEvent(_ text: String, _ type: LogLevel, _ localTime: LocalTime) {
+func report(_ text: String, _ type: LogLevel, _ localTime: LocalTime, _ owner: PIDandTID) {
     logReport.lastMessage = "[\(localTime.date)] [\(localTime.time)]\r\n> \(text)"
 }
 
@@ -56,23 +59,37 @@ let logReport = LogReport()
 // MARK: - Logger
 
 // log.turned = .off
-dmlog.turned = .off
+// dmlog.turned = .off
 // geolog.turned = .off
 
 log.output = .consoleapp
 // dmlog.output = .consoleapp
-geolog.output = .consoleapp
+// geolog.output = .consoleapp
 
-log.format = .textonly
+// log.format = .textonly
 // dmlog.format = .textonly
 geolog.format = .textonly
 
 // geolog.output = .custom
-log.customActionOnMessage = reportGeoEvent(_:_:_:)
+log.customActionOnMessage = report(_:_:_:_:)
 
-// log.time = true
+log.time = true
 // dmlog.time = true
 // geolog.time = true
+
+var resetInfo = ""
+
+if let path = Bundle.main.url(forResource: "CPLConfig", withExtension: "json") {
+    if log.loadConfig(path), dmlog.loadConfig(path), geolog.loadConfig(path) {
+        resetInfo = "Options successfully reseted!"
+    } else {
+        resetInfo = "Failed to reset options!"
+    }
+} else {
+    resetInfo = "Failed to create URL!"
+}
+
+log.message(resetInfo)
 
 log.message("The app's start point...", .info)
 
@@ -131,3 +148,25 @@ func setMainWindow() {
         NSApplication.shared.windows.first?.setFrame(frame, display: true)
     }
 }
+
+/*
+
+var tiduint: UInt64 = 0
+pthread_threadid_np(nil, &tiduint)
+
+let tid = "0x\(String(format: "%02x", tiduint))"
+
+log.message("The app's start point... TID: \(tid)", .info)
+
+NSLog("NSLog Start: The app's start point... TID: \(tid)")
+
+if #available(macOS 11.0, *) {
+    let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "network")
+    logger.log("Logger Start: The app's start point... TID: \(tid)")
+}
+
+let oslog = OSLog(subsystem: Bundle.main.bundleIdentifier!, category: "network")
+
+os_log( "%{public}@", log: oslog,
+        "os_log Start: The app's start point... TID: \(tid)")
+*/

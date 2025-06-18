@@ -14,10 +14,20 @@ import ConsolePerseusLogger
 
 class DarkModeDiscoveryTests: XCTestCase {
 
-    // func test_zero() { XCTFail("Tests not yet implemented in \(type(of: self)).") }
+    override static func setUp() {
+        super.setUp()
 
-    func test_the_first_success() {
         log.time = true
-        log.message(#function)
+        // log.pidtid = true
+    }
+/*
+    override static func tearDown() {
+        super.tearDown()
+    }
+
+    func test_zero() { XCTFail("Tests not yet implemented in \(type(of: self)).") }
+*/
+    func test_the_first_success() {
+        log.message("[\(type(of: self))].\(#function)")
     }
 }

@@ -4,7 +4,7 @@
 
 [![Actions Status](https://github.com/perseusrealdeal/arkenstone/actions/workflows/main.yml/badge.svg)](https://github.com/perseusrealdeal/arkenstone/actions/workflows/main.yml)
 [![Style](https://github.com/perseusrealdeal/arkenstone/actions/workflows/swiftlint.yml/badge.svg)](https://github.com/perseusrealdeal/arkenstone/actions/workflows/swiftlint.yml)
-![Version](https://img.shields.io/badge/Version-2.0-green.svg)
+![Version](https://img.shields.io/badge/Version-2.1-green.svg)
 [![Platforms](https://img.shields.io/badge/Platform-macOS%2010.13+-orange.svg)](https://en.wikipedia.org/wiki/MacOS_version_history)
 [![Xcode](https://img.shields.io/badge/Xcode-14.2+-red.svg)](https://en.wikipedia.org/wiki/Xcode)
 [![Swift](https://img.shields.io/badge/Swift-5-orange.svg)](https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html)
@@ -15,9 +15,9 @@
 
 > Swift Package Manager.
 
-[![ConsolePerseusLogger](http://img.shields.io/:ConsolePerseusLogger-1.3.0-green.svg)](https://github.com/perseusrealdeal/ConsolePerseusLogger.git)
-[![PerseusDarkMode](http://img.shields.io/:PerseusDarkMode-2.0.1-green.svg)](https://github.com/perseusrealdeal/PerseusDarkMode.git)
-[![PerseusGeoKit](http://img.shields.io/:PerseusGeoKit-1.0.1-green.svg)](https://github.com/perseusrealdeal/PerseusGeoKit.git)
+[![ConsolePerseusLogger](http://img.shields.io/:ConsolePerseusLogger-1.5.0-green.svg)](https://github.com/perseusrealdeal/ConsolePerseusLogger.git)
+[![PerseusDarkMode](http://img.shields.io/:PerseusDarkMode-2.0.2-green.svg)](https://github.com/perseusrealdeal/PerseusDarkMode.git)
+[![PerseusGeoKit](http://img.shields.io/:PerseusGeoKit-1.0.2-green.svg)](https://github.com/perseusrealdeal/PerseusGeoKit.git)
 
 # In brief
 
@@ -40,9 +40,9 @@
 
 | Type    | Name                                                                                                                                                                  | License |
 | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| Package | [ConsolePerseusLogger](https://github.com/perseusrealdeal/ConsolePerseusLogger) / [1.3.0](https://github.com/perseusrealdeal/ConsolePerseusLogger/releases/tag/1.3.0) | MIT     |
-| Package | [PerseusDarkMode](https://github.com/perseusrealdeal/PerseusDarkMode) / [2.0.1](https://github.com/perseusrealdeal/PerseusDarkMode/releases/tag/2.0.1)                | MIT     |
-| Package | [PerseusGeoKit](https://github.com/perseusrealdeal/PerseusGeoKit) / [1.0.1](https://github.com/perseusrealdeal/PerseusGeoKit/releases/tag/1.0.1)                      | MIT     |
+| Package | [ConsolePerseusLogger](https://github.com/perseusrealdeal/ConsolePerseusLogger) / [1.5.0](https://github.com/perseusrealdeal/ConsolePerseusLogger/releases/tag/1.5.0) | MIT     |
+| Package | [PerseusDarkMode](https://github.com/perseusrealdeal/PerseusDarkMode) / [2.0.2](https://github.com/perseusrealdeal/PerseusDarkMode/releases/tag/2.0.2)                | MIT     |
+| Package | [PerseusGeoKit](https://github.com/perseusrealdeal/PerseusGeoKit) / [1.0.2](https://github.com/perseusrealdeal/PerseusGeoKit/releases/tag/1.0.2)                      | MIT     |
 
 # Third-party software
 

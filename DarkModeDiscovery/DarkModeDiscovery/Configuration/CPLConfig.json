@@ -1,0 +1,15 @@
+{
+    "subsystem"   : "Perseus",
+    "category"    : "Lover",
+    "turned"      : "off",
+    "level"       : 5,
+    "output"      : "standard",
+    "subsecond"   : "nanosecond",
+    "tidnumber"   : "hexadecimal",
+    "format"      : "short",
+    "marks"       : false,
+    "time"        : false,
+    "owner"       : true,
+    "directives"  : false,
+    "debugIsInfo" : true
+}
