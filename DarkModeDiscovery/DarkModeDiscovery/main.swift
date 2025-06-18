@@ -48,54 +48,40 @@ class LogReport: NSObject {
     private let newline = "\r\n--\r\n"
 }
 
-typealias LogLevel = ConsolePerseusLogger.PerseusLogger.Level
+typealias LogLevel = PerseusGeoKit.PerseusLogger.Level
 
 func report(_ text: String, _ type: LogLevel, _ localTime: LocalTime, _ owner: PIDandTID) {
-    logReport.lastMessage = "[\(localTime.date)] [\(localTime.time)]\r\n> \(text)"
+    geoReport.lastMessage = "[\(localTime.date)] [\(localTime.time)]\r\n> \(text)"
 }
 
-let logReport = LogReport()
+let geoReport = LogReport()
 
 // MARK: - Logger
+
+geolog.customActionOnMessage = report(_:_:_:_:)
 
 // log.turned = .off
 // dmlog.turned = .off
 // geolog.turned = .off
 
-log.output = .consoleapp
-// dmlog.output = .consoleapp
-// geolog.output = .consoleapp
-
-// log.format = .textonly
-// dmlog.format = .textonly
-geolog.format = .textonly
-
-// geolog.output = .custom
-log.customActionOnMessage = report(_:_:_:_:)
-
-log.time = true
-// dmlog.time = true
-// geolog.time = true
-
-var resetInfo = ""
+var isLoadedInfo = ""
 
 if let path = Bundle.main.url(forResource: "CPLConfig", withExtension: "json") {
     if log.loadConfig(path), dmlog.loadConfig(path), geolog.loadConfig(path) {
-        resetInfo = "Options successfully reseted!"
+        isLoadedInfo = "Options successfully reseted!"
     } else {
-        resetInfo = "Failed to reset options!"
+        isLoadedInfo = "Failed to reset options!"
     }
 } else {
-    resetInfo = "Failed to create URL!"
+    isLoadedInfo = "Failed to create URL!"
 }
 
-log.message(resetInfo)
-
+log.message(isLoadedInfo)
 log.message("The app's start point...", .info)
 
-let globals = AppGlobals()
-
 // MARK: - Construct the app's top elements
+
+let globals = AppGlobals()
 
 let app = NSApplication.shared
 

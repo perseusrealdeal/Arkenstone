@@ -5,11 +5,11 @@
     "level"       : 5,
     "output"      : "standard",
     "subsecond"   : "nanosecond",
-    "tidnumber"   : "hexadecimal",
+    "tidnumber"   : "decimal",
     "format"      : "short",
-    "marks"       : false,
+    "marks"       : true,
     "time"        : false,
-    "owner"       : true,
+    "owner"       : false,
     "directives"  : false,
     "debugIsInfo" : true
 }
