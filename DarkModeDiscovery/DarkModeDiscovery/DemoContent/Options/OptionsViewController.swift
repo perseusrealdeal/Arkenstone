@@ -14,6 +14,8 @@ import PerseusDarkMode
 
 class OptionsViewController: NSViewController {
 
+    @IBOutlet private(set) weak var labelLog: MessageLabel!
+
     @IBOutlet private(set) weak var boxPerseusDarkMode: NSBox!
     @IBOutlet private(set) weak var boxSystemDarkMode: NSBox!
     @IBOutlet private(set) weak var boxCustomCode: NSBox!
@@ -149,10 +151,13 @@ class OptionsViewController: NSViewController {
         switch DarkModeAgent.DarkModeUserChoice {
         case .auto:
             segmentedControl.selectedSegment = 2
+            labelLog.message = "Auto"
         case .on:
             segmentedControl.selectedSegment = 1
+            labelLog.message = "On"
         case .off:
             segmentedControl.selectedSegment = 0
+            labelLog.message = "Off"
         }
     }
 
@@ -160,10 +165,13 @@ class OptionsViewController: NSViewController {
         switch selected {
         case 0:
             DarkModeAgent.force(.off)
+            labelLog.message = "Off"
         case 1:
             DarkModeAgent.force(.on)
+            labelLog.message = "On"
         case 2:
             DarkModeAgent.force(.auto)
+            labelLog.message = "Auto"
         default:
             break
         }

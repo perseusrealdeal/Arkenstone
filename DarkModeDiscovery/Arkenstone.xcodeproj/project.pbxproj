@@ -20,6 +20,7 @@
 		2ECC35AB2D8957C60059FBCC /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ECC35AA2D8957C60059FBCC /* Map.storyboard */; };
 		2ECC35AD2D8960A00059FBCC /* MapWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC35AC2D8960A00059FBCC /* MapWindowController.swift */; };
 		2ECC35AF2D8960AD0059FBCC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC35AE2D8960AD0059FBCC /* MapViewController.swift */; };
+		2ECECDFA2E3CB3C200A1DC82 /* MessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECECDF92E3CB3C200A1DC82 /* MessageLabel.swift */; };
 		2ECF7ADF2DB29A1600ECB6B7 /* PDMSupportingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECF7ADE2DB29A1600ECB6B7 /* PDMSupportingStar.swift */; };
 		2ECFE08B2DB3705F0083FDBE /* PGKSupportingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECFE08A2DB3705F0083FDBE /* PGKSupportingStar.swift */; };
 		4B0158E629103C0D009F1803 /* DarkModeDiscoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0158E529103C0D009F1803 /* DarkModeDiscoveryTests.swift */; };
@@ -71,6 +72,7 @@
 		2ECC35AA2D8957C60059FBCC /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		2ECC35AC2D8960A00059FBCC /* MapWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWindowController.swift; sourceTree = "<group>"; };
 		2ECC35AE2D8960AD0059FBCC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		2ECECDF92E3CB3C200A1DC82 /* MessageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLabel.swift; sourceTree = "<group>"; };
 		2ECF7ADE2DB29A1600ECB6B7 /* PDMSupportingStar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDMSupportingStar.swift; sourceTree = "<group>"; };
 		2ECFE08A2DB3705F0083FDBE /* PGKSupportingStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGKSupportingStar.swift; sourceTree = "<group>"; };
 		2EE5FCCE2DD06D22000AC9CD /* UpdatingLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = UpdatingLocation.gpx; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				4B7DD3AF297D33B700172BD4 /* CustomColors.swift */,
 				2ECFE08A2DB3705F0083FDBE /* PGKSupportingStar.swift */,
 				2ECF7ADE2DB29A1600ECB6B7 /* PDMSupportingStar.swift */,
+				2ECECDF92E3CB3C200A1DC82 /* MessageLabel.swift */,
 			);
 			path = FirstPartyCode;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				2ECF7ADF2DB29A1600ECB6B7 /* PDMSupportingStar.swift in Sources */,
 				E06FED13289A86ED00538B55 /* Race.swift in Sources */,
 				E01D2D3A289A76A6009B932F /* Companion.swift in Sources */,
+				2ECECDFA2E3CB3C200A1DC82 /* MessageLabel.swift in Sources */,
 				4B6A98BB295CAF3400965FAF /* OptionsWindowController.swift in Sources */,
 				4B6C3D2C29704130001299E6 /* ItemImageView.swift in Sources */,
 				E00F8383288A4A04000D0A01 /* MainViewController.swift in Sources */,
@@ -716,7 +720,7 @@
 			repositoryURL = "https://github.com/perseusrealdeal/PerseusDarkMode";
 			requirement = {
 				kind = exactVersion;
-				version = 2.0.3;
+				version = 2.0.4;
 			};
 		};
 		2E9EC03C2DD90E8F00384398 /* XCRemoteSwiftPackageReference "ConsolePerseusLogger" */ = {
@@ -724,7 +728,7 @@
 			repositoryURL = "https://github.com/perseusrealdeal/ConsolePerseusLogger";
 			requirement = {
 				kind = exactVersion;
-				version = 1.5.0;
+				version = 1.5.1;
 			};
 		};
 		2EC1A8592DEAEDFC001861B5 /* XCRemoteSwiftPackageReference "PerseusGeoKit" */ = {
@@ -732,7 +736,7 @@
 			repositoryURL = "https://github.com/perseusrealdeal/PerseusGeoKit/";
 			requirement = {
 				kind = exactVersion;
-				version = 1.0.3;
+				version = 1.0.4;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
