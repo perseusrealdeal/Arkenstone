@@ -1,8 +1,8 @@
 //
 //  PDMSupportingStar.swift
-//  Version: 2.0.1
+//  Version: 2.1.0
 //
-//  The Darkness Support Classes (PerseusUISystemKit previously)
+//  The Darkness Support (PerseusUISystemKit previously)
 //
 //
 //  For iOS and macOS only. Use Stars to adopt for the specifics you need.
@@ -563,7 +563,7 @@ public class DarkModeImageView: UIImageView {
         }
     }
 
-    private(set) var darkModeObserver: DarkModeObserver?
+    private(set) var theDarknessTrigger: DarkModeObserver?
 
     private(set) var light: UIImage?
     private(set) var dark: UIImage?
@@ -579,7 +579,7 @@ public class DarkModeImageView: UIImageView {
     }
 
     private func configure() {
-        darkModeObserver = DarkModeObserver { style in
+        theDarknessTrigger = DarkModeObserver { style in
             self.image = style == .light ? self.light : self.dark
         }
 
@@ -590,7 +590,7 @@ public class DarkModeImageView: UIImageView {
         self.light = light
         self.dark = dark
 
-        darkModeObserver?.action = { style in
+        theDarknessTrigger?.action = { style in
             self.image = style == .light ? self.light : self.dark
         }
 

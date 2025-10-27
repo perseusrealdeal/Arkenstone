@@ -33,15 +33,15 @@ class OptionsViewController: NSViewController {
         let isDark = UserDefaults.standard.string(forKey: "AppleInterfaceStyle") ?? "nil"
         let text = "1 = \(isDark)"
 
-        labelInformation.stringValue = text
-        log.message(text)
+        // labelInformation.stringValue = text
+        log.message(text, .notice, .custom, .enduser)
     }
 
     @IBAction func button2Tapped(_ sender: NSButton) {
         let text = "2 = \(printApperance(NSApp.windows.first?.effectiveAppearance))"
 
-        labelInformation.stringValue = text
-        log.message(text)
+        // labelInformation.stringValue = text
+        log.message(text, .notice, .custom, .enduser)
     }
 
     @IBAction func button3Tapped(_ sender: NSButton) {
@@ -53,8 +53,8 @@ class OptionsViewController: NSViewController {
             text = "3 = only available in macOS 10.14 or newer"
         }
 
-        labelInformation.stringValue = text
-        log.message(text)
+        // labelInformation.stringValue = text
+        log.message(text, .notice, .custom, .enduser)
     }
 
     @IBAction func button4Tapped(_ sender: NSButton) {
@@ -66,8 +66,8 @@ class OptionsViewController: NSViewController {
             text = "4 = only available in macOS 11.0 or newer"
         }
 
-        labelInformation.stringValue = text
-        log.message(text)
+        // labelInformation.stringValue = text
+        log.message(text, .notice, .custom, .enduser)
     }
 
     // MARK: - Perseus Dark Mode Group Actions
@@ -75,8 +75,8 @@ class OptionsViewController: NSViewController {
     @IBAction func button5Tapped(_ sender: NSButton) {
         let text = "5 = \(DarkModeAgent.shared.style)"
 
-        labelInformation.stringValue = text
-        log.message(text)
+        // labelInformation.stringValue = text
+        log.message(text, .notice, .custom, .enduser)
     }
 
     @IBAction func button6Tapped(_ sender: NSButton) {
@@ -85,16 +85,16 @@ class OptionsViewController: NSViewController {
 
         let text = "6 = \(observableName) (\(observableNumber))"
 
-        labelInformation.stringValue = text
-        log.message(text)
+        // labelInformation.stringValue = text
+        log.message(text, .notice, .custom, .enduser)
     }
 
     @IBAction func button7Tapped(_ sender: NSButton) {
         let userChoice = DarkModeAgent.DarkModeUserChoice
         let text = "7 = \(userChoice)"
 
-        labelInformation.stringValue = text
-        log.message(text)
+        // labelInformation.stringValue = text
+        log.message(text, .notice, .custom, .enduser)
     }
 
     // MARK: - Custom Code Group Actions
@@ -109,8 +109,8 @@ class OptionsViewController: NSViewController {
             text = "4 = only available in macOS 10.14 or newer"
         }
 
-        labelInformation.stringValue = text
-        log.message(text)
+        // labelInformation.stringValue = text
+        log.message(text, .notice, .custom, .enduser)
     }
 
     @IBAction func buttonBTapped(_ sender: NSButton) {
@@ -118,8 +118,8 @@ class OptionsViewController: NSViewController {
 
         // TODO: - Anymore?
 
-        labelInformation.stringValue = text
-        log.message(text)
+        // labelInformation.stringValue = text
+        log.message(text, .notice, .custom, .enduser)
     }
 
     // MARK: - Content
@@ -129,6 +129,8 @@ class OptionsViewController: NSViewController {
 
         self.preferredContentSize = NSSize(width: self.view.frame.size.width,
                                            height: self.view.frame.size.height)
+
+        localReport.messageDelegate = labelLog
 
         if #unavailable(macOS 10.14) { // For HighSierra only.
             boxPerseusDarkMode.isTransparent = true
