@@ -1,6 +1,6 @@
 //
 //  PGKSupportingStar.swift
-//  Version: 1.0.1
+//  Version: 1.1.0
 //
 //  PerseusGeoKit Support Code
 //
@@ -43,13 +43,13 @@
 // swiftlint:disable file_length
 //
 
-import ConsolePerseusLogger
-import PerseusGeoKit
-
 #if os(iOS)
 import UIKit
 #endif
 import MapKit
+
+import ConsolePerseusLogger
+import PerseusGeoKit
 
 // MARK: - Geo Constants
 

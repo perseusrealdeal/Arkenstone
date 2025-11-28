@@ -14,7 +14,7 @@
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
                         <rect key="contentRect" x="99" y="99" width="800" height="600"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1025"/>
-                        <value key="minSize" type="size" width="800" height="600"/>
+                        <value key="minSize" type="size" width="650" height="500"/>
                         <view key="contentView" id="GXa-t6-a7S">
                             <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                             <autoresizingMask key="autoresizingMask"/>
@@ -141,12 +141,27 @@
                                                     <userDefinedRuntimeAttribute type="image" keyPath="imageDark" value="DragonAndBilbo"/>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HHM-LX-3kz">
+                                                <rect key="frame" x="303" y="3" width="144" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="130" id="wme-2l-uHd"/>
+                                                </constraints>
+                                                <buttonCell key="cell" type="push" title="Logger" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yGN-He-rVc">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="showLogger:" target="E1e-1t-HN6" id="o4g-D8-8ke"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="HHM-LX-3kz" secondAttribute="trailing" constant="10" id="1qA-T8-q2v"/>
                                             <constraint firstItem="mj2-Gc-sLl" firstAttribute="top" secondItem="dXU-fX-v5M" secondAttribute="top" id="BJ6-CX-yT3"/>
                                             <constraint firstItem="mj2-Gc-sLl" firstAttribute="leading" secondItem="dXU-fX-v5M" secondAttribute="leading" id="D90-Jc-o5X"/>
                                             <constraint firstAttribute="trailing" secondItem="mj2-Gc-sLl" secondAttribute="trailing" id="DKM-aU-XPH"/>
                                             <constraint firstAttribute="bottom" secondItem="mj2-Gc-sLl" secondAttribute="bottom" id="PuL-T1-pBj"/>
+                                            <constraint firstAttribute="bottom" secondItem="HHM-LX-3kz" secondAttribute="bottom" constant="10" id="nPA-oK-X66"/>
                                         </constraints>
                                     </customView>
                                 </subviews>

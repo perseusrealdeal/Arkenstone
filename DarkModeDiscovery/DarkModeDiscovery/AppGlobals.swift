@@ -28,6 +28,13 @@ var CURRENT_LOCATION: String {
     return AppGlobals.currentLocation == nil ? DEFAULT_GEO_POINT : CURRENT_GEO_POINT
 }
 
+var isHighSierra: Bool { // true HighSierra, false otherwise
+    if #available(macOS 10.14, *) {
+        return false
+    } // For HighSierra.
+    return true
+}
+
 // MARK: - App Globals
 
 struct AppGlobals {
@@ -38,7 +45,7 @@ struct AppGlobals {
         didSet {
             let location = currentLocation?.description ?? "current location is erased"
             log.message("\(location) \(#function)", .info)
-            geolog.message("\(location) \(#function)", .debug, .custom)
+            GEO_LOG.message("\(location) \(#function)", .debug, .custom)
         }
     }
 
@@ -66,9 +73,68 @@ struct AppGlobals {
         GeoCoordinator.shared.locationUpdatesRecieved = { updates in
             if let thelastone = updates.last {
                 log.message("Location Updates: \(updates.count)")
-                geolog.message("Location Updates: \(updates.count)", .debug, .custom)
+                GEO_LOG.message("Location Updates: \(updates.count)", .debug, .custom)
                 AppGlobals.currentLocation = thelastone
             }
         }
     }
 }
+
+func loadJsonLogProfile(_ name: String) -> (status: Bool, info: String) {
+
+    if let path = Bundle.main.url(forResource: name, withExtension: "json") {
+        if log.loadConfig(path), dmlog.loadConfig(path), geolog.loadConfig(path) {
+            return (true, "Options successfully reseted")
+        } else {
+            return (false, "Failed to reset options")
+        }
+    } else {
+        return (false, "Failed to create URL")
+    }
+}
+
+// MARK: - Other useful code
+
+/*
+
+func setMainWindow() {
+    if let screen = NSScreen.main,
+       NSApplication.shared.windows.first?.windowController is MainWindowController,
+       var frame = NSApplication.shared.windows.first?.frame {
+
+        let height: CGFloat = 600 // Default main window height
+        let width: CGFloat = 800 // Default main window width
+
+        let origin_x = screen.frame.size.width / 2 - width / 2
+        let origin_y = screen.frame.size.height / 2 - height / 2
+
+        frame.size = NSSize(width: width, height: height)
+        frame.origin = NSPoint(x: origin_x, y: origin_y)
+
+        NSApplication.shared.windows.first?.setFrame(frame, display: true)
+    }
+}
+
+*/
+
+/*
+
+var tiduint: UInt64 = 0
+pthread_threadid_np(nil, &tiduint)
+
+let tid = "0x\(String(format: "%02x", tiduint))"
+
+log.message("The app's start point... TID: \(tid)", .info)
+
+NSLog("NSLog Start: The app's start point... TID: \(tid)")
+
+if #available(macOS 11.0, *) {
+    let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "network")
+    logger.log("Logger Start: The app's start point... TID: \(tid)")
+}
+
+let oslog = OSLog(subsystem: Bundle.main.bundleIdentifier!, category: "network")
+
+os_log( "%{public}@", log: oslog,
+        "os_log Start: The app's start point... TID: \(tid)")
+*/

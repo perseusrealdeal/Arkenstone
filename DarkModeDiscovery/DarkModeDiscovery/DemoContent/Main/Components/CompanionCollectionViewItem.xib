@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="CompanionCollectionViewItem" customModule="DarkModeDiscovery" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="CompanionCollectionViewItem" customModule="Arkenstone" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="130" height="160"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7U2-jg-3ut" customClass="ItemImageView" customModule="DarkModeDiscovery" customModuleProvider="target">
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7U2-jg-3ut" customClass="ItemImageView" customModule="Arkenstone" customModuleProvider="target">
                     <rect key="frame" x="5" y="35" width="120" height="120"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="120" id="FoR-Xw-QCb"/>
@@ -43,7 +43,7 @@
             </constraints>
             <point key="canvasLocation" x="27" y="-36"/>
         </customView>
-        <customObject id="Ylp-Gc-GhI" customClass="CompanionCollectionViewItem" customModule="DarkModeDiscovery" customModuleProvider="target">
+        <customObject id="Ylp-Gc-GhI" customClass="CompanionCollectionViewItem" customModule="Arkenstone" customModuleProvider="target">
             <connections>
                 <outlet property="imageView" destination="7U2-jg-3ut" id="DSc-45-1Wd"/>
                 <outlet property="textField" destination="Wwd-Sq-6zV" id="nec-zA-Yhn"/>

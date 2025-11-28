@@ -13,14 +13,11 @@ import ConsolePerseusLogger
 @testable import Arkenstone
 
 class DarkModeDiscoveryTests: XCTestCase {
-
+/*
     override static func setUp() {
         super.setUp()
-
-        log.time = true
-        // log.pidtid = true
     }
-/*
+
     override static func tearDown() {
         super.tearDown()
     }

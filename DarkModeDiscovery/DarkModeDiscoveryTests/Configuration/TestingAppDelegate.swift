@@ -8,8 +8,8 @@
 //
 
 import XCTest
-import ConsolePerseusLogger
 
+import ConsolePerseusLogger
 @testable import Arkenstone
 
 // MARK: - The Testing Application Delegate
@@ -19,7 +19,11 @@ class TestingAppDelegate: NSResponder, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
-        log.message("Launching with testing matter purpose", .info)
+        log.output = .standard
+
+        log.message("The app's test bundle start point...", .info)
+        log.message("Launching with testing matter purpose...", .info)
+
         log.message("[\(type(of: self))].\(#function)")
     }
 }

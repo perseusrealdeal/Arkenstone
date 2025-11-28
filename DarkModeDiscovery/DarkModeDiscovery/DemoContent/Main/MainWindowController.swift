@@ -15,17 +15,23 @@ import PerseusDarkMode
 class MainWindowController: NSWindowController, NSWindowDelegate {
 
     private lazy var optionsController = { () -> NSWindowController in
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Options"), bundle: nil)
+        let name = "\(OptionsWindowController.self)"
+        let storyboard = NSStoryboard(name: NSStoryboard.Name(name), bundle: nil)
         let screen = storyboard.instantiateInitialController() as? NSWindowController
 
         return screen ?? NSWindowController()
     }()
 
     private lazy var mapController = { () -> NSWindowController in
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Map"), bundle: nil)
+        let name = "\(MapWindowController.self)"
+        let storyboard = NSStoryboard(name: NSStoryboard.Name(name), bundle: nil)
         let screen = storyboard.instantiateInitialController() as? NSWindowController
 
         return screen ?? NSWindowController()
+    }()
+
+    private lazy var loggerWC = { () -> NSWindowController in
+        return LoggerWindowController.storyboardInstance()
     }()
 
     override func windowDidLoad() {
@@ -68,5 +74,9 @@ class MainWindowController: NSWindowController, NSWindowDelegate {
 
     @IBAction func showMap(_ sender: NSMenuItem) {
         mapController.showWindow(sender)
+    }
+
+    @IBAction func showLogger(_ sender: Any) {
+        loggerWC.showWindow(sender)
     }
 }

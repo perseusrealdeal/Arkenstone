@@ -22,7 +22,7 @@ class MapViewController: NSViewController {
 
     @IBOutlet private(set) weak var checkButtonAutoMapToCurrent: NSButton!
 
-    private var observation: NSKeyValueObservation?
+    private var logReportObservation: NSKeyValueObservation?
     private var autoMapToCurrent = true
 
     @IBOutlet private(set) weak var labelCoordinate: NSTextField!
@@ -85,11 +85,11 @@ class MapViewController: NSViewController {
         GeoCoordinator.register(stakeholder: self, selector: #selector(reload))
 
         // Connect to Log Reporting
-        observation = geoReport.observe(\.lastMessage, options: .new) { _, _ in
+        logReportObservation = localReport.observe(\.lastMessage, options: .new) { _, _ in
             self.refreshLogReportTextView()
         }
 
-        textScrollViewLog.isHidden = true
+        textScrollViewLog.isHidden = false
     }
 
     override func viewDidAppear() {
@@ -126,10 +126,10 @@ extension MapViewController {
 
         mapView.showsUserLocation = true
 
-        guard let location = AppGlobals.currentLocation else { return }
+        let point = AppGlobals.currentLocation ?? GeoPoint(DEFAULT_MAP_POINT)
 
-        let point = CLLocation(latitude: location.latitude, longitude: location.longitude)
-        let region = MKCoordinateRegion(center: point.coordinate,
+        let location = CLLocation(latitude: point.latitude, longitude: point.longitude)
+        let region = MKCoordinateRegion(center: location.coordinate,
                                         latitudinalMeters: DEFAULT_MAP_RADIUS,
                                         longitudinalMeters: DEFAULT_MAP_RADIUS)
 
@@ -137,7 +137,7 @@ extension MapViewController {
     }
 
     private func refreshLogReportTextView() {
-        // textViewLog.string = geoReport.text
+        textViewLog.string = localReport.text
 
         // TODO: - Scroll to bottom
     }

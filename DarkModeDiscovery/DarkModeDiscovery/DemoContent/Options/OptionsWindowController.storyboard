@@ -170,7 +170,7 @@
                                 </constraints>
                             </box>
                             <box title="Custom Code" translatesAutoresizingMaskIntoConstraints="NO" id="gmO-cU-9Q3" userLabel="Custom Code Box">
-                                <rect key="frame" x="327" y="191" width="296" height="99"/>
+                                <rect key="frame" x="327" y="171" width="296" height="99"/>
                                 <view key="contentView" id="PdL-in-mbV">
                                     <rect key="frame" x="3" y="3" width="290" height="81"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -234,6 +234,14 @@
                                     </connections>
                                 </segmentedCell>
                             </segmentedControl>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gx5-bg-GTG" customClass="MessageLabel" customModule="Arkenstone" customModuleProvider="target">
+                                <rect key="frame" x="297" y="279" width="37" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="9D9-Td-BqP">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="qmk-kD-jq1" secondAttribute="bottom" id="3ph-d5-fcd"/>
@@ -245,8 +253,10 @@
                             <constraint firstItem="ixr-qO-4tF" firstAttribute="top" secondItem="5RK-HS-UFI" secondAttribute="top" constant="30" id="Fe4-r6-vdC"/>
                             <constraint firstItem="qmk-kD-jq1" firstAttribute="leading" secondItem="5RK-HS-UFI" secondAttribute="leading" id="LtI-3r-L1i"/>
                             <constraint firstItem="qmk-kD-jq1" firstAttribute="top" secondItem="5RK-HS-UFI" secondAttribute="top" id="Q0p-wx-huc"/>
+                            <constraint firstItem="gx5-bg-GTG" firstAttribute="centerX" secondItem="qmk-kD-jq1" secondAttribute="centerX" id="Qfk-tq-uml"/>
                             <constraint firstAttribute="trailing" secondItem="9E1-6F-RRP" secondAttribute="trailing" constant="10" id="Syn-zC-QfX"/>
-                            <constraint firstAttribute="top" secondItem="gmO-cU-9Q3" secondAttribute="top" constant="-10" id="mdO-Ge-pRU"/>
+                            <constraint firstItem="gx5-bg-GTG" firstAttribute="top" secondItem="qmk-kD-jq1" secondAttribute="top" constant="5" id="YJK-rj-3KN"/>
+                            <constraint firstAttribute="top" secondItem="gmO-cU-9Q3" secondAttribute="top" constant="-30" id="mdO-Ge-pRU"/>
                             <constraint firstAttribute="trailing" secondItem="qmk-kD-jq1" secondAttribute="trailing" id="quy-Zf-wQu"/>
                             <constraint firstAttribute="bottom" secondItem="9E1-6F-RRP" secondAttribute="bottom" constant="10" id="tJT-1F-AvQ"/>
                             <constraint firstAttribute="leading" secondItem="ixr-qO-4tF" secondAttribute="leading" constant="-10" id="tfg-9L-zHG"/>
@@ -257,6 +267,7 @@
                         <outlet property="boxPerseusDarkMode" destination="ixr-qO-4tF" id="mWz-re-H1d"/>
                         <outlet property="boxSystemDarkMode" destination="GBL-iE-Fvd" id="zFB-jE-eAn"/>
                         <outlet property="labelInformation" destination="RjB-X5-OIo" id="hDL-Ir-bc6"/>
+                        <outlet property="labelLog" destination="gx5-bg-GTG" id="RlT-uk-n7D"/>
                         <outlet property="segmentedControl" destination="9E1-6F-RRP" id="qBA-yd-Mz7"/>
                         <outlet property="segmentedControlValueChanged" destination="9E1-6F-RRP" id="bfK-dV-dyx"/>
                     </connections>

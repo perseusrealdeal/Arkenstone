@@ -3,13 +3,13 @@
     "category"    : "Lover",
     "turned"      : "off",
     "level"       : 5,
-    "output"      : "standard",
+    "output"      : "custom",
     "subsecond"   : "nanosecond",
     "tidnumber"   : "decimal",
     "format"      : "short",
-    "marks"       : true,
+    "marks"       : false,
     "time"        : false,
-    "owner"       : false,
+    "owner"       : true,
     "directives"  : false,
     "debugIsInfo" : true
 }
