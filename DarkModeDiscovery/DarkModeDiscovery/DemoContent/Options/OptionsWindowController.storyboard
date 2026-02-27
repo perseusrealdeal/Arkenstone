@@ -35,7 +35,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="630" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qmk-kD-jq1" customClass="DarkModeImageView" customModule="Arkenstone" customModuleProvider="target">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qmk-kD-jq1" customClass="DarkModeImageView" customModule="PerseusDarkMode">
                                 <rect key="frame" x="0.0" y="0.0" width="630" height="300"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Ktr-Lg-9Ke"/>
                                 <userDefinedRuntimeAttributes>

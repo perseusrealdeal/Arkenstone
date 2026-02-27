@@ -45,7 +45,7 @@
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="ggy-pj-ydL">
                                         <rect key="frame" x="0.0" y="150" width="450" height="100"/>
                                         <subviews>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="pch-xV-LUR" customClass="DarkModeImageView" customModule="Arkenstone" customModuleProvider="target">
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="pch-xV-LUR" customClass="DarkModeImageView" customModule="PerseusDarkMode">
                                                 <rect key="frame" x="0.0" y="0.0" width="450" height="100"/>
                                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="Mol-TW-rN3"/>
                                                 <userDefinedRuntimeAttributes>
@@ -132,7 +132,7 @@
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="dXU-fX-v5M">
                                         <rect key="frame" x="0.0" y="0.0" width="450" height="50"/>
                                         <subviews>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mj2-Gc-sLl" customClass="DarkModeImageView" customModule="Arkenstone" customModuleProvider="target">
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mj2-Gc-sLl" customClass="DarkModeImageView" customModule="PerseusDarkMode">
                                                 <rect key="frame" x="0.0" y="0.0" width="450" height="50"/>
                                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="uaX-XN-hFq"/>
                                                 <userDefinedRuntimeAttributes>
@@ -208,7 +208,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wLm-68-HNO" customClass="DarkModeImageView" customModule="Arkenstone" customModuleProvider="target">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wLm-68-HNO" customClass="DarkModeImageView" customModule="PerseusDarkMode">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="MjK-VM-7uu"/>
                                 <userDefinedRuntimeAttributes>
@@ -274,7 +274,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5au-tj-4bR" customClass="DarkModeImageView" customModule="Arkenstone" customModuleProvider="target">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5au-tj-4bR" customClass="DarkModeImageView" customModule="PerseusDarkMode">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="xzx-Gy-l7r"/>
                             </imageView>
