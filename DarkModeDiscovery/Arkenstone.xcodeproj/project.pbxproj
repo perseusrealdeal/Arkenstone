@@ -30,7 +30,6 @@
 		2ECC0F392ED9807200FD49E2 /* LocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ECC0F382ED9807200FD49E2 /* LocationView.xib */; };
 		2ECC35AD2D8960A00059FBCC /* MapWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC35AC2D8960A00059FBCC /* MapWindowController.swift */; };
 		2ECC35AF2D8960AD0059FBCC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC35AE2D8960AD0059FBCC /* MapViewController.swift */; };
-		2ECFE08B2DB3705F0083FDBE /* PGKSupportingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECFE08A2DB3705F0083FDBE /* PGKSupportingStar.swift */; };
 		4B0158E629103C0D009F1803 /* DarkModeDiscoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0158E529103C0D009F1803 /* DarkModeDiscoveryTests.swift */; };
 		4B0158ED29103C21009F1803 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00F83AD288A6F99000D0A01 /* TestingAppDelegate.swift */; };
 		4B26073D295DC238002813C6 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B26073C295DC238002813C6 /* OptionsViewController.swift */; };
@@ -87,7 +86,6 @@
 		2ECC0F382ED9807200FD49E2 /* LocationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationView.xib; sourceTree = "<group>"; };
 		2ECC35AC2D8960A00059FBCC /* MapWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWindowController.swift; sourceTree = "<group>"; };
 		2ECC35AE2D8960AD0059FBCC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		2ECFE08A2DB3705F0083FDBE /* PGKSupportingStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGKSupportingStar.swift; sourceTree = "<group>"; };
 		2EE5FCCE2DD06D22000AC9CD /* UpdatingLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = UpdatingLocation.gpx; sourceTree = "<group>"; };
 		4B0158E329103C0D009F1803 /* ArkenstoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArkenstoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B0158E529103C0D009F1803 /* DarkModeDiscoveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeDiscoveryTests.swift; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 			children = (
 				2E79A4FD2F4700C300120DB0 /* MessageLabel.swift */,
 				4B7DD3AF297D33B700172BD4 /* CustomColors.swift */,
-				2ECFE08A2DB3705F0083FDBE /* PGKSupportingStar.swift */,
 			);
 			path = FirstPartyCode;
 			sourceTree = "<group>";
@@ -484,7 +481,6 @@
 				4B6A98BB295CAF3400965FAF /* OptionsWindowController.swift in Sources */,
 				4B6C3D2C29704130001299E6 /* ItemImageView.swift in Sources */,
 				E00F8383288A4A04000D0A01 /* MainViewController.swift in Sources */,
-				2ECFE08B2DB3705F0083FDBE /* PGKSupportingStar.swift in Sources */,
 				2ECC35AD2D8960A00059FBCC /* MapWindowController.swift in Sources */,
 				4B3A67E72965932D0024077F /* CompanionCollectionViewItem.swift in Sources */,
 				2EBB4CB92ED75B6700C44504 /* LoggerViewController.swift in Sources */,
@@ -771,8 +767,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/perseusrealdeal/PerseusDarkMode";
 			requirement = {
-				branch = prepare/v2.2.0;
-				kind = branch;
+				kind = exactVersion;
+				version = 2.2.0;
 			};
 		};
 		2E9EC03C2DD90E8F00384398 /* XCRemoteSwiftPackageReference "ConsolePerseusLogger" */ = {
@@ -780,15 +776,15 @@
 			repositoryURL = "https://github.com/perseusrealdeal/ConsolePerseusLogger";
 			requirement = {
 				kind = exactVersion;
-				version = 1.7.0;
+				version = 1.7.1;
 			};
 		};
 		2EC1A8592DEAEDFC001861B5 /* XCRemoteSwiftPackageReference "PerseusGeoKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/perseusrealdeal/PerseusGeoKit/";
 			requirement = {
-				branch = prepare/v1.2.0;
-				kind = branch;
+				kind = exactVersion;
+				version = 1.2.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
